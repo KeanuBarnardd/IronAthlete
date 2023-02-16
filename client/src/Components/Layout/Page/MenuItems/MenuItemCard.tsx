@@ -1,5 +1,6 @@
 import React from "react";
 import menuItemModel from "./../../../../Interfaces/menuItemModel";
+import { Link } from "react-router-dom";
 
 // Determines what Props we will be using...
 interface Props {
@@ -12,12 +13,14 @@ export default function MenuItemCard(props: Props) {
       <div className="card" style={{ boxShadow: "0 1px 7px 0 rgb(0 0 0 / 50%)" }}>
         <div className="card-body pt-2">
           <div className="row col-10 offset-1 p-4">
-            <img
-              src={props.menuItem.image}
-              style={{ borderRadius: "50%" }}
-              alt=""
-              className="w-100 mt-5 image-box"
-            />
+            <Link to={`/menuItemDetails/${props.menuItem.id}`}>
+              <img
+                src={props.menuItem.image}
+                style={{ borderRadius: "50%" }}
+                alt=""
+                className="w-100 mt-5 image-box"
+              />
+            </Link>
           </div>
           {props.menuItem.specialTag && props.menuItem.specialTag.length > 0 && (
             <i
@@ -50,6 +53,9 @@ export default function MenuItemCard(props: Props) {
           ></i>
 
           <div className="text-center">
+            <Link to={`/menuItemDetails/${props.menuItem.id}`}>
+              {props.menuItem.name}
+            </Link>
             <p className="card-title m-0 text-success fs-3">{props.menuItem.name}</p>
             <p className="badge bg-secondary" style={{ fontSize: "12px" }}>
               {props.menuItem.category}
