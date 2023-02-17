@@ -1,16 +1,15 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { shoppingCartApi } from ".";
 
-const shoppingCarrt = createApi({
+const shoppingCartApi = createApi({
   reducerPath: "shoppingCartApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "",
+    baseUrl: "https://freshdirectapi.azurewebsites.net/api/",
   }),
   tagTypes: ["ShoppingCarts"],
   endpoints: (builder) => ({
     getShoppingCart: builder.query({
       query: (userId) => ({
-        url: `shoppingcart/${userId}`,
+        url: `shoppingcart`,
         params: {
           userId: userId,
         },
@@ -32,5 +31,5 @@ const shoppingCarrt = createApi({
   }),
 });
 
-export const { useGetShoppingCartQuery } = shoppingCartApi;
+export const { useGetShoppingCartQuery, useUpdateShoppingCartMutation } = shoppingCartApi;
 export default shoppingCartApi;
