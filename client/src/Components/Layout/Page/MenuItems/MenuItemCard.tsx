@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import menuItemModel from "./../../../../Interfaces/menuItemModel";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useUpdateShoppingCartMutation } from "../../../../Apis/shoppingCartApi";
 
 // Determines what Props we will be using...
 interface Props {
@@ -8,6 +10,19 @@ interface Props {
 }
 
 export default function MenuItemCard(props: Props) {
+  const [isAddingToCart, setIsAddingToCart] = useState<boolean>(false);
+  const [updateShoppingCart] = useUpdateShoppingCartMutation();
+
+  const addToCart = async (menuItemId: number) => {
+    setIsAddingToCart(true);
+    const response = await updateShoppingCart({
+      menuItemId: menuItemId,
+      updateQuantityBy: 1,
+      userId: "a11c959d-bc03-4d89-90bf-98ae62bc292b",
+    });
+    setIsAddingToCart(false);
+  };
+
   return (
     <div className="col-md-4 col-12 p-4">
       <div className="card" style={{ boxShadow: "0 1px 7px 0 rgb(0 0 0 / 50%)" }}>
@@ -39,23 +54,34 @@ export default function MenuItemCard(props: Props) {
             </i>
           )}
 
-          <i
-            className="bi bi-cart-plus btn btn-outline-danger"
-            style={{
-              position: "absolute",
-              top: "15px",
-              right: "15px",
-              padding: "5px 10px",
-              borderRadius: "3px",
-              outline: "none !important",
-              cursor: "pointer",
-            }}
-          ></i>
+          {isAddingToCart ? (
+            <div
+              style={{
+                position: "absolute",
+                top: "15px",
+                right: "15px",
+              }}
+            >
+              <div className="spinner-border text-warning" style={{ scale: "100%" }}></div>
+            </div>
+          ) : (
+            <i
+              onClick={() => addToCart(props.menuItem.id)}
+              className="bi bi-cart-plus btn btn-outline-danger"
+              style={{
+                position: "absolute",
+                top: "15px",
+                right: "15px",
+                padding: "5px 10px",
+                borderRadius: "3px",
+                outline: "none !important",
+                cursor: "pointer",
+              }}
+            ></i>
+          )}
 
           <div className="text-center">
-            <Link to={`/menuItemDetails/${props.menuItem.id}`}>
-              {props.menuItem.name}
-            </Link>
+            <Link to={`/menuItemDetails/${props.menuItem.id}`}>{props.menuItem.name}</Link>
             <p className="card-title m-0 text-success fs-3">{props.menuItem.name}</p>
             <p className="badge bg-secondary" style={{ fontSize: "12px" }}>
               {props.menuItem.category}

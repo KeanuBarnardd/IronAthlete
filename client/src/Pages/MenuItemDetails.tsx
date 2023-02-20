@@ -32,7 +32,9 @@ export default function MenuItemDetails() {
       updateQuantityBy: quantity,
       userId: "a11c959d-bc03-4d89-90bf-98ae62bc292b",
     });
+
     console.log(response);
+    console.log(`Here is the MenuItem ID: ${menuItemId}. \nHere is the Quantity: ${quantity}\nHere is the userId: `);
     setIsAddingToCart(false);
   };
 

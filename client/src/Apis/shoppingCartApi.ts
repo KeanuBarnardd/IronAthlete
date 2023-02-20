@@ -20,7 +20,7 @@ const shoppingCartApi = createApi({
       query: ({ menuItemId, updateQuantityBy, userId }) => ({
         url: "shoppingcart",
         method: "POST",
-        paramas: {
+        params: {
           menuItemId,
           updateQuantityBy,
           userId,
