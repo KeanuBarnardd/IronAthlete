@@ -85,7 +85,11 @@ export default function Header() {
                 </NavLink>
               </li>
               <li className="nav-item text-white">
-                <NavLink to={"/login"} className="btn btn-success btn-outlined rounged-pill text-white mx-2"   style={{ border: "none", height: "40px", width: "100px" }}>
+                <NavLink
+                  to={"/login"}
+                  className="btn btn-success btn-outlined rounged-pill text-white mx-2"
+                  style={{ border: "none", height: "40px", width: "100px" }}
+                >
                   Login
                 </NavLink>
               </li>
