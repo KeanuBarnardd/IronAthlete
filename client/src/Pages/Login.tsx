@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { useLoginUserMutation } from "../Apis/authApi";
 import { inputHelper } from "../Helper";
 import { apiResponse } from "../Interfaces";
+import jwt_decode from "jwt-decode";
+import userModel from "./../Interfaces/userModel";
+import { useDispatch } from "react-redux";
+import { setLoggedInUser } from "../Storage/Redux/userAuthSlice";
+import { useNavigate } from "react-router-dom";
+import { MainLoader } from "../Components/Layout/Page/Common";
 
 export default function Login() {
   const [error, setError] = useState("");
   const [loginUser] = useLoginUserMutation();
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [userInput, setUserInput] = useState({
     userName: "",
     password: "",
@@ -28,7 +36,10 @@ export default function Login() {
     if (response.data) {
       console.log(response.data);
       const { token } = response.data.result;
+      const { fullName, id, email, role }: userModel = jwt_decode(token);
       localStorage.setItem("token", token);
+      navigate("/");
+      dispatch(setLoggedInUser({ fullName, id, email, role }));
     } else if (response.error) {
       console.log(response.error);
       setError(response.error.data.errorsMessages[0]);
@@ -39,6 +50,7 @@ export default function Login() {
 
   return (
     <div className="container text-center">
+      {loading && <MainLoader/>}
       <form method="post" onSubmit={handleSubmit}>
         <h1 className="mt-5">Login</h1>
         <div className="mt-5">
