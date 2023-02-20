@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { cartItemModel } from "../../../../Interfaces";
 import { RootState } from "../../../../Storage/Redux/store";
+import { MiniLoader } from "../Common";
+import inputHelper from "./../../../../Helper/inputHelper";
 
 export default function CartPickUpDetails() {
+  const [loading, setLoading] = useState(false);
   const shoppingCartFromStore: cartItemModel[] = useSelector(
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
   );
@@ -11,11 +14,29 @@ export default function CartPickUpDetails() {
   let grandTotal = 0;
   let totalItems = 0;
 
+  const initialUserData = {
+    name: "",
+    email: "",
+    phoneNumber: "",
+  };
+
   shoppingCartFromStore?.map((cartItem: cartItemModel) => {
     totalItems += cartItem.quantity ?? 0;
     grandTotal += (cartItem.menuItem?.price ?? 0) * (cartItem.quantity ?? 0);
     return null;
   });
+
+  const [userInput, setUserInput] = useState(initialUserData);
+  const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const tempData = inputHelper(e, userInput);
+    setUserInput(tempData);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    //Initiate the Payment using API here
+  };
 
   return (
     <div className="border pb-5 pt-3">
@@ -23,19 +44,29 @@ export default function CartPickUpDetails() {
         Pickup Details
       </h1>
       <hr />
-      <form className="col-10 mx-auto">
+      <form onSubmit={handleSubmit} className="col-10 mx-auto">
         <div className="form-group mt-3">
           Pickup Name
-          <input type="text" className="form-control" placeholder="name..." name="name" required />
+          <input
+            value={userInput.name}
+            type="text"
+            className="form-control"
+            placeholder="name..."
+            name="name"
+            required
+            onChange={handleUserInput}
+          />
         </div>
         <div className="form-group mt-3">
           Pickup Email
           <input
             type="email"
+            value={userInput.email}
             className="form-control"
             placeholder="email..."
             name="email"
             required
+            onChange={handleUserInput}
           />
         </div>
 
@@ -43,10 +74,12 @@ export default function CartPickUpDetails() {
           Pickup Phone Number
           <input
             type="number"
+            value={userInput.phoneNumber}
             className="form-control"
             placeholder="phone number..."
             name="phoneNumber"
             required
+            onChange={handleUserInput}
           />
         </div>
         <div className="form-group mt-3">
@@ -55,8 +88,12 @@ export default function CartPickUpDetails() {
             <h5>No of items : {`${totalItems}`}</h5>
           </div>
         </div>
-        <button type="submit" className="btn btn-lg btn-success form-control mt-3">
-          Looks Good? Place Order!
+        <button
+          type="submit"
+          className="btn btn-lg btn-success form-control mt-3"
+          disabled={loading}
+        >
+          {loading ? <MiniLoader size={0.5} /> : "Looks Good? Place Order! "}
         </button>
       </form>
     </div>
