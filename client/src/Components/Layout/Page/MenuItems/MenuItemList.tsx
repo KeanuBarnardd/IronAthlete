@@ -5,6 +5,7 @@ import { menuItemModel } from "../../../../Interfaces/index";
 import MenuItemCard from "./MenuItemCard";
 import { useDispatch } from "react-redux";
 import { setMenuItem } from "../../../../Storage/Redux/menuItemSlice";
+import { MainLoader } from "../Common";
 
 export default function MenuItemList() {
   // Creates an Array of MenuItemModels...
@@ -20,7 +21,7 @@ export default function MenuItemList() {
   }, [isLoading]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <MainLoader />;
   }
 
   return (
