@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Header, Footer } from "../Components/Layout/index";
-import { Home, NotFound, MenuItemDetails } from "../Pages/index";
+import { Home, NotFound, MenuItemDetails, ShoppingCart } from "../Pages/index";
 import { useDispatch } from "react-redux";
 import { useGetShoppingCartQuery } from "../Apis/shoppingCartApi";
 import { setShoppingCart } from "../Storage/Redux/shoppingCartSlice";
@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     if (!isLoading) {
-      console.log(data.result); 
+      console.log(data.result);
       dispatch(setShoppingCart(data.result.cartItems));
     }
   }, [data]);
@@ -25,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="shoppingCart" element={<ShoppingCart />} />
           <Route path="/menuItemDetails/:menuItemId" element={<MenuItemDetails />} />
         </Routes>
       </div>
