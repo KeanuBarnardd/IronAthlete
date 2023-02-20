@@ -27,6 +27,8 @@ export default function Login() {
 
     if (response.data) {
       console.log(response.data);
+      const { token } = response.data.result;
+      localStorage.setItem("token", token);
     } else if (response.error) {
       console.log(response.error);
       setError(response.error.data.errorsMessages[0]);
