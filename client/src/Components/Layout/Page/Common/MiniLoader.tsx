@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function MiniLoader() {
-  return <div>MiniLoader</div>;
+export default function MiniLoader({ type = "warning", size = 100 }) {
+  return <div className={`spinner-border text-${type}`} style={{ scale: `${size}` }}></div>;
 }

@@ -3,6 +3,7 @@ import menuItemModel from "./../../../../Interfaces/menuItemModel";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useUpdateShoppingCartMutation } from "../../../../Apis/shoppingCartApi";
+import { MiniLoader } from "../Common";
 
 // Determines what Props we will be using...
 interface Props {
@@ -62,7 +63,7 @@ export default function MenuItemCard(props: Props) {
                 right: "15px",
               }}
             >
-              <div className="spinner-border text-warning" style={{ scale: "100%" }}></div>
+              <MiniLoader />
             </div>
           ) : (
             <i
