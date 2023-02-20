@@ -31,7 +31,7 @@ export default function Header() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
+          <ul className="navbar-nav mr-auto mb-2 mb-lg-0 w-100">
             <li className="nav-item ">
               <NavLink className="nav-link" to={"/"}>
                 Home <span className="sr-only"></span>
@@ -70,6 +70,26 @@ export default function Header() {
                 </a>
               </div>
             </li>
+            <div className="d-flex" style={{ marginLeft: "auto" }}>
+              <li className="nav-item ">
+                <button
+                  className="btn btn-success btn-outlined rounged-pill text-white mx-2"
+                  style={{ border: "none", height: "40px", width: "100px" }}
+                >
+                  Logout
+                </button>
+              </li>
+              <li className="nav-item text-white">
+                <NavLink to={"/register"} className="nav-link">
+                  Register
+                </NavLink>
+              </li>
+              <li className="nav-item text-white">
+                <NavLink to={"/login"} className="btn btn-success btn-outlined rounged-pill text-white mx-2"   style={{ border: "none", height: "40px", width: "100px" }}>
+                  Login
+                </NavLink>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
