@@ -13,22 +13,23 @@ import {
   AuthenticationTestAdmin,
 } from "../Pages/index";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useGetShoppingCartQuery } from "../Apis/shoppingCartApi";
 import { setShoppingCart } from "../Storage/Redux/shoppingCartSlice";
 import jwt_decode from "jwt-decode";
 import userModel from "./../Interfaces/userModel";
 import { setLoggedInUser } from "../Storage/Redux/userAuthSlice";
+import { RootState } from "../Storage/Redux/store";
 
 function App() {
   const dispatch = useDispatch();
-
-  const { data, isLoading } = useGetShoppingCartQuery("a11c959d-bc03-4d89-90bf-98ae62bc292b");
-
+  const userData: userModel = useSelector((state: RootState) => state.userAuthStore);
+  const { data, isLoading } = useGetShoppingCartQuery(userData.id);
+  
   useEffect(() => {
     if (!isLoading) {
-      console.log(data.result);
-      dispatch(setShoppingCart(data.result.cartItems));
+      console.log(data);
+      dispatch(setShoppingCart(data.result?.cartItems));
     }
   }, [data]);
 
@@ -55,7 +56,6 @@ function App() {
           <Route path="/authentication" element={<AuthenticationTest />} />
           <Route path="/authorization" element={<AuthenticationTestAdmin />} />
           <Route path="/accessDenied" element={<AccessDenied />} />
-        
         </Routes>
       </div>
       <Footer />

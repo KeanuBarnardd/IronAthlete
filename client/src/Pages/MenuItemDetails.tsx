@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useUpdateShoppingCartMutation } from "../Apis/shoppingCartApi";
 import { MainLoader } from "../Components/Layout/Page/Common";
 import MiniLoader from "./../Components/Layout/Page/Common/MiniLoader";
-import { apiResponse } from "../Interfaces";
+import { apiResponse, userModel } from "../Interfaces";
 import toastNotify from "./../Helper/toastNotify";
-// USER ADMIN ID - a11c959d-bc03-4d89-90bf-98ae62bc292b
+import { useSelector } from "react-redux";
+import { RootState } from "../Storage/Redux/store";
 
 export default function MenuItemDetails() {
   const { menuItemId } = useParams();
@@ -18,6 +19,8 @@ export default function MenuItemDetails() {
   const [quantity, setQuanity] = useState(1);
   const [isAddingToCart, setIsAddingToCart] = useState<boolean>(false);
   const [updateShoppingCart] = useUpdateShoppingCartMutation();
+
+  const userData: userModel = useSelector((state: RootState) => state.userAuthStore);
 
   const handleQuantity = (counter: number) => {
     let newQuanity = quantity + counter;
@@ -29,11 +32,16 @@ export default function MenuItemDetails() {
   };
 
   const handleAddCart = async (menuItemId: number) => {
+    if (!userData.id) {
+      navigate("/login");
+      return;
+    }
+
     setIsAddingToCart(true);
     const response: apiResponse = await updateShoppingCart({
       menuItemId: menuItemId,
       updateQuantityBy: quantity,
-      userId: "a11c959d-bc03-4d89-90bf-98ae62bc292b",
+      userId: userData.id,
     });
 
     if (response.data && response.data.isSuccess) {

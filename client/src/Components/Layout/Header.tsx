@@ -52,19 +52,7 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to={"/shoppingCart"}>
-                <i className="bi bi-cart">
-                  {shoppingCartFromStore?.length ? ` (${shoppingCartFromStore.length})` : ""}
-                </i>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/authentication"}>
-                Authentication
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to={"/authorization"}>
-                Autherization
+                <i className="bi bi-cart">{userData.id && ` (${shoppingCartFromStore.length})`}</i>
               </NavLink>
             </li>
 

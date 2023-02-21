@@ -4,6 +4,7 @@ import cartItemModel from "./../../../../Interfaces/cartItemModel";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, updateQuantity } from "../../../../Storage/Redux/shoppingCartSlice";
 import { useUpdateShoppingCartMutation } from "../../../../Apis/shoppingCartApi";
+import { userModel } from "../../../../Interfaces";
 
 export default function CartSummary() {
   const dispatch = useDispatch();
@@ -11,18 +12,19 @@ export default function CartSummary() {
   const shoppingCartFromStore: cartItemModel[] = useSelector(
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
   );
+  const userData: userModel = useSelector((state: RootState) => state.userAuthStore);
 
   if (!shoppingCartFromStore) {
     return <div>Shopping Cart Empty</div>;
   }
-  //"a11c959d-bc03-4d89-90bf-98ae62bc292b"
+
   const handleQuantity = (updateQuantityBy: number, cartItem: cartItemModel) => {
     if ((updateQuantityBy == -1 && cartItem.quantity == 1) || updateQuantityBy == 0) {
       //Remove this Item
       updateShoppingCart({
         menuItemId: cartItem.menuItem?.id,
         updateQuantityBy: 0,
-        userId: "a11c959d-bc03-4d89-90bf-98ae62bc292b",
+        userId: userData.id,
       });
       dispatch(removeFromCart({ cartItem, quantity: 0 }));
     } else {
@@ -30,7 +32,7 @@ export default function CartSummary() {
       updateShoppingCart({
         menuItemId: cartItem.menuItem?.id,
         updateQuantityBy: updateQuantityBy,
-        userId: "a11c959d-bc03-4d89-90bf-98ae62bc292b",
+        userId: userData.id,
       });
       dispatch(updateQuantity({ cartItem, quantity: cartItem.quantity! + updateQuantityBy }));
     }
