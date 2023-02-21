@@ -57,6 +57,16 @@ export default function Header() {
                 </i>
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to={"/authentication"}>
+                Authentication
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to={"/authorization"}>
+                Autherization
+              </NavLink>
+            </li>
 
             <li className="nav-item dropdown">
               <a
