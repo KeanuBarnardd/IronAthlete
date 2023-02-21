@@ -7,7 +7,7 @@ import Login from "./Login";
 import AccessDenied from "./AccessDenied";
 import AuthenticationTest from "./AuthenticationTest";
 import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
-
+import Payment from "./Payment";
 export {
   Home,
   NotFound,
@@ -18,4 +18,5 @@ export {
   AccessDenied,
   AuthenticationTest,
   AuthenticationTestAdmin,
+  Payment,
 };

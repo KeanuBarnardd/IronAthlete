@@ -11,6 +11,7 @@ import {
   AuthenticationTest,
   AccessDenied,
   AuthenticationTestAdmin,
+  Payment,
 } from "../Pages/index";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -25,7 +26,7 @@ function App() {
   const dispatch = useDispatch();
   const userData: userModel = useSelector((state: RootState) => state.userAuthStore);
   const { data, isLoading } = useGetShoppingCartQuery(userData.id);
-  
+
   useEffect(() => {
     if (!isLoading) {
       console.log(data);
@@ -52,7 +53,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/menuItemDetails/:menuItemId" element={<MenuItemDetails />} />
-
+          <Route path="/payment" element={<Payment />} />
           <Route path="/authentication" element={<AuthenticationTest />} />
           <Route path="/authorization" element={<AuthenticationTestAdmin />} />
           <Route path="/accessDenied" element={<AccessDenied />} />
