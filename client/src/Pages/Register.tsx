@@ -52,9 +52,9 @@ export default function Register() {
         <div className="mt-5">
           <div className="col-sm-6 offset-sm-3 col-xs-12 mt-4">
             <input
-              type="text"
+              type="email"
               className="form-control"
-              placeholder="Enter Username"
+              placeholder="Enter Email"
               required
               value={userInput.userName}
               name="userName"

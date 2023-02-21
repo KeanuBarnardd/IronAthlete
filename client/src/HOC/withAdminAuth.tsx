@@ -4,7 +4,7 @@ import { SD_Roles } from "../Utility/SD";
 
 export default function withAdminAuth(WrappedComponent: any) {
   return (props: any) => {
-    console.log("HOC Called");
+
     // If a user is not logged in then it will take us to the login page...
     const accessToken = localStorage.getItem("token");
 

@@ -29,7 +29,6 @@ function App() {
 
   useEffect(() => {
     if (!isLoading) {
-      console.log(data);
       dispatch(setShoppingCart(data.result?.cartItems));
     }
   }, [data]);
