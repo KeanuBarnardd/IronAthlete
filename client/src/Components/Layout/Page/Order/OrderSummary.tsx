@@ -13,7 +13,7 @@ export default function OrderSummary({ data, userInput }: orderSummaryProps) {
         <div className="border py-3 px-2">
           {data.cartItems.map((cartItem: cartItemModel, index: number) => {
             return (
-              <div className="d-flex">
+              <div key={index} className="d-flex">
                 <div className="d-flex w-100 justify-content-between">
                   <p>{cartItem.menuItem?.name}</p>
                   <p>
