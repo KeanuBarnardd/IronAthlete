@@ -9,6 +9,7 @@ import { setLoggedInUser } from "../../Storage/Redux/userAuthSlice";
 import { MainLoader } from "../../Components/Page/Common";
 import "./Login.scss";
 
+import AuthFormContainer from './../../Components/Layout/AuthFormContainer/AuthFormContainer';
 function Login() {
   const [error, setError] = useState("");
   const [loginUser] = useLoginUserMutation();

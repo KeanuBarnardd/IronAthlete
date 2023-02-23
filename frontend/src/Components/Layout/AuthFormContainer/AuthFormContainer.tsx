@@ -1,7 +1,7 @@
 import React from "react";
 import "./AuthFormContainer.scss";
-
-export default function AuthFormContainer(title: string, subTitle: string, form: any) {
+import { MainLoader } from "../../Page/Common";
+export default function AuthFormContainer(loading: any , title: any, subTitle: string, form: any) {
   return (
     <div className="login__background-container app__flex">
       <div className="login__main-container app__container-width">
@@ -11,6 +11,7 @@ export default function AuthFormContainer(title: string, subTitle: string, form:
             <p className="p-text">{subTitle}</p>
           </div>
         </div>
+        {loading && <MainLoader />}
         <div className="form__container">{form}</div>
       </div>
     </div>
