@@ -60,7 +60,9 @@ function Login() {
           {loading && <MainLoader />}
           <form className="login__form-container" method="post" onSubmit={handleSubmit}>
             <h1>Hey, Hello 👋 </h1>
-            <p className="sub-title p-text">Enter your infromation you entered while registering. </p>
+            <p className="sub-title p-text">
+              Enter your infromation you entered while registering.{" "}
+            </p>
             <div className="input__container col">
               <p className="">Email</p>
               <input

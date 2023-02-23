@@ -1,4 +1,5 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import AuthFormContainer from "./AuthFormContainer/AuthFormContainer";
 
-export { Header, Footer };
+export { Header, Footer, AuthFormContainer };
