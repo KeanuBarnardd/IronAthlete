@@ -1,0 +1,12 @@
+.navbar__container{
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  nav{
+    display: flex;
+    flex-direction: row;
+    ul{
+      display: flex;
+    }
+  }
+}
