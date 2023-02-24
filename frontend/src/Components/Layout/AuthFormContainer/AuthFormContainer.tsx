@@ -16,7 +16,7 @@ export default function AuthFormContainer(props: Props) {
         <div className="form__header-container">
           <div className="form__header-content">
             {props.title}
-            <p className="p-text ppp" style={{ color: "var(--grey-600);" }}>
+            <p className="p-text ppp" style={{ color: "var(--grey-600)" }}>
               {props.subtitle}
             </p>
           </div>

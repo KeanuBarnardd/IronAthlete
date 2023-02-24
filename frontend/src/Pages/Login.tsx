@@ -7,8 +7,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setLoggedInUser } from "../Storage/Redux/userAuthSlice";
 import { MainLoader } from "../Components/Page/Common";
+import { DemoLogin, AuthFormContainer } from "../Components/Layout";
 
-import AuthFormContainer from "../Components/Layout/AuthFormContainer/AuthFormContainer";
 function Login() {
   const [error, setError] = useState("");
   const [loginUser] = useLoginUserMutation();
@@ -41,9 +41,9 @@ function Login() {
     } else if (response.error) {
       setError(response.error.data.errorMessages[0]);
     }
-
     setLoading(false);
   };
+
   return (
     <AuthFormContainer
       title={
@@ -54,51 +54,61 @@ function Login() {
       subtitle={"Don't wait to get healthy eat with the best food people now. "}
       loading={loading}
       form={
-        <form className="login__form-container" method="post" onSubmit={handleSubmit}>
-          <h1>Hey, Hello 👋 </h1>
-          <p className="p-text" style={{ marginBottom: "30px" }}>
-            Enter your information you entered while registering.{" "}
-          </p>
-          <div className="input__container col">
-            <p className="">Email</p>
-            <input
-              type="text"
-              className="input"
-              placeholder=""
-              required
-              name="userName"
-              value={userInput.userName}
-              onChange={handleUserInput}
-            />
-          </div>
+        <div className="form__content">
+          <form className="login__form-container" method="post" onSubmit={handleSubmit}>
+            <h1>Hey, Hello 👋 </h1>
+            <p className="p-text" style={{ marginBottom: "30px" }}>
+              Enter your information you entered while registering.{" "}
+            </p>
+            <div className="input__container col">
+              <p className="">Email</p>
+              <input
+                type="text"
+                className="input"
+                placeholder=""
+                required
+                name="userName"
+                value={userInput.userName}
+                onChange={handleUserInput}
+              />
+            </div>
 
-          <div className="input__container col">
-            <p>Password</p>
-            <input
-              type="password"
-              className="input"
-              placeholder=""
-              required
-              name="password"
-              value={userInput.password}
-              onChange={handleUserInput}
-            />
-          </div>
+            <div className="input__container col">
+              <p>Password</p>
+              <input
+                type="password"
+                className="input"
+                placeholder=""
+                required
+                name="password"
+                value={userInput.password}
+                onChange={handleUserInput}
+              />
+            </div>
 
-          {error && <p className="text-danger">{error}</p>}
-          <button type="submit" className="btn btn-rainbow" style={{ width: "200px" }}>
-            Login
-          </button>
-          <div className="or__container">
-            <hr />
-            <p>or</p>
-            <hr />
-          </div>
+            {error && <p className="text-danger">{error}</p>}
+            <button type="submit" className="btn btn-rainbow" style={{ width: "200px" }}>
+              Login
+            </button>
+            <div className="or__container">
+              <hr />
+              <p>or</p>
+              <hr />
+            </div>
+          </form>
           <div className="row">
-            <button className="btn btn-outline">Register</button>
-            <button className="btn btn-outline">Demo Login</button>
+            <button
+              className="btn btn-outline"
+              onClick={() => {
+                navigate("/register");
+              }}
+            >
+              Register
+            </button>
+
+            <DemoLogin />
           </div>
-        </form>
+        </div>
       }
     />
   );

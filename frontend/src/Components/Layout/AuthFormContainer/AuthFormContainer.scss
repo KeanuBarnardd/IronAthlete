@@ -66,38 +66,39 @@ $navbar-padding-top: 64px; // Account for navbar position
     border-bottom-right-radius: var(--border-radius-1);
 
     // General Styling of forms inside this component
-    form {
+    .form__content {
       width: 100%;
       max-width: 380px;
-      
-      .input__container {
-        width: 100%;
-        margin-bottom: 1.4rem;
-        p {
-          font-size: 0.9rem;
-
-          color: var(--grey-400);
-        }
-
-        input {
+      form {
+        .input__container {
           width: 100%;
-          padding: 0.4rem;
-          border: 1.5px solid var(--grey-100);
-          border-radius: var(--border-radius-1);
+          margin-bottom: 1.4rem;
+          p {
+            font-size: 0.9rem;
 
-          &:focus {
-            outline: none !important;
-            border-color: #23a6d5;
+            color: var(--grey-400);
           }
-        }
 
-        select{
-          width: 100%;
-          padding: 0.5rem;
-          border: 1.5px solid var(--grey-100);
-          border-radius: var(--border-radius-1);
-          background-color: white;
-          color: var(--grey-600);
+          input {
+            width: 100%;
+            padding: 0.4rem;
+            border: 1.5px solid var(--grey-100);
+            border-radius: var(--border-radius-1);
+
+            &:focus {
+              outline: none !important;
+              border-color: #23a6d5;
+            }
+          }
+
+          select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1.5px solid var(--grey-100);
+            border-radius: var(--border-radius-1);
+            background-color: white;
+            color: var(--grey-600);
+          }
         }
       }
     }

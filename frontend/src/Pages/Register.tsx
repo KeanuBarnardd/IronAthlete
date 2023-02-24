@@ -5,7 +5,7 @@ import { apiResponse } from "../Interfaces";
 import { SD_Roles } from "../Utility/SD";
 import { useNavigate } from "react-router-dom";
 import { MainLoader } from "../Components/Page/Common";
-import { AuthFormContainer } from "../Components/Layout";
+import { AuthFormContainer, DemoLogin } from "../Components/Layout";
 
 function Register() {
   const [registerUser] = useRegisterUserMutation();
@@ -38,7 +38,6 @@ function Register() {
     } else if (response.error) {
       toastNotify(response.error.data.errorMessages[0], "error");
     }
-
     setLoading(false);
   };
 
@@ -52,12 +51,13 @@ function Register() {
       subtitle={"Discover the delicious, wholesome flavors of healthy eating. "}
       loading={loading}
       form={
-        <form method="post" onSubmit={handleSubmit}>
-          <h1>Join Us 👋 </h1>
-          <p className="sub-title p-text" style={{ marginBottom: "15px" }}>
-            Enter your details below and start your healthy eating journey.{" "}
-          </p>
-          <div className="mt-5">
+        <div className="form__content">
+          <form method="post" onSubmit={handleSubmit}>
+            <h1>Join Us 👋 </h1>
+            <p className="sub-title p-text" style={{ marginBottom: "15px" }}>
+              Enter your details below and start your healthy eating journey.{" "}
+            </p>
+
             <div className="input__container">
               <p>Email</p>
               <input
@@ -104,21 +104,28 @@ function Register() {
                 <option value={`${SD_Roles.ADMIN}`}>Admin</option>
               </select>
             </div>
-          </div>
 
-          <button type="submit" className="btn btn-rainbow" disabled={loading}>
-            Register
-          </button>
-          <div className="or__container">
-            <hr />
-            <p>or</p>
-            <hr />
-          </div>
+            <button type="submit" className="btn btn-rainbow" disabled={loading}>
+              Register
+            </button>
+            <div className="or__container">
+              <hr />
+              <p>or</p>
+              <hr />
+            </div>
+          </form>
           <div className="row">
-            <button className="btn btn-outline">Login</button>
-            <button className="btn btn-outline">Demo Login</button>
+            <button
+              onClick={() => {
+                navigate("/login");
+              }}
+              className="btn btn-outline"
+            >
+              Login
+            </button>
+            <DemoLogin />
           </div>
-        </form>
+        </div>
       }
     />
   );
