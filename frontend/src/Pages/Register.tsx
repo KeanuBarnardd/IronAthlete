@@ -5,6 +5,7 @@ import { apiResponse } from "../Interfaces";
 import { SD_Roles } from "../Utility/SD";
 import { useNavigate } from "react-router-dom";
 import { MainLoader } from "../Components/Page/Common";
+import { AuthFormContainer } from "../Components/Layout";
 
 function Register() {
   const [registerUser] = useRegisterUserMutation();
@@ -17,9 +18,7 @@ function Register() {
     name: "",
   });
 
-  const handleUserInput = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleUserInput = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const tempData = inputHelper(e, userInput);
     setUserInput(tempData);
   };
@@ -44,65 +43,84 @@ function Register() {
   };
 
   return (
-    <div className="container text-center">
-      {loading && <MainLoader />}
-      <form method="post" onSubmit={handleSubmit}>
-        <h1 className="mt-5">Register</h1>
-        <div className="mt-5">
-          <div className="col-sm-6 offset-sm-3 col-xs-12 mt-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter Username"
-              required
-              name="userName"
-              value={userInput.userName}
-              onChange={handleUserInput}
-            />
+    <AuthFormContainer
+      title={
+        <h1>
+          <span>Register</span> with us today and taste the difference
+        </h1>
+      }
+      subtitle={"Discover the delicious, wholesome flavors of healthy eating. "}
+      loading={loading}
+      form={
+        <form method="post" onSubmit={handleSubmit}>
+          <h1>Join Us 👋 </h1>
+          <p className="sub-title p-text" style={{ marginBottom: "15px" }}>
+            Enter your details below and start your healthy eating journey.{" "}
+          </p>
+          <div className="mt-5">
+            <div className="input__container">
+              <p>Email</p>
+              <input
+                type="text"
+                className="form-control"
+                required
+                name="userName"
+                value={userInput.userName}
+                onChange={handleUserInput}
+              />
+            </div>
+            <div className="input__container">
+              <p>Name</p>
+              <input
+                type="text"
+                className="form-control"
+                required
+                name="name"
+                value={userInput.name}
+                onChange={handleUserInput}
+              />
+            </div>
+            <div className="input__container">
+              <p>Password</p>
+              <input
+                type="password"
+                className="form-control"
+                required
+                name="password"
+                value={userInput.password}
+                onChange={handleUserInput}
+              />
+            </div>
+            <div className="input__container">
+              <select
+                className="form-control form-select"
+                required
+                value={userInput.role}
+                name="role"
+                onChange={handleUserInput}
+              >
+                <option value="">Select Role</option>
+                <option value={`${SD_Roles.CUTOMER}`}>Customer</option>
+                <option value={`${SD_Roles.ADMIN}`}>Admin</option>
+              </select>
+            </div>
           </div>
-          <div className="col-sm-6 offset-sm-3 col-xs-12 mt-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter Name"
-              required
-              name="name"
-              value={userInput.name}
-              onChange={handleUserInput}
-            />
-          </div>
-          <div className="col-sm-6 offset-sm-3 col-xs-12 mt-4">
-            <input
-              type="password"
-              className="form-control"
-              placeholder="Enter Password"
-              required
-              name="password"
-              value={userInput.password}
-              onChange={handleUserInput}
-            />
-          </div>
-          <div className="col-sm-6 offset-sm-3 col-xs-12 mt-4">
-            <select
-              className="form-control form-select"
-              required
-              value={userInput.role}
-              name="role"
-              onChange={handleUserInput}
-            >
-              <option value="">--Select Role--</option>
-              <option value={`${SD_Roles.CUTOMER}`}>Customer</option>
-              <option value={`${SD_Roles.ADMIN}`}>Admin</option>
-            </select>
-          </div>
-        </div>
-        <div className="mt-5">
-          <button type="submit" className="btn btn-success" disabled={loading}>
+
+          <button type="submit" className="btn btn-rainbow" disabled={loading}>
             Register
           </button>
-        </div>
-      </form>
-    </div>
+          <div className="or__container">
+            <hr />
+            <p>or</p>
+            <hr />
+          </div>
+          <div className="row">
+            <button className="btn btn-outline">Login</button>
+            <button className="btn btn-outline">Demo Login</button>
+          </div>
+        </form>
+      }
+    />
   );
 }
 

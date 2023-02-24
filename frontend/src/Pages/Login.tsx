@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { useLoginUserMutation } from "../../Apis/authApi";
-import { inputHelper } from "../../Helper";
-import { apiResponse, userModel } from "../../Interfaces";
+import { useLoginUserMutation } from "../Apis/authApi";
+import { inputHelper } from "../Helper";
+import { apiResponse, userModel } from "../Interfaces";
 import jwt_decode from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setLoggedInUser } from "../../Storage/Redux/userAuthSlice";
-import { MainLoader } from "../../Components/Page/Common";
-import "./Login.scss";
+import { setLoggedInUser } from "../Storage/Redux/userAuthSlice";
+import { MainLoader } from "../Components/Page/Common";
 
-import AuthFormContainer from "./../../Components/Layout/AuthFormContainer/AuthFormContainer";
+import AuthFormContainer from "../Components/Layout/AuthFormContainer/AuthFormContainer";
 function Login() {
   const [error, setError] = useState("");
   const [loginUser] = useLoginUserMutation();
@@ -57,7 +56,9 @@ function Login() {
       form={
         <form className="login__form-container" method="post" onSubmit={handleSubmit}>
           <h1>Hey, Hello 👋 </h1>
-          <p className="sub-title p-text">Enter your infromation you entered while registering. </p>
+          <p className="p-text" style={{ marginBottom: "30px" }}>
+            Enter your information you entered while registering.{" "}
+          </p>
           <div className="input__container col">
             <p className="">Email</p>
             <input
@@ -93,7 +94,10 @@ function Login() {
             <p>or</p>
             <hr />
           </div>
-          <button className="btn btn-outline">Register</button>
+          <div className="row">
+            <button className="btn btn-outline">Register</button>
+            <button className="btn btn-outline">Demo Login</button>
+          </div>
         </form>
       }
     />
