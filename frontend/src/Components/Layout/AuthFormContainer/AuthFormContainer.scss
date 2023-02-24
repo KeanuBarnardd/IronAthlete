@@ -1,16 +1,21 @@
-.login__background-container {
+// Variables 
+$navbar-padding-top: 64px; // Account for navbar position
+
+.auth__background-container {
   background-color: var(--grey-100);
-  padding-top: 64px;
+  padding-top: $navbar-padding-top;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  .login__main-container {
+
+  .auth__main-container {
     width: 100%;
     margin: 2rem;
     display: flex;
     height: 85%;
+
     border-radius: var(--border-radius-1);
     .form__header-container {
       display: flex;
@@ -19,11 +24,13 @@
       justify-content: center;
       width: 50%;
       padding: 7rem;
+
       background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       border-top-left-radius: var(--border-radius-1);
       border-bottom-left-radius: var(--border-radius-1);
+
       .form__header-content {
         padding: 3rem;
         border-radius: 2px;
@@ -52,6 +59,7 @@
     justify-content: center;
     height: 100%;
     width: 50%;
+
     background-color: white;
     border-top-right-radius: var(--border-radius-1);
     border-bottom-right-radius: var(--border-radius-1);

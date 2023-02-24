@@ -9,7 +9,7 @@ import { setLoggedInUser } from "../../Storage/Redux/userAuthSlice";
 import { MainLoader } from "../../Components/Page/Common";
 import "./Login.scss";
 
-import AuthFormContainer from './../../Components/Layout/AuthFormContainer/AuthFormContainer';
+import AuthFormContainer from "./../../Components/Layout/AuthFormContainer/AuthFormContainer";
 function Login() {
   const [error, setError] = useState("");
   const [loginUser] = useLoginUserMutation();
@@ -46,64 +46,57 @@ function Login() {
     setLoading(false);
   };
   return (
-    <div className="login__background-container app__flex">
-      <div className="login__main-container app__container-width">
-        <div className="form__header-container">
-          <div className="form__header-content">
-            <h1>
-              The best food is right here <span>Log in</span> and begin shopping.
-            </h1>
-            <p className="p-text">Don't wait to get healthy eat with the best food people now.</p>
+    <AuthFormContainer
+      title={
+        <h1>
+          The best food is right here <span>log in </span>and begin shopping
+        </h1>
+      }
+      subtitle={"Don't wait to get healthy eat with the best food people now. "}
+      loading={loading}
+      form={
+        <form className="login__form-container" method="post" onSubmit={handleSubmit}>
+          <h1>Hey, Hello 👋 </h1>
+          <p className="sub-title p-text">Enter your infromation you entered while registering. </p>
+          <div className="input__container col">
+            <p className="">Email</p>
+            <input
+              type="text"
+              className="input"
+              placeholder=""
+              required
+              name="userName"
+              value={userInput.userName}
+              onChange={handleUserInput}
+            />
           </div>
-        </div>
 
-        <div className="form__container">
-          {loading && <MainLoader />}
-          <form className="login__form-container" method="post" onSubmit={handleSubmit}>
-            <h1>Hey, Hello 👋 </h1>
-            <p className="sub-title p-text">
-              Enter your infromation you entered while registering.{" "}
-            </p>
-            <div className="input__container col">
-              <p className="">Email</p>
-              <input
-                type="text"
-                className="input"
-                placeholder=""
-                required
-                name="userName"
-                value={userInput.userName}
-                onChange={handleUserInput}
-              />
-            </div>
+          <div className="input__container col">
+            <p>Password</p>
+            <input
+              type="password"
+              className="input"
+              placeholder=""
+              required
+              name="password"
+              value={userInput.password}
+              onChange={handleUserInput}
+            />
+          </div>
 
-            <div className="input__container col">
-              <p>Password</p>
-              <input
-                type="password"
-                className="input"
-                placeholder=""
-                required
-                name="password"
-                value={userInput.password}
-                onChange={handleUserInput}
-              />
-            </div>
-
-            {error && <p className="text-danger">{error}</p>}
-            <button type="submit" className="btn btn-rainbow" style={{ width: "200px" }}>
-              Login
-            </button>
-            <div className="or__container">
-              <hr />
-              <p>or</p>
-              <hr />
-            </div>
-            <button className="btn btn-outline">Register</button>
-          </form>
-        </div>
-      </div>
-    </div>
+          {error && <p className="text-danger">{error}</p>}
+          <button type="submit" className="btn btn-rainbow" style={{ width: "200px" }}>
+            Login
+          </button>
+          <div className="or__container">
+            <hr />
+            <p>or</p>
+            <hr />
+          </div>
+          <button className="btn btn-outline">Register</button>
+        </form>
+      }
+    />
   );
 }
 

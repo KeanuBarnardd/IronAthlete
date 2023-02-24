@@ -1,18 +1,26 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./AuthFormContainer.scss";
 import { MainLoader } from "../../Page/Common";
-export default function AuthFormContainer(loading: any , title: any, subTitle: string, form: any) {
+
+interface Props {
+  title: ReactNode;
+  subtitle: string;
+  form: ReactNode;
+  loading: boolean;
+}
+
+export default function AuthFormContainer(props: Props) {
   return (
-    <div className="login__background-container app__flex">
-      <div className="login__main-container app__container-width">
+    <div className="auth__background-container app__flex">
+      <div className="auth__main-container app__container-width">
         <div className="form__header-container">
           <div className="form__header-content">
-            <h1>{title}</h1>
-            <p className="p-text">{subTitle}</p>
+            {props.title}
+            <p className="sub-title p-text">{props.subtitle}</p>
           </div>
         </div>
-        {loading && <MainLoader />}
-        <div className="form__container">{form}</div>
+        {props.loading && <MainLoader />}
+        <div className="form__container">{props.form}</div>
       </div>
     </div>
   );
