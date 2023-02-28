@@ -86,7 +86,11 @@ function Login() {
               />
             </div>
 
-            {error && <p className="text-danger">{error}</p>}
+            {error && (
+              <div className="error__container">
+                <p className="error__text">{error}</p>
+              </div>
+            )}
             <button type="submit" className="btn btn-rainbow" style={{ width: "200px" }}>
               Login
             </button>

@@ -32,6 +32,8 @@
   --gray-color: #E0DFE3;
   --dark-grey-color:#52584E;
   --black-color: #1c1b20;
+  --error-color-light: rgba(236, 56, 56, 0.158);
+  --error-color-dark:rgb(204, 51, 51);
 
   /*Custom Colour Pallete*/
 

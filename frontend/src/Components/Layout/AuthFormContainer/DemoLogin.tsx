@@ -19,7 +19,6 @@ export default function DemoLogin() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
     const response: apiResponse = await loginUser({
@@ -37,7 +36,6 @@ export default function DemoLogin() {
       setError(response.error.data.errorMessages[0]);
       console.error("Our demo user does not exist or username password is different please check.");
     }
-    setLoading(false);
   };
 
   return (
