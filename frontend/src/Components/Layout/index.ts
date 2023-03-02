@@ -1,6 +1,7 @@
-import Header from "./Header";
+
 import Footer from "./Footer";
 import AuthFormContainer from "./AuthFormContainer/AuthFormContainer";
 import DemoLogin from "./AuthFormContainer/DemoLogin";
+import Navbar from "./Navbar/Navbar";
 
-export { Header, Footer, AuthFormContainer, DemoLogin };
+export { Footer, AuthFormContainer, DemoLogin, Navbar };

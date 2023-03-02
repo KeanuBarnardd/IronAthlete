@@ -3,10 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { cartItemModel, userModel } from "../../../Interfaces";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../Storage/Redux/store";
-import {
-  emptyUserState,
-  setLoggedInUser,
-} from "../../../Storage/Redux/userAuthSlice";
+import { emptyUserState, setLoggedInUser } from "../../../Storage/Redux/userAuthSlice";
 import { SD_Roles } from "../../../Utility/SD";
 import "./Navbar.scss";
 
@@ -20,9 +17,7 @@ function Header() {
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
   );
 
-  const userData: userModel = useSelector(
-    (state: RootState) => state.userAuthStore
-  );
+  const userData: userModel = useSelector((state: RootState) => state.userAuthStore);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -31,9 +26,9 @@ function Header() {
   };
 
   return (
-    <div className="navbar__container" >
+    <div className="navbar__container app__flex">
       <nav className="navbar">
-        <div className="container-fluid">
+        <div>
           <NavLink className="nav-link" aria-current="page" to="/">
             <img src={logo} style={{ height: "40px" }} className="m-1" />
           </NavLink>
@@ -57,15 +52,6 @@ function Header() {
               </li>
               {userData.role == SD_Roles.ADMIN ? (
                 <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Admin Panel
-                  </a>
                   <ul className="dropdown-menu">
                     <li
                       style={{ cursor: "pointer" }}
@@ -92,22 +78,14 @@ function Header() {
                 </li>
               ) : (
                 <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    aria-current="page"
-                    to="/order/myorders"
-                  >
+                  <NavLink className="nav-link" aria-current="page" to="/order/myorders">
                     Orders
                   </NavLink>
                 </li>
               )}
 
               <li className="nav-item">
-                <NavLink
-                  className="nav-link"
-                  aria-current="page"
-                  to="/shoppingCart"
-                >
+                <NavLink className="nav-link" aria-current="page" to="/shoppingCart">
                   <i className="bi bi-cart"></i>{" "}
                   {userData.id && `(${shoppingCartFromStore.length})`}
                 </NavLink>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Footer, Header } from "./Components/Layout";
+import { Footer, Navbar } from "./Components/Layout";
 import {
   AccessDenied,
   AllOrders,
@@ -58,7 +58,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Navbar />
       <div>
         <Routes>
           <Route path="/" element={<Home />}></Route>
