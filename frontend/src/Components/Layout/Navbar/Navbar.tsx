@@ -25,6 +25,13 @@ function Header() {
     dispatch(setLoggedInUser({ ...emptyUserState }));
     navigate("/");
   };
+  /*
+    Data we need to pass down to Mobile Navbar 
+    - userData.id 
+    - handleLogout
+    - shoppingCartFromStore.length
+    - userData.fullName
+  */
 
   return (
     <div className="navbar__container app__flex">
