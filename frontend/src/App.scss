@@ -103,7 +103,7 @@
 //------------- Buttons -------------
 
 .btn {
-  width: 100% !important;
+  width: 100%;
   padding: 0.7rem;
   border-radius: var(--border-radius-1);
   cursor: pointer;
@@ -124,7 +124,6 @@
 }
 
 .btn-outline {
-  width: 100% !important;
   padding: 0.7rem;
   border: 1px solid var(--grey-200);
   color: var(--grey-500);

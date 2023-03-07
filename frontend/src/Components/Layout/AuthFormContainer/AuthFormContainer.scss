@@ -70,8 +70,11 @@ $navbar-padding-top: 64px; // Account for navbar position
       width: 100%;
       max-width: 380px;
       form {
+        button {
+          width: 100%;
+        }
 
-        .error__container{
+        .error__container {
           background-color: var(--error-color-light);
           padding: 0.5rem;
           border-radius: var(--border-radius-1);
@@ -85,8 +88,6 @@ $navbar-padding-top: 64px; // Account for navbar position
         .input__container {
           width: 100%;
           margin-bottom: 1.4rem;
-
-          
 
           p {
             font-size: 0.9rem;

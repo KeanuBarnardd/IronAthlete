@@ -23,6 +23,11 @@
       font-size: 1.2rem;
     }
 
+    .home-toggle,
+    .navbar-toggler {
+      display: none;
+    }
+
     .nav__content-left {
       display: flex;
       align-items: center;
@@ -42,6 +47,44 @@
       }
       .btn-outline {
         color: var(--grey-400);
+      }
+      .logged__in-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-width: 350px;
+        width: 100%;
+        p {
+          font-size: 0.9rem;
+          width: 100%;
+          text-align: right;
+          color: var(--grey-400);
+        }
+        .btn {
+          max-width: 150px;
+        }
+      }
+    }
+
+    // Mobile Styling
+    @media screen and (max-width: 650px) {
+      .home-toggle,
+      .navbar-toggler {
+        display: flex;
+      }
+
+      .navbar-toggler {
+        font-size: 2.4rem;
+        padding: 0rem 0.3rem;
+        cursor: pointer;
+        background-color: white;
+        color: var(--grey-600);
+        border: none;
+      }
+
+      .nav__content-left,
+      .nav__login-container {
+        display: none;
       }
     }
   }

@@ -6,7 +6,7 @@ import { RootState } from "../../../Storage/Redux/store";
 import { emptyUserState, setLoggedInUser } from "../../../Storage/Redux/userAuthSlice";
 import { SD_Roles } from "../../../Utility/SD";
 import "./Navbar.scss";
-
+import "../../../App.scss";
 let logo = require("../../../Assets/Images/mango.png");
 
 function Header() {
@@ -28,6 +28,14 @@ function Header() {
   return (
     <div className="navbar__container app__flex">
       <nav className="app__container-width">
+        {/* --------Mobile Nav------ */}
+        <NavLink className="nav-link home-toggle" aria-current="page" to="/">
+          <img src={logo} style={{ height: "50px", marginRight: "10px" }} alt="FreshDirect Logo" />
+        </NavLink>
+        <button className="navbar-toggler" type="button">
+          <i className="bi bi-list"></i>
+        </button>
+        {/* --------Mobile Nav------ */}
         <div className="nav__content-left">
           <NavLink className="nav-link" aria-current="page" to="/">
             <img
@@ -36,19 +44,15 @@ function Header() {
               alt="FreshDirect Logo"
             />
           </NavLink>
-          {/* <button className="navbar-toggler" type="button">
-            <span className="navbar-toggler-icon"></span>
-          </button> */}
-
           <NavLink className="nav-link" aria-current="page" to="/">
             Home
           </NavLink>
 
           {userData.role == SD_Roles.ADMIN ? (
             <li className=" dropdown">
-              <li onClick={() => navigate("menuItem/menuitemlist")}>Menu Item</li>
+              {/* <li onClick={() => navigate("menuItem/menuitemlist")}>Menu Item</li>
               <li onClick={() => navigate("order/myorders")}>My Orders</li>
-              <li onClick={() => navigate("order/allOrders")}>All Orders</li>
+              <li onClick={() => navigate("order/allOrders")}>All Orders</li> */}
             </li>
           ) : (
             <NavLink className="nav-link" aria-current="page" to="/order/myorders">
@@ -63,10 +67,12 @@ function Header() {
 
         <div className="nav__login-container">
           {userData.id && (
-            <>
-              <button>Welcome, {userData.fullName}</button>
-              <button onClick={handleLogout}>Logout</button>
-            </>
+            <div className="logged__in-container">
+              <p>Welcome, {userData.fullName}</p>
+              <button className="btn btn-rainbow" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
           )}
 
           {!userData.id && (

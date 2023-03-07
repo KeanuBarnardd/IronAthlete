@@ -91,7 +91,7 @@ function Login() {
                 <p className="error__text">{error}</p>
               </div>
             )}
-            <button type="submit" className="btn btn-rainbow" style={{ width: "200px" }}>
+            <button type="submit" className="btn btn-rainbow">
               Login
             </button>
             <div className="or__container">
