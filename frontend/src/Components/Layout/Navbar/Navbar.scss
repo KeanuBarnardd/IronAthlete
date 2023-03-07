@@ -1,13 +1,48 @@
 .navbar__container {
   width: 100%;
-  position: absolute;
+  position: fixed;
   background-color: white;
   display: flex;
+  justify-content: center;
+  box-shadow: var(--box-shadow-2);
   nav {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    width: 100%;
-    
+    align-items: center;
+    gap: 30px;
+    padding: 0.3rem 0rem;
+
+    li,
+    .nav-link {
+      list-style: none;
+      text-decoration: none;
+      color: var(--grey-400);
+      font-size: 1rem;
+    }
+    .cart {
+      font-size: 1.2rem;
+    }
+
+    .nav__content-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .nav__login-container {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .btn-rainbow,
+      .btn-outline {
+        min-width: 100px;
+        text-align: center;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      .btn-outline {
+        color: var(--grey-400);
+      }
+    }
   }
 }
