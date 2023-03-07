@@ -1,0 +1,24 @@
+.mobile__nav-content {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .mobile__nav-content {
+    display: flex;
+    flex-direction: column;
+
+    .mobile__nav-top {
+      display: flex;
+      justify-content: space-between;
+
+      .navbar-toggler {
+        font-size: 2.4rem;
+        padding: 0rem 0.3rem;
+        cursor: pointer;
+        background-color: white;
+        color: var(--grey-600);
+        border: none;
+      }
+    }
+  }
+}

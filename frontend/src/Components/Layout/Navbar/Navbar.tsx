@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { MobileNav } from "../index";
 import { cartItemModel, userModel } from "../../../Interfaces";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../Storage/Redux/store";
@@ -27,15 +28,8 @@ function Header() {
 
   return (
     <div className="navbar__container app__flex">
+      <MobileNav />
       <nav className="app__container-width">
-        {/* --------Mobile Nav------ */}
-        <NavLink className="nav-link home-toggle" aria-current="page" to="/">
-          <img src={logo} style={{ height: "50px", marginRight: "10px" }} alt="FreshDirect Logo" />
-        </NavLink>
-        <button className="navbar-toggler" type="button">
-          <i className="bi bi-list"></i>
-        </button>
-        {/* --------Mobile Nav------ */}
         <div className="nav__content-left">
           <NavLink className="nav-link" aria-current="page" to="/">
             <img
