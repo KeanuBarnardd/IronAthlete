@@ -4,7 +4,14 @@ import "./MobileNav.scss";
 
 let logo = require("../../../Assets/Images/mango.png");
 
-export default function MobileNav() {
+interface Props {
+  userId: string;
+  userName: string | undefined;
+  shoppingCartLength: number;
+  handleLogout: (params: any) => void;
+}
+
+export default function MobileNav(props: Props) {
   const [toggleNav, setToggleNav] = useState(true);
   const [toggleOrders, setToggleOrders] = useState(false);
 
@@ -28,6 +35,7 @@ export default function MobileNav() {
         <NavLink className="mobile__nav-link" to={"/"}>
           Home
         </NavLink>
+
         <li
           onClick={() => {
             toggleOrders ? setToggleOrders(false) : setToggleOrders(true);
@@ -36,6 +44,7 @@ export default function MobileNav() {
         >
           Orders
         </li>
+
         <div className={`orders__dropdown-container ${toggleOrders ? "active" : ""}`}>
           <NavLink className={"mobile__nav-link"} to={"/menuItem/menuitemList"}>
             Edit Menu
@@ -47,21 +56,19 @@ export default function MobileNav() {
             All Orders
           </NavLink>
         </div>
-
         <NavLink className="mobile__nav-link" to={"/shoppingCart"}>
           Shopping Cart <span>3 Items</span>
         </NavLink>
-        
       </div>
       <div className="mobile__nav-bottom">
-          <NavLink className="nav-link btn btn-outline" to="/register">
-            Register
-          </NavLink>
+        <NavLink className="nav-link btn btn-outline" to="/register">
+          Register
+        </NavLink>
 
-          <NavLink className="nav-link btn btn-rainbow" to="/login">
-            Login
-          </NavLink>
-        </div>
+        <NavLink className="nav-link btn btn-rainbow" to="/login">
+          Login
+        </NavLink>
+      </div>
     </div>
   );
 }

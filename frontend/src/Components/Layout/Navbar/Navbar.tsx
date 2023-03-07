@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MobileNav } from "../index";
+
 import { cartItemModel, userModel } from "../../../Interfaces";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../../Storage/Redux/store";
@@ -10,7 +11,7 @@ import "./Navbar.scss";
 import "../../../App.scss";
 let logo = require("../../../Assets/Images/mango.png");
 
-function Header() {
+function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -35,7 +36,12 @@ function Header() {
 
   return (
     <div className="navbar__container app__flex">
-      <MobileNav />
+      <MobileNav
+        userId={userData.id}
+        userName={userData.fullName}
+        shoppingCartLength={shoppingCartFromStore.length}
+        handleLogout={handleLogout}
+      />
       <nav className="app__container-width">
         <div className="nav__content-left">
           <NavLink className="nav-link" aria-current="page" to="/">
@@ -93,4 +99,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Navbar;
