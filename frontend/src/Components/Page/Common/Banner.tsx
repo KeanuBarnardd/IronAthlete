@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setSearchItem } from "../../../Storage/Redux/menuItemSlice";
-import "./banner.css";
+
 function Banner() {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();

@@ -65,7 +65,9 @@ function Navbar() {
               </div>
             </button>
           ) : (
-            <button className="nav-link">Orders</button>
+            <NavLink to="/order/myorders" className="nav-link">
+              Orders
+            </NavLink>
           )}
 
           <NavLink className="nav-link" aria-current="page" to="/shoppingCart">
