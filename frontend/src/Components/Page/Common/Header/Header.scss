@@ -1,7 +1,12 @@
 header {
   .header__container {
     display: flex;
-    gap: 50px;
+    justify-content: space-between;
+    background-color: var(--grey-000);
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius-1);
+    margin-top: 80px;
+    margin-bottom: 100px;
     .header__content {
       width: 100%;
 
@@ -22,17 +27,59 @@ header {
 
       .header__card-grid {
         display: grid;
+        max-width: 500px;
         gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        margin-top: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        margin-top: 1.8rem;
       }
     }
 
     .burger__container {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
       img {
         width: 100%;
         max-width: 400px;
         height: auto;
+      }
+
+      .stats__container {
+        position: relative;
+
+        .stat__container {
+          position: absolute;
+          color: var(--grey-600);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border-radius: var(--border-radius-1);
+          //box-shadow: var(--box-shadow-3);
+          padding: 0.5rem 1rem;
+          i {
+            font-size: 2.5rem;
+            //@at-root: white;
+
+            border-radius: var(--border-radius-1);
+          }
+        }
+
+        .stat__container.one {
+          background-color: var(--accent-color-green);
+
+          top: -370px;
+          left: 300px;
+        }
+        .stat__container.two {
+          background-color: var(--accent-color-yellow);
+          top: -200px;
+          left: 350px;
+        }
+        .stat__container.three {
+          background-color: var(--accent-color-blue);
+          top: -60px;
+          left: 300px;
+        }
       }
     }
   }

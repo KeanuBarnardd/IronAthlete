@@ -4,8 +4,8 @@
   background-color: white;
   display: flex;
   justify-content: center;
-  //box-shadow: var(--box-shadow-2);
   padding: 0.3rem 0rem;
+  z-index: 100;
   nav {
     display: flex;
     justify-content: space-between;

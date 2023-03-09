@@ -22,27 +22,35 @@ export default function Header() {
           </p>
 
           <div className="header__card-grid">
-            <HeaderCard img={sushi3D} title="Sushi" color="#e4efe0" />
-            <HeaderCard img={burger3DSmall} title="Burgers" color="#faba92" />
-            <HeaderCard img={salad3D} title="Salads" color="#E2E4F1" />
-            <HeaderCard img={coffee3D} title="Drinks" color="#f5e0d4" />
-            <HeaderCard img={noodles3D} title="Noodles" color="#dbeaf2" />
+            <HeaderCard img={sushi3D} title="Sushi" color="var(--accent-color-green)" />
+            <HeaderCard img={salad3D} title="Salads" color="var(--accent-color-purple)" />
+            <HeaderCard img={coffee3D} title="Drinks" color="var(--accent-color-orange)" />
+            <HeaderCard img={noodles3D} title="Noodles" color="var(--accent-color-blue)" />
           </div>
         </div>
         <div className="header__content burger__container col">
-          <img src={burger3DSmall} alt="" />
+          <img src={burger3DSmall} />
           <div className="stats__container">
-            <div className="stat__container">
-              <h3>Customers</h3>
-              <p>100+</p>
+            <div className="stat__container one ">
+              <i className="bi bi-emoji-laughing"></i>
+              <div className="col">
+                <p>Happy Cutsomers</p>
+                <h3>5067</h3>
+              </div>
             </div>
-            <div className="stat__container">
-              <h3>Customers</h3>
-              <p>100+</p>
+            <div className="stat__container two">
+              <i className="bi bi-truck"></i>
+              <div className="col">
+                <p>Meals Delivered</p>
+                <h3>600,000+</h3>
+              </div>
             </div>
-            <div className="stat__container">
-              <h3>Customers</h3>
-              <p>100+</p>
+            <div className="stat__container three">
+              <i className="bi bi-egg-fried"></i>
+              <div className="col">
+                <p>Meals cooked</p>
+                <h3>990,200+</h3>
+              </div>
             </div>
           </div>
         </div>
