@@ -1,3 +1,5 @@
 import MenuItemList from "./MenuItemList";
 import MenuItemCard from "./MenuItemCard";
-export { MenuItemList, MenuItemCard };
+import HeaderCard from "./HeaderCard/HeaderCard";
+
+export { MenuItemList, MenuItemCard, HeaderCard };
