@@ -1,7 +1,39 @@
 header {
-  
-  background-color: green;
-  .header__content {
-    background-color: red;
+  .header__container {
+    display: flex;
+    gap: 50px;
+    .header__content {
+      width: 100%;
+
+      h1 {
+        font-size: 5rem;
+        color: var(--grey-700);
+        line-height: 80px;
+        margin-bottom: 15px;
+        max-width: 800px;
+      }
+      h2 {
+        font-size: 2rem;
+        color: var(--grey-600);
+      }
+      p {
+        max-width: 700px;
+      }
+
+      .header__card-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        margin-top: 1.5rem;
+      }
+    }
+
+    .burger__container {
+      img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+      }
+    }
   }
 }

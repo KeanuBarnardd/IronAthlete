@@ -1,0 +1,34 @@
+.headercard__container {
+  display: flex;
+  flex-direction: column;
+
+  .img__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-1);
+    padding: 1rem 0rem;
+    transition: all ease-in-out var(--timer-short);
+    img {
+      transition: all ease-in-out var(--timer-short);
+      width: 100%;
+      max-width: 80px;
+      height: 70px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: var(--box-shadow-1);
+      img {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  p {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 5px;
+    color: var(--grey-400);
+  }
+}
