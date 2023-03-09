@@ -60,14 +60,26 @@ export default function MobileNav(props: Props) {
           Shopping Cart <span>3 Items</span>
         </NavLink>
       </div>
-      <div className="mobile__nav-bottom">
-        <NavLink className="nav-link btn btn-outline" to="/register">
-          Register
-        </NavLink>
+      <div className={`mobile__nav-bottom ${toggleNav ? "active" : ""}`}>
+        {!props.userId && (
+          <>
+            <NavLink className="nav-link btn btn-outline" to="/register">
+              Register
+            </NavLink>
 
-        <NavLink className="nav-link btn btn-rainbow" to="/login">
-          Login
-        </NavLink>
+            <NavLink className="nav-link btn btn-rainbow" to="/login">
+              Login
+            </NavLink>
+          </>
+        )}
+        {props.userId && (
+          <div className="logged__in-container-mobile">
+            <p>Welcome, {props.userName}</p>
+            <button className="btn btn-rainbow" onClick={props.handleLogout}>
+              Logout
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

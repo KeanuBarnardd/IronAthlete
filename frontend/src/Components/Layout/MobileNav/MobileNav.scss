@@ -59,6 +59,10 @@
       }
     }
     .mobile__nav-bottom {
+      display: none;
+    }
+
+    .mobile__nav-bottom.active {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -70,9 +74,13 @@
         padding: 0.3rem;
         font-size: 0.9rem;
       }
-      .btn.orange {
-        background-color: rgb(218, 146, 80);
-        color: white;
+
+      .logged__in-container-mobile {
+        p {
+          text-align: center;
+          color: var(--grey-600);
+          margin-bottom: 5px;
+        }
       }
     }
   }

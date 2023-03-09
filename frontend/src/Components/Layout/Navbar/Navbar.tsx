@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { MobileNav } from "../index";
 
@@ -15,6 +15,8 @@ function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [toggleNav, setToggleNav] = useState(false);
+
   const shoppingCartFromStore: cartItemModel[] = useSelector(
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
   );
@@ -26,13 +28,6 @@ function Navbar() {
     dispatch(setLoggedInUser({ ...emptyUserState }));
     navigate("/");
   };
-  /*
-    Data we need to pass down to Mobile Navbar 
-    - userData.id 
-    - handleLogout
-    - shoppingCartFromStore.length
-    - userData.fullName
-  */
 
   return (
     <div className="navbar__container app__flex">
@@ -56,15 +51,21 @@ function Navbar() {
           </NavLink>
 
           {userData.role == SD_Roles.ADMIN ? (
-            <li className=" dropdown">
-              {/* <li onClick={() => navigate("menuItem/menuitemlist")}>Menu Item</li>
-              <li onClick={() => navigate("order/myorders")}>My Orders</li>
-              <li onClick={() => navigate("order/allOrders")}>All Orders</li> */}
-            </li>
-          ) : (
-            <NavLink className="nav-link" aria-current="page" to="/order/myorders">
+            <button
+              onClick={() => {
+                toggleNav ? setToggleNav(false) : setToggleNav(true);
+              }}
+              className="nav-link dropdown__button"
+            >
               Orders
-            </NavLink>
+              <div className={`dropdown__container ${toggleNav ? "active" : ""}`}>
+                <li onClick={() => navigate("menuItem/menuitemlist")}>Menu</li>
+                <li onClick={() => navigate("order/myorders")}>My Orders</li>
+                <li onClick={() => navigate("order/allOrders")}>All Orders</li>
+              </div>
+            </button>
+          ) : (
+            <button className="nav-link">Orders</button>
           )}
 
           <NavLink className="nav-link" aria-current="page" to="/shoppingCart">
