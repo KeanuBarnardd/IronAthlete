@@ -1,0 +1,26 @@
+.home__grid-container {
+  display: grid;
+  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 2rem;
+  .proccess__container {
+   
+    .img__container {
+      height: 180px;
+      border-radius: var(--border-radius-1);
+      background-position: center;
+      background-size: cover;
+    }
+
+    h2{
+      color: var(--grey-500);
+    }
+
+    p,h2{
+      text-align: center;
+      margin-top: 5px;
+    }
+
+
+  }
+}
