@@ -1,3 +1,5 @@
+import logo from "./mango.png";
+
 import burger3D from "./burger3d.png";
 import burger3DSmall from "./burger3dSmall.png";
 import coffee3D from "./coffee3d.png";
@@ -26,4 +28,5 @@ export {
   lambPot,
   girlEating,
   tableEating,
+  logo
 };
