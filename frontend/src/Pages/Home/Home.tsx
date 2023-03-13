@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
+import { ItemSlider } from "../../Components/Layout";
 import { foodBowl, order, delivery, lambPot, tableEating } from "../../Assets/Images/images";
 import "./Home.scss";
 
@@ -8,6 +9,14 @@ function Home() {
   return (
     <div>
       <Header />
+  
+      <div className="app__flex" style={{marginTop:"7rem"}}>
+        <div className="app__container-width">
+          <ItemSlider />
+          <ItemSlider />
+        </div>
+      </div>
+
       <div className="app__flex">
         <div className="app__container-width app__container col">
           <div className="row" style={{ justifyContent: "space-between", alignItems: "center" }}>
@@ -73,7 +82,7 @@ function Home() {
       </div>
       <div className="app__flex">
         <div className="app__container-width app__container">
-          <div className="row" style={{gap:"50px"}}>
+          <div className="row" style={{ gap: "50px" }}>
             <div className="col">
               <p className="sub-title">
                 <span style={{ backgroundColor: "var(--accent-color-blue)" }}>
@@ -100,8 +109,7 @@ function Home() {
                     <p className="p-text">
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ducimus
                       suscipit, ullam expedita cupiditate corporis ratione magni corrupti sapiente
-                      nemo!  ullam expedita cupiditate corporis ratione magni corrupti sapiente
-                      nemo!
+                      nemo! ullam expedita cupiditate corporis ratione magni corrupti sapiente nemo!
                     </p>
                   </div>
                 </li>
@@ -117,7 +125,6 @@ function Home() {
                   </div>
                 </li>
               </ul>
-              
             </div>
             <img className="table__eating-img" src={tableEating} alt="" />
           </div>
