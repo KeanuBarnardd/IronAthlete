@@ -37,10 +37,15 @@
 
   /*ACCENT COLOURS*/
   --accent-color-green: #e4efe0;
+  --accent-color-green-dark: #8ebd7c;
   --accent-color-purple: #e2e4f1;
+  --accent-color-purple-dark: #bec4f0;
   --accent-color-orange: #f5e0d4;
+  --accent-color-orange-dark: #fcbd98;
   --accent-color-blue: #dbeaf2;
+  --accent-color-blue-dark: #77b9dd;
   --accent-color-yellow:#faba92;
+  --accent-color-yellow-dark: #e4efe0;
   /*Custom Colour Pallete*/
 
   /*Set Colours*/

@@ -1,15 +1,16 @@
 header {
+  overflow: hidden;
   .header__container {
     display: flex;
     justify-content: space-between;
     background-color: var(--grey-000);
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 0rem 2rem;
     border-radius: var(--border-radius-1);
     margin-top: 80px;
    
     .header__content {
       width: 100%;
-
+      padding-bottom: 2rem;
       h1 {
         font-size: 5rem;
         color: var(--grey-700);
@@ -27,59 +28,82 @@ header {
 
       .header__card-grid {
         display: grid;
-        max-width: 500px;
-        gap: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        max-width: 450px;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
         margin-top: 1.8rem;
       }
     }
 
-    .burger__container {
+    .girl__container {
       position: relative;
-      width: 100%;
-      max-width: 580px;
+      display: flex;
+      align-items: center;
+
       img {
+        position: absolute;
+        bottom: 0;
         width: 100%;
         max-width: 400px;
         height: auto;
+        z-index: 2;
       }
 
-      .stats__container {
-        position: relative;
+      .circle {
+        position: absolute;
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+      }
 
-        .stat__container {
-          position: absolute;
-          color: var(--grey-600);
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          border-radius: var(--border-radius-1);
-          //box-shadow: var(--box-shadow-3);
-          padding: 0.5rem 1rem;
-          i {
-            font-size: 2.5rem;
-            //@at-root: white;
+      .circle.one {
+        bottom: -100px;
+        right: 50px;
+        width: 200px;
+        height: 200px;
+        background-color: var(--accent-color-blue);
+        z-index: 3;
+      }
 
-            border-radius: var(--border-radius-1);
-          }
-        }
+      .circle.two{
+        bottom: 50px;
+        left: 0px;
+        width: 150px;
+        height: 150px;
+        z-index: 1;
+        background-color: var(--accent-color-green);
+      }
 
-        .stat__container.one {
-          background-color: var(--accent-color-green);
+      .circle.three{
+        top: 60px;
+        left: 70px;
+        width: 100px;
+        height: 100px;
+        background-color: var(--accent-color-orange);
+        z-index: 1;
+      }
 
-          top: -370px;
-          left: 300px;
-        }
-        .stat__container.two {
-          background-color: var(--accent-color-yellow);
-          top: -200px;
-          left: 350px;
-        }
-        .stat__container.three {
-          background-color: var(--accent-color-blue);
-          top: -60px;
-          left: 300px;
-        }
+      .circle.four{
+        top: 150px;
+        right: 0px;
+        width: 100px;
+        height: 100px;
+        background-color: var(--accent-color-orange);
+      }
+
+      .circle.five{
+        top: 0px;
+        right: 180px;
+        width: 300px;
+        height: 300px;
+        background-color: var(--accent-color-purple);
+      }
+      
+      .circle.six{
+        top: 0px;
+        right: 100px;
+        background-color: var(--accent-color-green);
       }
     }
   }

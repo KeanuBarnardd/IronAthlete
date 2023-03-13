@@ -6,6 +6,7 @@ import {
   coffee3D,
   noodles3D,
   sushi3D,
+  girlEating,
 } from "../../../../Assets/Images/images";
 import "./Header.scss";
 
@@ -22,36 +23,27 @@ export default function Header() {
           </p>
 
           <div className="header__card-grid">
-            <HeaderCard img={sushi3D} title="Sushi" color="var(--accent-color-green)" />
-            <HeaderCard img={salad3D} title="Salads" color="var(--accent-color-purple)" />
-            <HeaderCard img={coffee3D} title="Drinks" color="var(--accent-color-orange)" />
-            <HeaderCard img={noodles3D} title="Noodles" color="var(--accent-color-blue)" />
+            <HeaderCard icon={"bi bi-truck"} title="Sushi" color="var(--accent-color-green)" darkColor={"var(--accent-color-green-dark)"} />
+            <HeaderCard icon={"bi bi-box-seam"} title="Salads" color="var(--accent-color-purple)" darkColor={"var(--accent-color-purple-dark)"} />
+            <HeaderCard
+              icon={"bi bi-cup-straw"}
+              title="Drinks"
+              color="var(--accent-color-orange)"
+            darkColor={"var(--accent-color-orange-dark)"} />
+            <HeaderCard icon={"bi bi-egg-fried"} title="Noodles" color="var(--accent-color-blue)" darkColor={"var(--accent-color-blue-dark)"} />
           </div>
         </div>
-        <div className="header__content burger__container col">
-          <img src={burger3DSmall} />
-          <div className="stats__container">
-            <div className="stat__container one ">
-              <i className="bi bi-emoji-laughing"></i>
-              <div className="col">
-                <p>Happy Cutsomers</p>
-                <h3>5067</h3>
-              </div>
-            </div>
-            <div className="stat__container two">
-              <i className="bi bi-truck"></i>
-              <div className="col">
-                <p>Meals Delivered</p>
-                <h3>600,000+</h3>
-              </div>
-            </div>
-            <div className="stat__container three">
-              <i className="bi bi-egg-fried"></i>
-              <div className="col">
-                <p>Meals cooked</p>
-                <h3>990,200+</h3>
-              </div>
-            </div>
+        <div className="header__content girl__container col">
+          <img src={girlEating}>
+            
+          </img>
+          <div className="circle__container">
+            <div className="circle one"></div>
+            <div className="circle two"></div>
+            <div className="circle three"></div>
+            <div className="circle four"></div>
+            <div className="circle five"></div>
+            <div className="circle six"></div>
           </div>
         </div>
       </div>

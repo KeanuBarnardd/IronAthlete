@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
-import { foodBowl, order, delivery, lambPot } from "../../Assets/Images/images";
+import { foodBowl, order, delivery, lambPot, tableEating } from "../../Assets/Images/images";
 import "./Home.scss";
 
 function Home() {
@@ -56,13 +56,71 @@ function Home() {
       </div>
       <div className="app__flex" style={{ backgroundColor: "var(--accent-color-orange)" }}>
         <div
-          className="app__container app__container-width"
+          className="app__container-width col"
           style={{
             borderRadius: "var(--border-radius-1",
+            paddingTop: "3rem",
+            paddingBottom: "3rem",
           }}
         >
-          <h1 className="head-text" style={{textAlign:"center"}}>We're changing the way people order food. Message, when you need food quickly.</h1>
-          
+          <h1 className="head-text" style={{ textAlign: "center" }}>
+            We're changing the way people order food. Message, when you need food quickly.
+          </h1>
+          <button className="btn btn-grey" style={{ marginTop: "20px" }}>
+            Order now
+          </button>
+        </div>
+      </div>
+      <div className="app__flex">
+        <div className="app__container-width app__container">
+          <div className="row" style={{gap:"50px"}}>
+            <div className="col">
+              <p className="sub-title">
+                <span style={{ backgroundColor: "var(--accent-color-blue)" }}>
+                  Our promise to you
+                </span>
+              </p>
+              <h1 className="head-text">Fresh, Healthy & Always Tasty</h1>
+              <ul className="promise__list">
+                <li>
+                  <i className="bi bi-check-circle"></i>
+                  <div className="col">
+                    <h2>Fresh,Never Frozen</h2>
+                    <p className="p-text">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ducimus
+                      suscipit, ullam expedita cupiditate corporis ratione magni corrupti sapiente
+                      nemo!
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i className="bi bi-check-circle"></i>
+                  <div className="col">
+                    <h2>Nutritionally-Balanced Meals</h2>
+                    <p className="p-text">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ducimus
+                      suscipit, ullam expedita cupiditate corporis ratione magni corrupti sapiente
+                      nemo!  ullam expedita cupiditate corporis ratione magni corrupti sapiente
+                      nemo!
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <i className="bi bi-check-circle"></i>
+                  <div className="col">
+                    <h2>Flex Your Plan to Your Lifestyle</h2>
+                    <p className="p-text">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae ducimus
+                      suscipit, ullam expedita cupiditate corporis ratione magni corrupti sapiente
+                      nemo!
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              
+            </div>
+            <img className="table__eating-img" src={tableEating} alt="" />
+          </div>
         </div>
       </div>
     </div>
