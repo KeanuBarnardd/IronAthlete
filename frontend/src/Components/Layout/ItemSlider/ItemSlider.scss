@@ -1,0 +1,14 @@
+.item__slider-head {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--grey-600);
+}
+.card__item {
+  padding: 10px;
+}
+.itemSlider__container {
+  overflow-y: visible;
+  .itemSlider__content {
+    display: flex;
+  }
+}

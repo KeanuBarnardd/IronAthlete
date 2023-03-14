@@ -1,0 +1,14 @@
+.slider__card-container {
+  height: 220px;
+  background-size: contain;
+  background-position: center;
+  background-color: var(--grey-100);
+  border: 1px solid var(--grey-100);
+  border-radius: var(--border-radius-1);
+  background-repeat: no-repeat;
+  transition: ease-in-out all var(--timer-short);
+  cursor: pointer;
+  &:hover {
+    box-shadow: var(--box-shadow-5);
+  }
+}

@@ -9,11 +9,14 @@ function Home() {
   return (
     <div>
       <Header />
-  
-      <div className="app__flex" style={{marginTop:"7rem"}}>
-        <div className="app__container-width">
-          <ItemSlider />
-          <ItemSlider />
+
+      <div className="app__flex" style={{ marginTop: "4rem" }}>
+        <div
+          className="app__container-width"
+          style={{ display: "flex", flexDirection: "column", gap: "30px" }}
+        >
+          <ItemSlider headText="Top pics for 2023" />
+          <ItemSlider headText="Most sold this year" />
         </div>
       </div>
 

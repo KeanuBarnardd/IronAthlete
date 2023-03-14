@@ -4,5 +4,5 @@ import DemoLogin from "./AuthFormContainer/DemoLogin";
 import Navbar from "./Navbar/Navbar";
 import MobileNav from "./MobileNav/MobileNav";
 import ItemSlider from "./ItemSlider/ItemSlider";
-
-export { Footer, AuthFormContainer, DemoLogin, Navbar, MobileNav, ItemSlider };
+import SliderCard from "./SliderCard/SliderCard";
+export { Footer, AuthFormContainer, DemoLogin, Navbar, MobileNav, ItemSlider, SliderCard };
