@@ -16,6 +16,7 @@ function Home() {
           style={{ display: "flex", flexDirection: "column", gap: "30px" }}
         >
           <ItemSlider headText="Best Sellers 2023" pText="" />
+          <ItemSlider headText="Best Sellers 2023" pText="" />
         </div>
       </div>
 

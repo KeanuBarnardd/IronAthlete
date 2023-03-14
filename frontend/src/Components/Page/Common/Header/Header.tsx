@@ -14,6 +14,8 @@ export default function Header() {
   return (
     <header className="app__flex nav__padding">
       <div className="app__container-width app__container header__container">
+        <h1 className="background__text one">FRESH DIRECT</h1>
+        <h1 className="background__text tw">FRESH DIRECT</h1>
         <div className="header__content col">
           <h1>Healthy Eating Made Simple</h1>
           <h2>Nutritious Meals for a Healthier You</h2>
@@ -22,29 +24,31 @@ export default function Header() {
             life. Say goodbye to processed junk food and hello to delicious, wholesome meals.
           </p>
 
-          <div className="header__card-grid">
-            <HeaderCard icon={"bi bi-truck"} title="Sushi" color="var(--accent-color-green)" darkColor={"var(--accent-color-green-dark)"} />
-            <HeaderCard icon={"bi bi-box-seam"} title="Salads" color="var(--accent-color-purple)" darkColor={"var(--accent-color-purple-dark)"} />
-            <HeaderCard
-              icon={"bi bi-cup-straw"}
-              title="Drinks"
-              color="var(--accent-color-orange)"
-            darkColor={"var(--accent-color-orange-dark)"} />
-            <HeaderCard icon={"bi bi-egg-fried"} title="Noodles" color="var(--accent-color-blue)" darkColor={"var(--accent-color-blue-dark)"} />
+          <div className="row" style={{ marginTop: "20px", width: "450px" }}>
+            <button
+              className="btn "
+              style={{
+                backgroundColor: "var(--accent-color-blue)",
+                color: "var(--grey-600)",
+                fontWeight: "bold",
+              }}
+            >
+              Shop now
+            </button>
+            <button
+              className="btn "
+              style={{
+                backgroundColor: "var(--accent-color-orange)",
+                color: "var(--grey-600)",
+                fontWeight: "bold",
+              }}
+            >
+              Register
+            </button>
           </div>
         </div>
         <div className="header__content girl__container col">
-          <img src={girlEating}>
-            
-          </img>
-          <div className="circle__container">
-            <div className="circle one"></div>
-            <div className="circle two"></div>
-            <div className="circle three"></div>
-            <div className="circle four"></div>
-            <div className="circle five"></div>
-            <div className="circle six"></div>
-          </div>
+          <img src={girlEating}></img>
         </div>
       </div>
     </header>
