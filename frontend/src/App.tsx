@@ -17,6 +17,7 @@ import {
   Payment,
   Register,
   ShoppingCart,
+  Store,
 } from "./Pages";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
@@ -78,6 +79,7 @@ function App() {
           <Route path="/menuItem/menuitemlist" element={<MenuItemList />} />
           <Route path="/menuItem/menuItemUpsert/:id" element={<MenuItemUpsert />} />
           <Route path="/menuItem/menuItemUpsert" element={<MenuItemUpsert />} />
+          <Route path="/store" element={<Store />} />
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </div>

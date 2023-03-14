@@ -1,0 +1,61 @@
+.shop__banner-container {
+  position: relative;
+  padding: 3rem;
+  background-color: var(--accent-color-orange);
+  border-radius: var(--border-radius-1);
+
+  h1 {
+    font-size: 4rem;
+    max-width: 800px;
+    color: var(--grey-700);
+    line-height: 80px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+  }
+
+  img {
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+    width: 400px;
+  }
+}
+
+.search__container {
+  margin-top: 30px;
+  width: 100%;
+  justify-content: space-between;
+  input {
+    width: 100%;
+    max-width: 500px;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid var(--grey-200);
+    border-radius: var(--border-radius-1);
+    color: var(--grey-700);
+  }
+
+  .filter__container {
+    button {
+      min-width: 80px;
+      cursor: pointer;
+      border: 1px solid var(--grey-200);
+      border-radius: var(--border-radius-1);
+      color: var(--grey-400);
+      transition: all ease-in-out var(--timer-short);
+    }
+
+    button.active {
+      background-color: var(--accent-color-orange);
+      color: var(--grey-700);
+      border-color: var(--accent-color-orange-dark);
+    }
+  }
+  select {
+    padding: 0.1rem 1rem;
+    cursor: pointer;
+    border: 1px solid var(--grey-200);
+    border-radius: var(--border-radius-1);
+    color: var(--grey-600);
+  }
+}

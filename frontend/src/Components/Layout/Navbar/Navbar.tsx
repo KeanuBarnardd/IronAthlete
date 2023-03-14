@@ -49,6 +49,9 @@ function Navbar() {
           <NavLink className="nav-link" aria-current="page" to="/">
             Home
           </NavLink>
+          <NavLink className="nav-link" to="/store">
+            Store
+          </NavLink>
 
           {userData.role == SD_Roles.ADMIN ? (
             <button

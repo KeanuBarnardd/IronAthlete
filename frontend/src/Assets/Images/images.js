@@ -8,7 +8,7 @@ import noodles3D from "./noodles3d.png";
 import sushi3D from "./sushi3d.png";
 import girlEating from "./girlEating.png";
 import tableEating from "./tableEating.jpg";
-
+import girlEatingPink from "./girlEatingPink.png";
 // Images for "Our Proccess" section
 import foodBowl from "./foodBowl.jpg";
 import order from "./order.jpg";
@@ -28,5 +28,6 @@ export {
   lambPot,
   girlEating,
   tableEating,
-  logo
+  logo,
+  girlEatingPink
 };
