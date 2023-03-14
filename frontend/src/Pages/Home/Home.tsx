@@ -10,7 +10,7 @@ function Home() {
     <div>
       <Header />
 
-      <div className="app__flex" style={{ marginTop: "4rem" }}>
+      <div className="app__flex" style={{ marginTop: "4rem", backgroundColor: "var(--grey-000)", paddingTop:"2rem", paddingBottom:"2rem"}}>
         <div
           className="app__container-width"
           style={{ display: "flex", flexDirection: "column", gap: "30px" }}
