@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useGetMenuItemsQuery } from "../../../Apis/menuItemApi";
+import { MainLoader } from "../../Page/Common";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { SliderCard } from "../index";
+import { menuItemModel } from "../../../Interfaces";
 import "./ItemSlider.scss";
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -25,36 +29,44 @@ const responsive = {
 
 interface Props {
   headText: string;
+  pText:string;
 }
 
 export default function ItemSlider(props: Props) {
+  const { data, isLoading } = useGetMenuItemsQuery(null);
+
   return (
     <div>
       <h3 className="item__slider-head">{props.headText}</h3>
-      <Carousel
-        containerClass="itemSlider__container"
-        sliderClass="itemSlider__content"
-        itemClass="card__item"
-        responsive={responsive}
-        infinite={true}
-        slidesToSlide={1}
-        autoPlay={true}
-        autoPlaySpeed={9000}
-        rewindWithAnimation={true}
-      >
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-        <SliderCard />
-      </Carousel>
+      <p className="p-text">{props.pText}</p>
+      {isLoading && <MainLoader />}
+      {!isLoading && (
+        <Carousel
+          containerClass="itemSlider__container"
+          sliderClass="itemSlider__content"
+          itemClass="card__item"
+          responsive={responsive}
+          infinite={true}
+          slidesToSlide={1}
+          autoPlay={true}
+          autoPlaySpeed={3000}
+          rewindWithAnimation={true}
+        >
+          {data.result.map((menuItem: menuItemModel) => {
+            return (
+              <SliderCard
+                name={menuItem.name}
+                image={menuItem.image}
+                price={menuItem.price}
+                id={menuItem.id}
+                description={menuItem.description}
+                specialTag={menuItem.specialTag}
+                category={menuItem.category}
+              />
+            );
+          })}
+        </Carousel>
+      )}
     </div>
   );
 }

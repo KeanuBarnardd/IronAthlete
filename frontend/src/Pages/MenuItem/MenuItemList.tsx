@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  useDeleteMenuItemMutation,
-  useGetMenuItemsQuery,
-} from "../../Apis/menuItemApi";
+import { useDeleteMenuItemMutation, useGetMenuItemsQuery } from "../../Apis/menuItemApi";
 import { toast } from "react-toastify";
 import { MainLoader } from "../../Components/Page/Common";
 import { menuItemModel } from "../../Interfaces";
@@ -74,9 +71,7 @@ function MenuItemList() {
                     <button className="btn btn-success">
                       <i
                         className="bi bi-pencil-fill"
-                        onClick={() =>
-                          navigate("/menuitem/menuitemupsert/" + menuItem.id)
-                        }
+                        onClick={() => navigate("/menuitem/menuitemupsert/" + menuItem.id)}
                       ></i>
                     </button>
                     <button

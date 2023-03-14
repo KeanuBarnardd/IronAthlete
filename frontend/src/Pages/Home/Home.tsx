@@ -15,8 +15,7 @@ function Home() {
           className="app__container-width"
           style={{ display: "flex", flexDirection: "column", gap: "30px" }}
         >
-          <ItemSlider headText="Top pics for 2023" />
-          <ItemSlider headText="Most sold this year" />
+          <ItemSlider headText="Best Sellers 2023" pText="" />
         </div>
       </div>
 
