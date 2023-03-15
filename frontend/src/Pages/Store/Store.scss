@@ -62,7 +62,7 @@
 
 .store__grid {
   display: grid;
-  gap: 10px;
+  gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2.5rem;
   background-color: var(--grey-000);
