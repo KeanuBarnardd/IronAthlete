@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useGetMenuItemsQuery } from "../../../Apis/menuItemApi";
 import { menuItemModel } from "../../../Interfaces";
-import MenuItemCard from "./MenuItemCard";
+import MenuItemCard from "./MenuItemCard2";
 import { useDispatch, useSelector } from "react-redux";
 import { setMenuItem } from "../../../Storage/Redux/menuItemSlice";
 import { MainLoader } from "../Common";

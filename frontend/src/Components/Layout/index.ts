@@ -5,4 +5,15 @@ import Navbar from "./Navbar/Navbar";
 import MobileNav from "./MobileNav/MobileNav";
 import ItemSlider from "./ItemSlider/ItemSlider";
 import SliderCard from "./SliderCard/SliderCard";
-export { Footer, AuthFormContainer, DemoLogin, Navbar, MobileNav, ItemSlider, SliderCard };
+import MenuItemCard from "./MenuItem/MenuItemCard";
+
+export {
+  Footer,
+  AuthFormContainer,
+  DemoLogin,
+  Navbar,
+  MobileNav,
+  ItemSlider,
+  SliderCard,
+  MenuItemCard,
+};

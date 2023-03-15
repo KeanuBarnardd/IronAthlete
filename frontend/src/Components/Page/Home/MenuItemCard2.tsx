@@ -55,7 +55,6 @@ function MenuItemCard(props: Props) {
             <i
               className="bi bi-star btn btn-success"
               style={{
-             
                 padding: "5px 10px",
                 borderRadius: "3px",
                 outline: "none !important",

@@ -1,8 +1,16 @@
 import React from "react";
+
+// Functionality
+import { MenuItemCard } from "../../Components/Layout";
+import { useGetMenuItemsQuery } from "../../Apis/menuItemApi";
+import menuItemModel from "./../../Interfaces/menuItemModel";
+// Styling
 import { girlEatingPink } from "../../Assets/Images/images";
 import "./Store.scss";
 
 export default function Shop() {
+  const { data, isLoading } = useGetMenuItemsQuery(null);
+
   return (
     <div className="app__flex app__container">
       <div className="app__container-width ">
@@ -24,6 +32,24 @@ export default function Shop() {
             <option value="">Name A-Z</option>
           </select>
         </div>
+        {isLoading && <p>Loading Content</p>}
+        {!isLoading && (
+          <div className="store__grid">
+            {data.result.map((menuItem: menuItemModel) => {
+              return (
+                <MenuItemCard
+                  id={menuItem.id}
+                  description={menuItem.description}
+                  image={menuItem.image}
+                  name={menuItem.name}
+                  category={menuItem.category}
+                  price={menuItem.price}
+                  specialTag={menuItem.specialTag}
+                />
+              );
+            })}
+          </div>
+        )}
       </div>
     </div>
   );
