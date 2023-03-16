@@ -18,7 +18,7 @@ function Payment() {
   };
   return (
     <Elements stripe={stripePromise} options={options}>
-      <div className="container m-5 p-5">
+      <div className="container m-5 p-5" style={{ paddingTop: "5rem" }}>
         <div className="row">
           <div className="col-md-7">
             <OrderSummary data={apiResult} userInput={userInput} />

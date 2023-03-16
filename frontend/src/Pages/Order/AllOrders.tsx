@@ -39,9 +39,7 @@ function AllOrders() {
     }),
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const tempValue = inputHelper(e, filters);
     setFilters(tempValue);
   };
@@ -62,15 +60,12 @@ function AllOrders() {
   }, [data]);
 
   const getPageDetails = () => {
-    const dataStartNumber =
-      (pageOptions.pageNumber - 1) * pageOptions.pageSize + 1;
+    const dataStartNumber = (pageOptions.pageNumber - 1) * pageOptions.pageSize + 1;
     const dataEndNumber = pageOptions.pageNumber * pageOptions.pageSize;
 
     return `${dataStartNumber}
              - 
-            ${
-              dataEndNumber < totalRecords ? dataEndNumber : totalRecords
-            } of ${totalRecords}`;
+            ${dataEndNumber < totalRecords ? dataEndNumber : totalRecords} of ${totalRecords}`;
   };
 
   const handlePageOptionChange = (direction: string, pageSize?: number) => {
@@ -91,7 +86,7 @@ function AllOrders() {
       {isLoading && <MainLoader />}
       {!isLoading && (
         <>
-          <div className="d-flex align-items-center justify-content-between mx-5 mt-5">
+          <div className="d-flex align-items-center justify-content-between mx-5 mt-5" style={{paddingTop:"5rem"}}>
             <h1 className="text-success">Orders List</h1>
 
             <div className="d-flex" style={{ width: "40%" }}>
@@ -102,30 +97,19 @@ function AllOrders() {
                 name="searchString"
                 onChange={handleChange}
               />
-              <select
-                className="form-select w-50 mx-2"
-                onChange={handleChange}
-                name="status"
-              >
+              <select className="form-select w-50 mx-2" onChange={handleChange} name="status">
                 {filterOptions.map((item, index) => (
                   <option key={index} value={item === "All" ? "" : item}>
                     {item}
                   </option>
                 ))}
               </select>
-              <button
-                className="btn btn-outline-success"
-                onClick={handleFilters}
-              >
+              <button className="btn btn-outline-success" onClick={handleFilters}>
                 Filter
               </button>
             </div>
           </div>
-          <div className="mx-5">
-            <div className="bg-danger form-control text-center text-white h4 ">
-              In this demo, orders older than 3 days might be deleted!
-            </div>
-          </div>
+          <div className="mx-5"></div>
           <OrderList isLoading={isLoading} orderData={orderData} />
           <div className="d-flex mx-5 justify-content-end align-items-center">
             <div>Rows per page: </div>
@@ -155,9 +139,7 @@ function AllOrders() {
             </button>
             <button
               onClick={() => handlePageOptionChange("next")}
-              disabled={
-                pageOptions.pageNumber * pageOptions.pageSize >= totalRecords
-              }
+              disabled={pageOptions.pageNumber * pageOptions.pageSize >= totalRecords}
               className="btn btn-outline-primary px-3 mx-2"
             >
               <i className="bi bi-chevron-right"></i>

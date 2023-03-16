@@ -27,7 +27,7 @@ function MenuItemList() {
     <>
       {isLoading && <MainLoader />}
       {!isLoading && (
-        <div className="table p-5">
+        <div className="table p-5" style={{paddingTop:"5rem"}}>
           <div className="d-flex align-items-center justify-content-between">
             <h1 className="text-success">MenuItem List</h1>
 
@@ -39,7 +39,7 @@ function MenuItemList() {
             </button>
           </div>
           <div className="bg-danger form-control text-center text-white h4">
-            In demo, you will not be able to create/update or delete Menu Items!
+            Edit the main menu - can add, edit and remove products from the home page.
           </div>
           <div className="p-2">
             <div className="row border">

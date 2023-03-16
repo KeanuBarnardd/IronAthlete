@@ -25,7 +25,7 @@ function OrderDetails() {
   return (
     <div
       className="container my-5 mx-auto p-5 w-100"
-      style={{ maxWidth: "750px" }}
+      style={{ maxWidth: "750px", paddingTop:"5rem" }}
     >
       {!isLoading && orderDetails && userInput && (
         <OrderSummary data={orderDetails} userInput={userInput} />

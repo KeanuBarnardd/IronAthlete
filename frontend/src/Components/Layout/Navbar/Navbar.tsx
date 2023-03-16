@@ -68,7 +68,7 @@ function Navbar() {
               </div>
             </button>
           ) : (
-            <NavLink to="/order/myorders" className="nav-link">
+            <NavLink to="/login" className="nav-link">
               Orders
             </NavLink>
           )}

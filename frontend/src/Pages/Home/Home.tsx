@@ -24,7 +24,6 @@ function Home() {
           style={{ display: "flex", flexDirection: "column", gap: "30px" }}
         >
           <ItemSlider headText="Best Sellers 2023" pText="" />
-          <ItemSlider headText="Best Sellers 2023" pText="" />
         </div>
       </div>
 
@@ -86,7 +85,7 @@ function Home() {
           <h1 className="head-text" style={{ textAlign: "center" }}>
             We're changing the way people order food. Message, when you need food quickly.
           </h1>
-          <button className="btn btn-grey" style={{ marginTop: "20px" }}>
+          <button className="btn btn-grey" style={{ marginTop: "20px" , maxWidth:"200px"}}>
             Order now
           </button>
         </div>

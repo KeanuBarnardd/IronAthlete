@@ -137,7 +137,7 @@ export default function Shop() {
       <div className="app__container-width ">
         <div className="shop__banner-container">
           <h1>Grab upto 50% off on selected products</h1>
-          <button className="btn btn-grey">Buy Now</button>
+          <button className="btn btn-grey" style={{maxWidth:"200px"}}>Buy Now</button>
           <img src={girlEatingPink} alt="" />
         </div>
         <div className="search__container row">
