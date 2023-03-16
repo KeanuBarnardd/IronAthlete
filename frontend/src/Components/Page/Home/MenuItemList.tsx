@@ -21,17 +21,11 @@ function MenuItemList() {
     SD_SortTypes.NAME_A_Z,
     SD_SortTypes.NAME_Z_A,
   ];
-  const searchValue = useSelector(
-    (state: RootState) => state.menuItemStore.search
-  );
+  const searchValue = useSelector((state: RootState) => state.menuItemStore.search);
 
   useEffect(() => {
     if (data && data.result) {
-      const tempMenuArray = handleFilters(
-        sortName,
-        selectedCategory,
-        searchValue
-      );
+      const tempMenuArray = handleFilters(sortName, selectedCategory, searchValue);
       setMenuItems(tempMenuArray);
     }
   }, [searchValue]);
@@ -53,11 +47,7 @@ function MenuItemList() {
 
   const handleSortClick = (i: number) => {
     setSortName(sortOptions[i]);
-    const tempArray = handleFilters(
-      sortOptions[i],
-      selectedCategory,
-      searchValue
-    );
+    const tempArray = handleFilters(sortOptions[i], selectedCategory, searchValue);
     setMenuItems(tempArray);
   };
 
@@ -81,17 +71,12 @@ function MenuItemList() {
     });
   };
 
-  const handleFilters = (
-    sortType: SD_SortTypes,
-    category: string,
-    search: string
-  ) => {
+  const handleFilters = (sortType: SD_SortTypes, category: string, search: string) => {
     let tempArray =
       category === "All"
         ? [...data.result]
         : data.result.filter(
-            (item: menuItemModel) =>
-              item.category.toUpperCase() === category.toUpperCase()
+            (item: menuItemModel) => item.category.toUpperCase() === category.toUpperCase()
           );
 
     //search functionality
@@ -112,15 +97,13 @@ function MenuItemList() {
     if (sortType === SD_SortTypes.NAME_A_Z) {
       tempArray.sort(
         (a: menuItemModel, b: menuItemModel) =>
-          a.name.toUpperCase().charCodeAt(0) -
-          b.name.toUpperCase().charCodeAt(0)
+          a.name.toUpperCase().charCodeAt(0) - b.name.toUpperCase().charCodeAt(0)
       );
     }
     if (sortType === SD_SortTypes.NAME_Z_A) {
       tempArray.sort(
         (a: menuItemModel, b: menuItemModel) =>
-          b.name.toUpperCase().charCodeAt(0) -
-          a.name.toUpperCase().charCodeAt(0)
+          b.name.toUpperCase().charCodeAt(0) - a.name.toUpperCase().charCodeAt(0)
       );
     }
 
@@ -142,9 +125,7 @@ function MenuItemList() {
               key={index}
             >
               <button
-                className={`nav-link p-0 pb-2 custom-buttons fs-5 ${
-                  index === 0 && "active"
-                } `}
+                className={`nav-link p-0 pb-2 custom-buttons fs-5 ${index === 0 && "active"} `}
                 onClick={() => handleCategoryClick(index)}
               >
                 {categoryName}
@@ -162,11 +143,7 @@ function MenuItemList() {
             </div>
             <ul className="dropdown-menu">
               {sortOptions.map((sortType, index) => (
-                <li
-                  key={index}
-                  className="dropdown-item"
-                  onClick={() => handleSortClick(index)}
-                >
+                <li key={index} className="dropdown-item" onClick={() => handleSortClick(index)}>
                   {sortType}
                 </li>
               ))}

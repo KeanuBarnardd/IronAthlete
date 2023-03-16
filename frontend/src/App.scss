@@ -117,10 +117,6 @@
   border: none;
   cursor: pointer;
   transition: all ease-in-out var(--timer-short);
-  &:hover {
-    box-shadow: var(--box-shadow-1);
-    scale: (1.01);
-  }
 }
 
 .btn-rainbow {
