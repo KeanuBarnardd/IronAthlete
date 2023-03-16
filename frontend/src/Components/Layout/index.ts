@@ -6,7 +6,7 @@ import MobileNav from "./MobileNav/MobileNav";
 import ItemSlider from "./ItemSlider/ItemSlider";
 import SliderCard from "./SliderCard/SliderCard";
 import MenuItemCard from "./MenuItem/MenuItemCard";
-
+import Suggestions from "../Suggestions/Suggestions";
 export {
   Footer,
   AuthFormContainer,
@@ -16,4 +16,5 @@ export {
   ItemSlider,
   SliderCard,
   MenuItemCard,
+  Suggestions,
 };

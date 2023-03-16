@@ -1,14 +1,16 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetMenuItemByIdQuery } from "../Apis/menuItemApi";
+import { useGetMenuItemByIdQuery } from "../../Apis/menuItemApi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useUpdateShoppingCartMutation } from "../Apis/shoppingCartApi";
-import { MainLoader, MiniLoader } from "../Components/Page/Common";
-import { apiResponse, userModel } from "../Interfaces";
-import { toastNotify } from "../Helper";
-import { RootState } from "../Storage/Redux/store";
+import { useUpdateShoppingCartMutation } from "../../Apis/shoppingCartApi";
+import { MainLoader, MiniLoader } from "../../Components/Page/Common";
+import { apiResponse, userModel } from "../../Interfaces";
+import { toastNotify } from "../../Helper";
+import { RootState } from "../../Storage/Redux/store";
 import { useSelector } from "react-redux";
+import "./MenuItemDetails.scss";
+
 function MenuItemDetails() {
   const { menuItemId } = useParams();
   const { data, isLoading } = useGetMenuItemByIdQuery(menuItemId);
@@ -16,9 +18,7 @@ function MenuItemDetails() {
   const [quantity, setQuantity] = useState(1);
   const [isAddingToCart, setIsAddingToCart] = useState<boolean>(false);
   const [updateShoppingCart] = useUpdateShoppingCartMutation();
-  const userData: userModel = useSelector(
-    (state: RootState) => state.userAuthStore
-  );
+  const userData: userModel = useSelector((state: RootState) => state.userAuthStore);
 
   const handleQuantity = (counter: number) => {
     let newQuantity = quantity + counter;
@@ -73,10 +73,7 @@ function MenuItemDetails() {
               {data.result?.description}
             </p>
             <span className="h3">${data.result?.price}</span> &nbsp;&nbsp;&nbsp;
-            <span
-              className="pb-2  p-3"
-              style={{ border: "1px solid #333", borderRadius: "30px" }}
-            >
+            <span className="pb-2  p-3" style={{ border: "1px solid #333", borderRadius: "30px" }}>
               <i
                 onClick={() => {
                   handleQuantity(-1);
@@ -110,10 +107,7 @@ function MenuItemDetails() {
               </div>
 
               <div className="col-5 ">
-                <button
-                  className="btn btn-secondary form-control"
-                  onClick={() => navigate(-1)}
-                >
+                <button className="btn btn-secondary form-control" onClick={() => navigate(-1)}>
                   Back to Home
                 </button>
               </div>
@@ -129,10 +123,7 @@ function MenuItemDetails() {
           </div>
         </div>
       ) : (
-        <div
-          className="d-flex justify-content-center"
-          style={{ width: "100%" }}
-        >
+        <div className="d-flex justify-content-center" style={{ width: "100%" }}>
           <MainLoader />
         </div>
       )}

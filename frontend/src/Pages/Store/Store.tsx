@@ -141,7 +141,14 @@ export default function Shop() {
           <img src={girlEatingPink} alt="" />
         </div>
         <div className="search__container row">
-          <input value={value} onChange={handleChange} placeholder="Search product name here..." type="text" name="" id=""></input>
+          <input
+            value={value}
+            onChange={handleChange}
+            placeholder="Search product name here..."
+            type="text"
+            name=""
+            id=""
+          ></input>
           <div className="filter__container row">
             {categoryList.map((categoryName, index) => (
               <button
