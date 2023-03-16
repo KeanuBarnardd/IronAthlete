@@ -9,13 +9,12 @@ import { apiResponse, userModel } from "../../Interfaces";
 import { toastNotify } from "../../Helper";
 import { RootState } from "../../Storage/Redux/store";
 import { useSelector } from "react-redux";
-import { ItemSlider } from "../../Components/Layout";
+import { Suggestions } from "../../Components/Layout";
 import "./MenuItemDetails.scss";
 
 function MenuItemDetails() {
   const { menuItemId } = useParams();
   const { data, isLoading } = useGetMenuItemByIdQuery(menuItemId);
-
 
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
@@ -54,21 +53,18 @@ function MenuItemDetails() {
     <div className="app__flex">
       {!isLoading ? (
         <div className="app__container app__container-width">
-                 
           <div className="row">
-          
             <div className="col">
               <img src={data.result.image} alt="" />
               <div className="col">
                 <h2>You may also like</h2>
-                <div className="suggestions__container">
-
-                </div>
+                <Suggestions removeIndex={data.result.id} />
               </div>
             </div>
 
             <div className="col">
               <h1>{data.result.name}</h1>
+
               <p className="p-text">{data.result?.description}</p>
               <hr />
               <h1 className="price">{data.result?.price}</h1>
