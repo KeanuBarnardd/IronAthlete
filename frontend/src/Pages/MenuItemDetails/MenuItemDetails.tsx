@@ -124,12 +124,14 @@ function MenuItemDetails() {
                   </div>
                 </div>
                 <div className="row col-two" style={{alignItems:"center", gap:"10px"}}>
-                <i className="bi bi-box2-heart"></i>
                   <div className="col ">
                     <h2>Unsatisfied with food? </h2>
                     <p className="p-text">We offer a 30 day back gurantee</p>
                   </div>
                 </div>
+              </div>
+              <div className="terms__container">
+                
               </div>
             </div>
           </div>

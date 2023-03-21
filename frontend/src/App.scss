@@ -1,5 +1,9 @@
 //   Use this to set all the general styling for your application.
 
+* {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 .main__app-container {
   height: 100%;
   background-color: green;
@@ -100,7 +104,7 @@
 
 .row {
   display: flex;
-  gap: 8px;
+  gap: 10px;
 }
 
 .col {
@@ -111,28 +115,26 @@
 //------------- Buttons -------------
 
 .btn {
-  width: 100%;
-  padding: 0.7rem;
-  border-radius: var(--border-radius-1);
+  font-size: 1rem;
   border: none;
   cursor: pointer;
   transition: all ease-in-out var(--timer-short);
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.btn.small {
+  padding: 0.2rem 1rem;
 }
 
-.btn-rainbow {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  border: none;
-  border-radius: var(--border-radius-1);
-  color: white;
-}
-
-.btn-outline {
-  padding: 0.7rem;
-  border: 1px solid var(--grey-200);
-  color: var(--grey-500);
-  background-color: white;
+.btn__outline-white {
+  border: 1px solid var(--grey-000);
+  color: var(--grey-000);
+  background-color: rgba(255, 255, 255, 0);
+  &:hover {
+    color: var(--dark-grey-color);
+    background-color: var(--grey-000);
+  }
 }
 
 .btn-grey {
@@ -144,24 +146,5 @@
   &:hover {
     background-color: var(--grey-700);
     color: white;
-  }
-}
-
-.or__container {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin: 0.7rem 0px;
-  hr {
-    width: 100%;
-    border: none;
-    border-top: 1px solid var(--grey-500);
-    border-color: var(--grey-100);
-  }
-  p {
-    margin-bottom: 0;
-    color: var(--grey-400);
   }
 }

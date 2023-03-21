@@ -30,6 +30,43 @@ function Navbar() {
   };
 
   return (
+    <div className="nav__container-parent">
+      <div className="nav__container-top app__flex">
+        <div className="nav__content-top app__container-width">
+          <div className="nav__login-container">
+            {userData.id && (
+              <div className="nav__container-login">
+                <p>Welcome,{userData.fullName}</p>
+                <button className="btn btn__outline-white small" onClick={handleLogout}>
+                  Logout
+                </button>
+              </div>
+            )}
+
+            {!userData.id && (
+              <div className="nav__container-login">
+                <NavLink className="nav-link btn btn-outline" to="/register">
+                  Register
+                </NavLink>
+
+                <NavLink className="nav-link btn btn-rainbow" to="/login">
+                  Login
+                </NavLink>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+      <nav className="app__flex">
+        <div className="nav__content-bottom app__container-width">Hello my name is keanu</div>
+      </nav>
+    </div>
+  );
+}
+
+export default Navbar;
+
+/*
     <div className="navbar__container app__flex">
       <MobileNav
         userId={userData.id}
@@ -102,7 +139,5 @@ function Navbar() {
         </div>
       </nav>
     </div>
-  );
-}
 
-export default Navbar;
+*/
