@@ -28,9 +28,13 @@
         }
         .btn {
           min-width: 80px;
-          padding: 0.1rem 0rem;
+          padding: 0.2rem 0rem;
         }
       }
+    }
+
+    @media screen and (max-width: 700px) {
+      display: none;
     }
   }
 
@@ -41,10 +45,27 @@
       justify-content: space-between;
       align-items: center;
 
+      .mobile__menu-btn {
+        display: none;
+      }
+
       .cart__btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
         font-size: 1.7rem;
         color: var(--grey-100);
         cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        span {
+          background-color: var(--accent-color);
+          color: var(--dark-grey-color);
+          padding: 0rem 0.37rem;
+          border-radius: 100%;
+          font-size: 1.1rem;
+          font-weight: bold;
+        }
       }
 
       .row {
@@ -59,6 +80,54 @@
           text-transform: uppercase;
           letter-spacing: 1px;
         }
+      }
+
+      .nav-link__container {
+        .dropdown__btn {
+          position: relative;
+          .dropdown__container {
+            display: none;
+          }
+
+          &:hover {
+            .dropdown__container {
+              left: 0;
+              top: 53px;
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+              list-style: none;
+              width: 100%;
+              background-color: var(--dark-grey-color);
+
+              li {
+                text-align: left;
+                padding: 1rem 0.3rem;
+                padding-left: 1rem;
+                transition: all ease-in-out var(--timer-short);
+                &:hover {
+                  background-color: var(--black-color);
+                }
+              }
+            }
+          }
+        }
+        @media screen and (max-width: 700px) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        flex-direction: row-reverse;
+        padding: 0.3rem 0rem;
+        .mobile__menu-btn {
+          display: flex;
+          font-size: 2.4rem;
+          border: none;
+          background-color: transparent;
+          color: var(--grey-200);
+          cursor: pointer;
+        }
+  
       }
     }
   }
@@ -76,6 +145,7 @@
   border-radius: 5px;
   text-decoration: none;
   background-color: transparent;
+  border: none;
 }
 
 .nav-link:hover {

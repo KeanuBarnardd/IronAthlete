@@ -63,11 +63,19 @@ function Navbar() {
       </div>
       <nav className="app__flex">
         <div className="nav__content-bottom app__container-width">
+          <button className="mobile__menu-btn">
+            <i className="bi bi-list"></i>
+          </button>
           <div className="row">
-            <img src={images.ironAtheleteLogo} alt="Iron Athelete Logo" />
-            <h2>IronAthlete</h2>
+            <NavLink
+              style={{ display: "flex", alignItems: "center", textDecoration: "none", gap: "5px" }}
+              to="/"
+            >
+              <img src={images.ironAtheleteLogo} alt="Iron Athelete Logo" />
+              <h2>IronAthlete</h2>
+            </NavLink>
           </div>
-          <div className="row">
+          <div className="row nav-link__container">
             <NavLink className="nav-link" aria-current="page" to="/">
               Home
             </NavLink>
@@ -79,14 +87,15 @@ function Navbar() {
             </NavLink>
             {userData.role == SD_Roles.ADMIN ? (
               <button
+                style={{ display: "flex", gap: "15px" }}
                 onClick={() => {
                   toggleNav ? setToggleNav(false) : setToggleNav(true);
                 }}
-                className="nav-link dropdown__button"
+                className="nav-link dropdown__btn"
               >
-                Orders
+                Orders <i className="bi bi-chevron-compact-down"></i>
                 <div className={`dropdown__container ${toggleNav ? "active" : ""}`}>
-                  <li onClick={() => navigate("menuItem/menuitemlist")}>Menu</li>
+                  <li onClick={() => navigate("menuItem/menuitemlist")}>Products</li>
                   <li onClick={() => navigate("order/myorders")}>My Orders</li>
                   <li onClick={() => navigate("order/allOrders")}>All Orders</li>
                 </div>
@@ -98,7 +107,8 @@ function Navbar() {
             )}
           </div>
           <NavLink className={"cart__btn"} aria-current="page" to="/shoppingCart">
-            <i className="bi bi-cart cart"></i> {userData.id && `(${shoppingCartFromStore.length})`}
+            <i className="bi bi-cart cart"></i>{" "}
+            {userData.id && <span>{shoppingCartFromStore.length}</span>}
           </NavLink>
         </div>
       </nav>
