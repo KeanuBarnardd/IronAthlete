@@ -104,7 +104,7 @@
 
 .row {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .col {
@@ -121,30 +121,26 @@
   transition: all ease-in-out var(--timer-short);
   text-transform: uppercase;
   font-weight: bold;
-  letter-spacing: 1px;
+  text-decoration: none;
+  text-align: center;
 }
 .btn.small {
   padding: 0.2rem 1rem;
 }
+.btn__accent {
+  background-color: var(--accent-color);
+  color: var(--dark-grey-color);
+  &:hover {
+    background-color: var(--accent-hover);
+  }
+}
 
 .btn__outline-white {
-  border: 1px solid var(--grey-000);
+  border: 1px solid var(--grey-100);
   color: var(--grey-000);
   background-color: rgba(255, 255, 255, 0);
   &:hover {
     color: var(--dark-grey-color);
-    background-color: var(--grey-000);
-  }
-}
-
-.btn-grey {
-  background-color: var(--grey-600);
-  border: 1px solid var(--grey-600);
-  color: white;
-  font-size: 1rem;
-  margin: auto;
-  &:hover {
-    background-color: var(--grey-700);
-    color: white;
+    background-color: var(--grey-100);
   }
 }

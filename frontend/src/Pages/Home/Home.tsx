@@ -2,7 +2,7 @@ import React from "react";
 import { Header } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
 import { ItemSlider } from "../../Components/Layout";
-import { foodBowl, order, delivery, lambPot, tableEating } from "../../Assets/Images/images";
+
 import "./Home.scss";
 
 function Home() {
@@ -44,7 +44,7 @@ function Home() {
           </div>
           <div className="home__grid-container">
             <div className="proccess__container">
-              <div className="img__container" style={{ backgroundImage: `url(${order})` }}></div>
+           
               <h2>Choose & order meal</h2>
               <p className="p-text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, dolores!
@@ -52,19 +52,19 @@ function Home() {
               </p>
             </div>
             <div className="proccess__container">
-              <div className="img__container" style={{ backgroundImage: `url(${lambPot})` }}></div>
+            
               <h2>We prepare your food</h2>
               <p className="p-text">
                 Lorem, ipsum dolor adipisicing elit. Necessitatibus, dolores!
               </p>
             </div>
             <div className="proccess__container">
-              <div className="img__container" style={{ backgroundImage: `url(${delivery})` }}></div>
+             
               <h2>We deliver </h2>
               <p className="p-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
             <div className="proccess__container">
-              <div className="img__container" style={{ backgroundImage: `url(${foodBowl})` }}></div>
+            
               <h2>You eat & enjoy</h2>
               <p className="p-text">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, dolores!
@@ -136,7 +136,7 @@ function Home() {
                 </li>
               </ul>
             </div>
-            <img className="table__eating-img" src={tableEating} alt="" />
+          
           </div>
         </div>
       </div>

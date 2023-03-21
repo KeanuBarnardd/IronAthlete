@@ -9,7 +9,7 @@ import { emptyUserState, setLoggedInUser } from "../../../Storage/Redux/userAuth
 import { SD_Roles } from "../../../Utility/SD";
 import "./Navbar.scss";
 import "../../../App.scss";
-let logo = require("../../../Assets/Images/mango.png");
+import { images } from "../../../Assets/Images/index";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -33,10 +33,15 @@ function Navbar() {
     <div className="nav__container-parent">
       <div className="nav__container-top app__flex">
         <div className="nav__content-top app__container-width">
+          <div className="row">
+            <i className="bi bi-facebook"></i>
+            <i className="bi bi-twitter"></i>
+            <i className="bi bi-instagram"></i>
+          </div>
           <div className="nav__login-container">
             {userData.id && (
               <div className="nav__container-login">
-                <p>Welcome,{userData.fullName}</p>
+                <p>Welcome, {userData.fullName}</p>
                 <button className="btn btn__outline-white small" onClick={handleLogout}>
                   Logout
                 </button>
@@ -45,12 +50,11 @@ function Navbar() {
 
             {!userData.id && (
               <div className="nav__container-login">
-                <NavLink className="nav-link btn btn-outline" to="/register">
-                  Register
-                </NavLink>
-
-                <NavLink className="nav-link btn btn-rainbow" to="/login">
+                <NavLink className="btn btn__outline-white" to="/login">
                   Login
+                </NavLink>
+                <NavLink className="btn btn__accent" to="/register">
+                  Sign Up
                 </NavLink>
               </div>
             )}
@@ -58,7 +62,45 @@ function Navbar() {
         </div>
       </div>
       <nav className="app__flex">
-        <div className="nav__content-bottom app__container-width">Hello my name is keanu</div>
+        <div className="nav__content-bottom app__container-width">
+          <div className="row">
+            <img src={images.ironAtheleteLogo} alt="Iron Athelete Logo" />
+            <h2>IronAthlete</h2>
+          </div>
+          <div className="row">
+            <NavLink className="nav-link" aria-current="page" to="/">
+              Home
+            </NavLink>
+            <NavLink className="nav-link" to="/store">
+              Shop
+            </NavLink>
+            <NavLink className="nav-link" to="/store">
+              Contact
+            </NavLink>
+            {userData.role == SD_Roles.ADMIN ? (
+              <button
+                onClick={() => {
+                  toggleNav ? setToggleNav(false) : setToggleNav(true);
+                }}
+                className="nav-link dropdown__button"
+              >
+                Orders
+                <div className={`dropdown__container ${toggleNav ? "active" : ""}`}>
+                  <li onClick={() => navigate("menuItem/menuitemlist")}>Menu</li>
+                  <li onClick={() => navigate("order/myorders")}>My Orders</li>
+                  <li onClick={() => navigate("order/allOrders")}>All Orders</li>
+                </div>
+              </button>
+            ) : (
+              <NavLink to="/login" className="nav-link">
+                Orders
+              </NavLink>
+            )}
+          </div>
+          <NavLink className={"cart__btn"} aria-current="page" to="/shoppingCart">
+            <i className="bi bi-cart cart"></i> {userData.id && `(${shoppingCartFromStore.length})`}
+          </NavLink>
+        </div>
       </nav>
     </div>
   );

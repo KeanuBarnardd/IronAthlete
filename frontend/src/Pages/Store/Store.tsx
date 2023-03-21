@@ -13,7 +13,6 @@ import { SD_SortTypes } from "../../Utility/SD";
 import { RootState } from "../../Storage/Redux/store";
 
 // Styling
-import { girlEatingPink } from "../../Assets/Images/images";
 import "./Store.scss";
 
 export default function Shop() {
@@ -138,7 +137,7 @@ export default function Shop() {
         <div className="shop__banner-container">
           <h1>Grab upto 50% off on selected products</h1>
           <button className="btn btn-grey" style={{maxWidth:"200px"}}>Buy Now</button>
-          <img src={girlEatingPink} alt="" />
+       
         </div>
         <div className="search__container row">
           <input

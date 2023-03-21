@@ -1,5 +1,4 @@
 import React from "react";
-import { logo } from "../../../Assets/Images/images";
 import "./Footer.scss";
 
 import { NavLink } from "react-router-dom";
@@ -11,7 +10,7 @@ function Footer() {
           <div className="row" style={{ justifyContent: "space-between" }}>
             <div className="col footer__socials-container">
               <div className="row">
-                <img src={logo} alt="" />
+         
                 <h1 style={{ color: "var(--accent-color-orange-dark)" }}>Fresh Direct</h1>
               </div>
               <p className="p-text">

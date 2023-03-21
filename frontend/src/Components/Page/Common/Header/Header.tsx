@@ -1,13 +1,6 @@
 import React from "react";
 import { HeaderCard } from "../../Home/index";
-import {
-  burger3DSmall,
-  salad3D,
-  coffee3D,
-  noodles3D,
-  sushi3D,
-  girlEating,
-} from "../../../../Assets/Images/images";
+
 import "./Header.scss";
 
 export default function Header() {
@@ -48,7 +41,7 @@ export default function Header() {
           </div>
         </div>
         <div className="header__content girl__container col">
-          <img src={girlEating}></img>
+          
         </div>
       </div>
     </header>

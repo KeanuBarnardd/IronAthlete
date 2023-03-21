@@ -3,7 +3,6 @@ import { menuItemModel } from "../../../Interfaces";
 import { useNavigate } from "react-router";
 import "./SliderCard.scss";
 
-const acaiBowl = require("../../../Assets/Images/MenuItems/acai_bowl.png");
 
 const randomColourArray = [
   "var(--accent-color-green)",

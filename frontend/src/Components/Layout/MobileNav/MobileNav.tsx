@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./MobileNav.scss";
 
-let logo = require("../../../Assets/Images/mango.png");
-
 interface Props {
   userId: string;
   userName: string | undefined;
@@ -18,9 +16,7 @@ export default function MobileNav(props: Props) {
   return (
     <div className="mobile__nav-content app__container-width">
       <div className="mobile__nav-top">
-        <NavLink className="nav-link home-toggle" aria-current="page" to="/">
-          <img src={logo} style={{ height: "50px", marginRight: "10px" }} alt="FreshDirect Logo" />
-        </NavLink>
+        <NavLink className="nav-link home-toggle" aria-current="page" to="/"></NavLink>
         <button
           onClick={() => {
             toggleNav ? setToggleNav(false) : setToggleNav(true);

@@ -6,144 +6,97 @@
     background-color: var(--dark-grey-color);
     .nav__content-top {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
+      padding: 0.3rem 0rem;
 
-      padding: 0.5rem 0rem;
+      .row {
+        align-items: center;
+        gap: 10px;
+        i {
+          color: var(--grey-300);
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+
       .nav__container-login {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
+        p {
+          color: var(--grey-100);
+        }
+        .btn {
+          min-width: 80px;
+          padding: 0.1rem 0rem;
+        }
       }
     }
   }
 
   nav {
     background-color: var(--black-color);
+    .nav__content-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .cart__btn {
+        font-size: 1.7rem;
+        color: var(--grey-100);
+        cursor: pointer;
+      }
+
+      .row {
+        align-items: center;
+        img {
+          height: 100%;
+          width: 50px;
+        }
+        h2 {
+          font-size: 1.5rem;
+          color: var(--grey-100);
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
   }
 }
 
-// .navbar__container {
-//   width: 100%;
-//   position: fixed;
-//   background-color: white;
-//   display: flex;
-//   justify-content: center;
-//   padding: 0.3rem 0rem;
-//   z-index: 100;
-//   nav {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     gap: 30px;
+.nav-link {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 1rem 1rem;
+  position: relative;
+  color: var(--grey-200);
+  z-index: 1;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  text-decoration: none;
+  background-color: transparent;
+}
 
-//     li,
-//     .nav-link {
-//       list-style: none;
-//       text-decoration: none;
-//       color: var(--grey-400);
-//       font-size: 1rem;
-//       background-color: white;
-//       border: none;
-//       transition: all ease-in-out var(--timer-short);
-//       &:hover {
-//         color: var(--accent-hover);
-//       }
-//     }
-//     .cart {
-//       font-size: 1.2rem;
-//     }
+.nav-link:hover {
+  color: #f1f1f1;
+  border-color: var(--dark-grey-color);
+}
 
-//     .home-toggle,
-//     .navbar-toggler {
-//       display: none;
-//     }
+.nav-link:hover:before {
+  top: 0%;
+  height: 100%;
+}
 
-//     .nav__content-left {
-//       display: flex;
-//       align-items: center;
-//       gap: 25px;
-
-//       .dropdown__container {
-//         display: none;
-//       }
-
-//       .dropdown__button {
-//         &:hover {
-//           color: var(--accent-hover);
-//           transition: all ease-in-out var(--timer-short);
-//           .dropdown__container {
-//             position: absolute;
-//             display: flex;
-//             flex-direction: column;
-
-//             width: 100%;
-//             max-width: 150px;
-//             text-align: left;
-//             border-radius: var(--border-radius-1);
-//             box-shadow: var(--box-shadow-2);
-//             background-color: white;
-//             z-index: 5;
-
-//             :first-child {
-//               border-top-left-radius: var(--border-radius-1);
-//               border-top-right-radius: var(--border-radius-1);
-//             }
-
-//             :last-child {
-//               border-bottom-left-radius: var(--border-radius-1);
-//               border-bottom-right-radius: var(--border-radius-1);
-//             }
-
-//             li {
-//               cursor: pointer;
-//               padding: 0.3rem 1rem;
-//               transition: ease-in-out all var(--timer-short);
-
-//               &:hover {
-//                 background-color: var(--grey-100);
-//                 color: var(--grey-600);
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//     .nav__login-container {
-//       display: flex;
-//       gap: 10px;
-//       align-items: center;
-//       .btn-rainbow,
-//       .btn-outline {
-//         min-width: 100px;
-//         text-align: center;
-//         color: white;
-//         padding: 0.5rem 1.5rem;
-//         font-size: 0.9rem;
-//       }
-//       .btn-outline {
-//         color: var(--grey-400);
-//       }
-//       .logged__in-container {
-//         display: flex;
-//         align-items: center;
-//         gap: 20px;
-//         min-width: 350px;
-//         width: 100%;
-//         p {
-//           font-size: 0.9rem;
-//           width: 100%;
-//           text-align: right;
-//           color: var(--grey-400);
-//         }
-//         .btn {
-//           max-width: 150px;
-//         }
-//       }
-//     }
-
-//     // Mobile Styling
-//     @media screen and (max-width: 650px) {
-//       display: none;
-//     }
-//   }
-// }
+.nav-link:before {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 0%;
+  width: 100%;
+  z-index: -1;
+  content: "";
+  color: #f1f1f1;
+  background: var(--dark-grey-color);
+  transition: all 0.3s ease;
+}
