@@ -15,7 +15,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [toggleNav, setToggleNav] = useState(false);
+  const [toggleNav, setToggleNav] = useState(true);
 
   const shoppingCartFromStore: cartItemModel[] = useSelector(
     (state: RootState) => state.shoppingCartStore.cartItems ?? []
@@ -63,7 +63,12 @@ function Navbar() {
       </div>
       <nav className="app__flex">
         <div className="nav__content-bottom app__container-width">
-          <button className="mobile__menu-btn">
+          <button
+            onClick={() => {
+              toggleNav ? setToggleNav(false) : setToggleNav(true);
+            }}
+            className="mobile__menu-btn"
+          >
             <i className="bi bi-list"></i>
           </button>
           <div className="row">
@@ -112,6 +117,10 @@ function Navbar() {
           </NavLink>
         </div>
       </nav>
+      {toggleNav && <MobileNav
+        userData={userData}
+        shoppingCartLength={shoppingCartFromStore.length}
+        handleLogout={handleLogout} />}
     </div>
   );
 }

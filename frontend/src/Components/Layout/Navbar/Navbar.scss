@@ -1,7 +1,7 @@
 .nav__container-parent {
   display: flex;
   flex-direction: column;
-
+  z-index: 2;
   .nav__container-top {
     background-color: var(--dark-grey-color);
     .nav__content-top {
@@ -127,7 +127,6 @@
           color: var(--grey-200);
           cursor: pointer;
         }
-  
       }
     }
   }
@@ -142,10 +141,15 @@
   color: var(--grey-200);
   z-index: 1;
   transition: all 0.5s ease;
-  border-radius: 5px;
   text-decoration: none;
   background-color: transparent;
   border: none;
+  @media screen and (max-width: 700px) {
+    color: var(--grey-600);
+    border-top: 1px solid  var(--grey-100);
+    padding: 0.8rem 0rem 0.8rem 4rem;
+    font-weight: bold;
+  }
 }
 
 .nav-link:hover {
@@ -156,6 +160,11 @@
 .nav-link:hover:before {
   top: 0%;
   height: 100%;
+  @media screen and (max-width: 700px) {
+    left: 0%;
+    right: auto;
+    width: 100%;
+  }
 }
 
 .nav-link:before {
