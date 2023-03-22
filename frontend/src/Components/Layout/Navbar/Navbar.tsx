@@ -117,10 +117,14 @@ function Navbar() {
           </NavLink>
         </div>
       </nav>
-      {toggleNav && <MobileNav
-        userData={userData}
-        shoppingCartLength={shoppingCartFromStore.length}
-        handleLogout={handleLogout} />}
+      {toggleNav && (
+        <MobileNav
+          userData={userData}
+          shoppingCartLength={shoppingCartFromStore.length}
+          handleLogout={handleLogout}
+          setToggleNav={setToggleNav}
+        />
+      )}
     </div>
   );
 }

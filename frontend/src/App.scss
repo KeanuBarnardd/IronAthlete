@@ -130,8 +130,10 @@
 .btn__accent {
   background-color: var(--accent-color);
   color: var(--dark-grey-color);
+  border: 1px solid var(--accent-color);
   &:hover {
     background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
   }
 }
 
@@ -142,5 +144,15 @@
   &:hover {
     color: var(--dark-grey-color);
     background-color: var(--grey-100);
+  }
+}
+
+.btn__outline-dark {
+  border: 1px solid var(--dark-grey-color);
+  color: var(--dark-grey-color);
+  background-color: rgba(255, 255, 255, 0);
+  &:hover {
+    color: white;
+    background-color: var(--dark-grey-color);
   }
 }
