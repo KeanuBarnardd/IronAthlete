@@ -1,50 +1,85 @@
 import React from "react";
-
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
+import { images } from "../../../../Assets/Images";
 import "./Header.scss";
-import Carousel from "react-multi-carousel";
+import { useNavigate } from "react-router";
+
+const slideImages = [
+  {
+    image: images.headerImg1,
+    headText: "Unleash Your Inner Athlete with Our Fitness Store",
+    subTitle:
+      "From cross-training shoes to compression gear, we have everything you need to perform at your best and look good doing it.",
+    btn1: {
+      btnText: "Shop Now",
+      btnIcon: "bi bi-box-arrow-in-up-right",
+      btnUrl: "/store",
+    },
+  },
+  {
+    image: images.headerImg2,
+    headText: "Get Stronger, Faster, and Healthier with Our Fitness ",
+    subTitle:
+      "Our range of supplements, including protein powders, pre-workouts, and post-workouts, will help you reach your fitness goals and recover faster.",
+    btn1: {
+      btnText: "Register",
+      btnIcon: "",
+      btnUrl: "/register",
+    },
+    btn2: {
+      btnText: "Login",
+      btnIcon: "",
+      btnUrl: "/login",
+    },
+  },
+  {
+    image: images.headerImg3,
+    headText: "Your One-Stop Shop for Gym Equipment and Nutrition",
+    subTitle:
+      "Shop the best brands in fitness and nutrition and take your training to the next level with our expert advice and support.",
+    btn1: {
+      btnText: "Contact Us",
+      btnIcon: "",
+      btnUrl: "/contact",
+    },
+  },
+];
 
 export default function Header() {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
+  const navigate = useNavigate();
 
   return (
-    <Carousel
-      containerClass="app__container-width"
-      sliderClass="itemSlider__content"
-      itemClass="card__item"
-      responsive={responsive}
-      infinite={true}
-      slidesToSlide={1}
-      autoPlay={true}
-      autoPlaySpeed={7000}
-      rewindWithAnimation={true}
-    >
-      <div>
-        <div className="row">
-          <div className="col">
-            <h1 className="head-text">Fuel Your Fitness Journey with Our Store</h1>
-            <p className="p-text">Whether you're a seasoned athlete or just starting out, our fitness store offers a wide range of products to help you perform at your best, including protein powders, energy bars, and sports drinks.</p>
-            <button className="btn btn__accent">Shop now</button>
+    <div className="slide-container">
+      <Slide duration={6000} autoplay={true} transitionDuration={250} easing={"ease"} arrows={true}>
+        {slideImages.map((slideImage, index) => (
+          <div key={index}>
+            <header
+              className="app__flex"
+              style={{
+                backgroundImage: ` linear-gradient(to bottom, var(--black-color), rgba(253, 253, 253, 0)),
+                url(${slideImage.image})`,
+              }}
+            >
+              <div className="app__container-width col header__content">
+                <h1 className="head-text">{slideImage.headText}</h1>
+                <p>{slideImage.subTitle}</p>
+                <div className="row">
+                  <button
+                    onClick={() => navigate(slideImage.btn1?.btnUrl)}
+                    className="btn btn__accent"
+                  >
+                    {slideImage.btn1?.btnText} <i className={slideImage.btn1?.btnIcon}></i>
+                  </button>
+                  {typeof slideImage.btn2 != "undefined" ? (
+                    <button className="btn btn__outline-white"> {slideImage.btn2.btnText} </button>
+                  ) : null}
+                </div>
+              </div>
+            </header>
           </div>
-        </div>
-      </div>
-    </Carousel>
+        ))}
+      </Slide>
+    </div>
   );
 }

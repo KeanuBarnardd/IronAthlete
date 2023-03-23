@@ -1,75 +1,36 @@
 header {
-  overflow: hidden;
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--grey-000);
-    padding: 4rem 2rem 0rem 2rem;
-    border-radius: var(--border-radius-1);
-    margin-top: 80px;
-    position: relative;
-    overflow: hidden;
-    .background__text {
-      position: absolute;
-   
-      font-size: 12rem;
-      color: var(--accent-color-green);
-      white-space: nowrap; 
+  display: flex;
+
+  height: 45vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .header__content {
+    
+    h1 {
+      color: var(--grey-000);
+      font-size: 4.5rem;
+      max-width: 850px;
+      line-height: 70px;
     }
 
- 
-
-    .header__content {
-      width: 100%;
-      padding-bottom: 2rem;
-     
-      h1 {
-        font-size: 5rem;
-        color: var(--grey-700);
-        line-height: 80px;
-        margin-bottom: 15px;
-        max-width: 800px;
-      }
-      h2 {
-        font-size: 2rem;
-        color: var(--grey-600);
-      }
-      p {
-        max-width: 700px;
-      }
-
-      .header__card-grid {
-        display: grid;
-        max-width: 400px;
-        gap: 10px;
-        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
-        margin-top: 1.8rem;
-      }
+    p {
+      color: var(--grey-100);
+      font-size: 1.3rem;
+      margin-top: 10px;
     }
 
-    .girl__container {
-      position: relative;
-      display: flex;
-      align-items: center;
-
-      img {
-        position: absolute;
-        bottom: 0;
+    .row{
+      gap: 15px;
+      .btn {
+        padding: 0.7rem;
         width: 100%;
-        max-width: 400px;
-        height: auto;
+        max-width: 250px;
+        font-size: 1.1rem;
+        margin-top: 10px;
        
       }
-
-      .circle {
-        position: absolute;
-        top: 0px;
-        right: 18%;
-        width: 70%;
-        height: 100%;
-        background-color: var(--accent-color-purple);
-        border-radius: 100%;
-      }
     }
+    
   }
 }
