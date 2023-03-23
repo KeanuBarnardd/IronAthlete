@@ -60,7 +60,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="page">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/menuItemDetails/:menuItemId" element={<MenuItemDetails />}></Route>

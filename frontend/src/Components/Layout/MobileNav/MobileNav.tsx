@@ -6,6 +6,7 @@ import { userModel } from "./../../../Interfaces/index";
 import { useNavigate } from "react-router";
 
 interface Props {
+  toggleNav: boolean;
   userData: userModel;
   shoppingCartLength: number;
   handleLogout: () => void;
@@ -19,7 +20,11 @@ export default function MobileNav(props: Props) {
 
   return (
     <nav className="app__flex mobile__nav-container">
-      <div className="col mobile__nav-content app__container-width">
+      <div
+        className={`col app__container-width mobile__nav-content ${
+          props.toggleNav ? "active" : ""
+        }`}
+      >
         <NavLink
           onClick={() => props.setToggleNav(false)}
           className="mobile__nav-link"
@@ -118,4 +123,3 @@ export default function MobileNav(props: Props) {
     </nav>
   );
 }
-

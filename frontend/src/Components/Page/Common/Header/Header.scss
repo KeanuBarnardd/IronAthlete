@@ -11,7 +11,7 @@ header {
     overflow: hidden;
     .background__text {
       position: absolute;
-      z-index: 0;
+   
       font-size: 12rem;
       color: var(--accent-color-green);
       white-space: nowrap; 
@@ -22,7 +22,7 @@ header {
     .header__content {
       width: 100%;
       padding-bottom: 2rem;
-      z-index: 1;
+     
       h1 {
         font-size: 5rem;
         color: var(--grey-700);
@@ -58,7 +58,7 @@ header {
         width: 100%;
         max-width: 400px;
         height: auto;
-        z-index: 2;
+       
       }
 
       .circle {
