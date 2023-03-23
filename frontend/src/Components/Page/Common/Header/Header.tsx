@@ -57,7 +57,7 @@ export default function Header() {
             <header
               className="app__flex"
               style={{
-                backgroundImage: ` linear-gradient(to bottom, var(--black-color), rgba(253, 253, 253, 0)),
+                backgroundImage: ` linear-gradient(to bottom, var(--black-color), rgba(253, 200, 253, 0)),
                 url(${slideImage.image})`,
               }}
             >

@@ -6,7 +6,6 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   .header__content {
-    
     h1 {
       color: var(--grey-000);
       font-size: 4.5rem;
@@ -20,17 +19,22 @@ header {
       margin-top: 10px;
     }
 
-    .row{
+    .row {
       gap: 15px;
       .btn {
         padding: 0.7rem;
         width: 100%;
-        max-width: 250px;
+        max-width: 220px;
         font-size: 1.1rem;
         margin-top: 10px;
-       
       }
     }
-    
+  }
+}
+
+.react-slideshow-container {
+  button.nav.default-nav {
+    background-color: transparent;
+    transition: ease-in-out all var(--timer-short);
   }
 }
