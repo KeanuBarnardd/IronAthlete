@@ -37,7 +37,8 @@ export default function MobileNav(props: Props) {
           Shop
         </NavLink>
         {props.userData.role == SD_Roles.ADMIN ? (
-          <button
+          <>
+           <button
             style={{ display: "flex", gap: "15px" }}
             onClick={() => {
               toggleOrders ? setToggleOrders(false) : setToggleOrders(true);
@@ -46,12 +47,7 @@ export default function MobileNav(props: Props) {
           >
             Orders <i className="bi bi-chevron-compact-down"></i>
           </button>
-        ) : (
-          <NavLink to="/login" className="mobile__nav-link">
-            Orders
-          </NavLink>
-        )}
-        <div className={`dropdown__container ${toggleOrders && props.toggleNav ? "active" : ""}`}>
+          <div className={`dropdown__container ${toggleOrders && props.toggleNav ? "active" : ""}`}>
           <li
             className="mobile__nav-link"
             onClick={() => {
@@ -80,6 +76,14 @@ export default function MobileNav(props: Props) {
             All Orders
           </li>
         </div>
+          </>
+         
+        ) : (
+          <NavLink to="/login" className="mobile__nav-link">
+            Orders
+          </NavLink>
+        )}
+       
         <NavLink onClick={() => props.setToggleNav(false)} className="mobile__nav-link" to="/store">
           Contact
         </NavLink>
