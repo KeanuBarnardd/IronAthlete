@@ -51,7 +51,7 @@ export default function MobileNav(props: Props) {
             Orders
           </NavLink>
         )}
-        <div className={`dropdown__container ${toggleOrders ? "active" : ""}`}>
+        <div className={`dropdown__container ${toggleOrders && props.toggleNav ? "active" : ""}`}>
           <li
             className="mobile__nav-link"
             onClick={() => {
