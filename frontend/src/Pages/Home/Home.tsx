@@ -7,7 +7,7 @@ import "./Home.scss";
 
 function Home() {
   return (
-    <div>
+    <div className="app__flex">
       <Header />
     </div>
   );
