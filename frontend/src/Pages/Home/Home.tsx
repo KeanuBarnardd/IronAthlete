@@ -9,6 +9,11 @@ function Home() {
   return (
     <>
       <Header />;
+      <div className="app__flex">
+        <div className="app__container-width app__container">
+          
+        </div>
+      </div>
     </>
   );
 }

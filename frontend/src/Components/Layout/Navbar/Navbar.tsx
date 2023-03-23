@@ -80,7 +80,7 @@ function Navbar() {
               <h2>IronAthlete</h2>
             </NavLink>
           </div>
-          <div className="row nav-link__container">
+          <div className=" nav-link__container">
             <NavLink className="nav-link" aria-current="page" to="/">
               Home
             </NavLink>
