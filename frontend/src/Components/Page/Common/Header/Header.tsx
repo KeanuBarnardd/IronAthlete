@@ -8,17 +8,6 @@ import { useNavigate } from "react-router";
 const slideImages = [
   {
     image: images.headerImg1,
-    headText: "Unleash Your Inner Athlete with Our Fitness Store",
-    subTitle:
-      "From cross-training shoes to compression gear, we have everything you need to perform at your best and look good doing it.",
-    btn1: {
-      btnText: "Shop Now",
-      btnIcon: "bi bi-box-arrow-in-up-right",
-      btnUrl: "/store",
-    },
-  },
-  {
-    image: images.headerImg2,
     headText: "Get Stronger, Faster, and Healthier with Our Fitness ",
     subTitle:
       "Our range of supplements, including protein powders, pre-workouts, and post-workouts, will help you reach your fitness goals and recover faster.",
@@ -31,6 +20,17 @@ const slideImages = [
       btnText: "Login",
       btnIcon: "",
       btnUrl: "/login",
+    },
+  },
+  {
+    image: images.headerImg2,
+    headText: "Unleash Your Inner Athlete with Our Fitness Store",
+    subTitle:
+      "From cross-training shoes to compression gear, we have everything you need to perform at your best and look good doing it.",
+    btn1: {
+      btnText: "Shop Now",
+      btnIcon: "bi bi-box-arrow-in-up-right",
+      btnUrl: "/store",
     },
   },
   {

@@ -29,6 +29,27 @@ header {
         margin-top: 10px;
       }
     }
+
+    @media screen and (max-width: 600px) {
+      display: flex;
+      align-items: center;
+      max-width: 100%;
+      text-align: center;
+      h1 {
+        font-size: 3rem;
+        line-height: 50px;
+      }
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .row {
+        justify-content: center;
+        width: 100%;
+        .btn {
+        }
+      }
+    }
   }
 }
 
