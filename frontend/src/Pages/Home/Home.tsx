@@ -9,13 +9,51 @@ function Home() {
   return (
     <>
       <Header />;
-      <div className="app__flex">
+      <div className="app__flex" style={{ marginTop: "30px", marginBottom: "50px" }}>
         <div className="app__container-width">
-          
+          {/* --------------Home Tags Grid-------------- */}
+          <div className="home__tags-grid">
+            <div className="home__tag-container row">
+              <i className="bi bi-truck"></i>
+              <div className="col">
+                <h2>Free Delivery</h2>
+                <p className="p-text">Free shipping on all orders over $30</p>
+              </div>
+            </div>
+            <div className="home__tag-container row">
+              <i className="bi bi-headset"></i>
+              <div className="col">
+                <h2>Online Support</h2>
+                <p className="p-text">Support online 24 hours a day</p>
+              </div>
+            </div>
+            <div className="home__tag-container row">
+              <i className="bi bi-coin"></i>
+              <div className="col">
+                <h2>Money Return</h2>
+                <p className="p-text">Back gurantee under 7 days</p>
+              </div>
+            </div>
+            <div className="home__tag-container row">
+              <i className="bi bi-piggy-bank"></i>
+              <div className="col">
+                <h2>Member Discount</h2>
+                <p className="p-text">On every order over $120.00</p>
+              </div>
+            </div>
+            <div className="home__tag-container row">
+              <i className="bi bi-check-circle"></i>
+              <div className="col">
+                <h2>Gym Community</h2>
+                <p className="p-text">Join the team at IronAthelete</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      {/* --------------Cataglogue Component-------------- */}
       <div className="app__flex">
-        <div className="app__container-width app__container catalogue__parent-container">
+        <div className="app__container-width catalogue__parent-container">
           <div className="row catalogue__container">
             <div className="catalogue__container-tall">
               <span className="sales__tag">SALE 15% OFF</span>
@@ -43,7 +81,7 @@ function Home() {
                 <p className="terms">Offer ends 20/06/2023. All terms & conditions apply</p>
               </div>
             </div>
-            <div className="col catalogue__container- " style={{ gap: "15px" }}>
+            <div className="col catalogue__container-parent " style={{ gap: "15px" }}>
               <div
                 className="col catalogue__container-sale"
                 style={{ backgroundImage: `url(${images.catalouge3})` }}
@@ -68,6 +106,9 @@ function Home() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="app__flex">
+        <div className="app__container"></div>
       </div>
     </>
   );
