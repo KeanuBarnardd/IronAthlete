@@ -152,7 +152,7 @@
 
       .catalogue__card {
         padding: 1rem;
-
+        cursor: pointer;
         background-color: var(--grey-000);
         box-shadow: var(--box-shadow-3);
         h2 {
@@ -173,6 +173,7 @@
         background-position: center;
         background-size: cover;
         height: 100%;
+        cursor: pointer;
         background-color: var(--accent-color);
         box-shadow: var(--box-shadow-3);
         padding: 1rem;

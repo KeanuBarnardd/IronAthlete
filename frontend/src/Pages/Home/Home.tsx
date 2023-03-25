@@ -4,8 +4,11 @@ import { MenuItemList } from "../../Components/Page/Home";
 import { ItemSlider } from "../../Components/Layout";
 import { images } from "../../Assets/Images";
 import "./Home.scss";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Header />;
@@ -42,7 +45,6 @@ function Home() {
                   <p className="p-text">On every order over $120.00</p>
                 </div>
               </div>
-          
             </div>
           </div>
         </div>
@@ -78,6 +80,7 @@ function Home() {
               </div>
               <div className="col catalogue__container-parent " style={{ gap: "15px" }}>
                 <div
+                  onClick={() => navigate("/store")}
                   className="col catalogue__container-sale"
                   style={{ backgroundImage: `url(${images.catalouge3})` }}
                 >
@@ -85,19 +88,19 @@ function Home() {
                   <h2>Off All Selected Protein Powders and Gym Wear if you buy today</h2>
                 </div>
                 <div className="catalogue__grid">
-                  <div className="catalogue__card">
+                  <div onClick={() => navigate("/store")} className="catalogue__card">
+                    <h2>Foot Wear</h2>
+                    <img src={images.cat_img_5} style={{ paddingTop: "10px" }} alt="" />
+                  </div>
+                  <div onClick={() => navigate("/store")} className="catalogue__card">
                     <h2>Hand weights</h2>
                     <img src={images.cat_img_1} alt="" />
                   </div>
-                  <div className="catalogue__card">
-                    <h2>Hand weights</h2>
-                    <img src={images.cat_img_1} alt="" />
-                  </div>
-                  <div className="catalogue__card">
+                  <div onClick={() => navigate("/store")} className="catalogue__card">
                     <h2>Safety gear</h2>
                     <img src={images.cat_img_2} alt="" />
                   </div>
-                  <div className="catalogue__card">
+                  <div onClick={() => navigate("/store")} className="catalogue__card">
                     <h2>Protein</h2>
                     <img src={images.cat_img_3} alt="" />
                   </div>
@@ -107,8 +110,11 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="app__flex">
-        <div className="app__container"></div>
+      {/* --------------Cataglogue Component-------------- */}
+      <div className="app__flex" style={{marginTop:"40px",marginBottom:"200px"}}>
+        <div className="app__container-width">
+          <h1 style={{width:"100%",textAlign:"center"}} className="head-text">Best Sellers</h1>
+        </div>
       </div>
     </>
   );
