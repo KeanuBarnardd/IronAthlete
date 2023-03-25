@@ -11,6 +11,7 @@ import cat_img_2 from "./Catalogue/cataimg2.png";
 import cat_img_3 from "./Catalogue/cataimg3.png";
 import cat_img_4 from "./Catalogue/cataimg4.jpg";
 import cat_img_5 from "./Catalogue/cataimg5.png";
+import gym_girl from "./General/gym_girl.png";
 
 export default {
   ironAtheleteLogo,
@@ -24,5 +25,6 @@ export default {
   cat_img_2,
   cat_img_3,
   cat_img_4,
-  cat_img_5
+  cat_img_5,
+  gym_girl
 };

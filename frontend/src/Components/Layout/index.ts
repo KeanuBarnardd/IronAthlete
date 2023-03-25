@@ -7,6 +7,8 @@ import ItemSlider from "./ItemSlider/ItemSlider";
 import SliderCard from "./SliderCard/SliderCard";
 import MenuItemCard from "./MenuItem/MenuItemCard";
 import Suggestions from "../Suggestions/Suggestions";
+import ProductCard from "./ProductCard/ProductCard";
+import JoinBanner from "./JoinBanner/JoinBanner";
 export {
   Footer,
   AuthFormContainer,
@@ -17,4 +19,6 @@ export {
   SliderCard,
   MenuItemCard,
   Suggestions,
+  ProductCard,
+  JoinBanner
 };

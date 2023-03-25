@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
-import { ItemSlider } from "../../Components/Layout";
+import { ItemSlider, ProductCard, JoinBanner } from "../../Components/Layout";
 import { images } from "../../Assets/Images";
 import "./Home.scss";
 import { useNavigate } from "react-router-dom";
@@ -110,12 +110,21 @@ function Home() {
           </div>
         </div>
       </div>
-      {/* --------------Cataglogue Component-------------- */}
-      <div className="app__flex" style={{marginTop:"40px",marginBottom:"200px"}}>
+      {/* --------------Home Items Grid -------------- */}
+      <div className="app__flex" style={{ marginTop: "40px", marginBottom: "100px" }}>
         <div className="app__container-width">
-          <h1 style={{width:"100%",textAlign:"center"}} className="head-text">Best Sellers</h1>
+          <h1 style={{ width: "100%", textAlign: "center", marginBottom:"30px" }} className="head-text">
+            Best Sellers
+          </h1>
+          <div className="home__items-grid">
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+          </div>
         </div>
       </div>
+      <JoinBanner/>
     </>
   );
 }

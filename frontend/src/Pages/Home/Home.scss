@@ -1,6 +1,5 @@
 .home__content {
-
-  @media screen and (max-width:600px) {
+  @media screen and (max-width: 600px) {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -191,4 +190,10 @@
       }
     }
   }
+}
+
+.home__items-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
