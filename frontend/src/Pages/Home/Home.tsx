@@ -1,6 +1,8 @@
 import React from "react";
 import { Header } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
+import { useGetMenuItemsQuery } from "../../Apis/menuItemApi";
+import menuItemModel from "./../../Interfaces/menuItemModel";
 import { ItemSlider, ProductCard, JoinBanner, TypesGrid } from "../../Components/Layout";
 import { images } from "../../Assets/Images";
 import "./Home.scss";
@@ -9,9 +11,27 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const navigate = useNavigate();
 
+  const { data, isLoading } = useGetMenuItemsQuery(null);
+
+  const getBestSellers = (product: menuItemModel) => {
+    if (product.specialTag !== null) {
+      if (product.specialTag.toUpperCase() === "Best Seller".toUpperCase()) {
+        return product;
+      }
+    }
+    return;
+  };
+
   return (
     <>
       <Header />;
+      <button
+        onClick={() => {
+          console.log(data.result.filter((item: menuItemModel) => item.category));
+        }}
+      >
+        CLICK ME
+      </button>
       <div className="home__content">
         <div className="app__flex" style={{ marginTop: "30px", marginBottom: "50px" }}>
           <div className="app__container-width">
@@ -120,10 +140,22 @@ function Home() {
             Best Sellers
           </h1>
           <div className="home__items-grid">
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            {!isLoading && (
+              <>
+                {data.result.filter(getBestSellers).map((item: menuItemModel, index: number) => (
+                  <ProductCard
+                    name={item.name}
+                    image={item.image}
+                    price={item.price}
+                    id={item.id}
+                    description={item.description}
+                    specialTag={item.specialTag}
+                    category={item.category}
+                    key={index}
+                  />
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>
