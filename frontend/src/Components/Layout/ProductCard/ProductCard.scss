@@ -9,7 +9,10 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-color: var(--grey-100);
-    span{
+    cursor: pointer;
+    transition: ease-in-out var(--timer-short) all;
+   
+    span {
       background-color: var(--accent-color);
       font-size: 1rem;
       font-weight: bold;
@@ -17,12 +20,16 @@
       padding: 0.3rem 1.2rem;
     }
 
+    &:hover{
+      box-shadow: var(--box-shadow-5);
+    }
   }
 
   .product__card-content {
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
+
     .product__tag {
       color: var(--grey-600);
       font-weight: bold;
@@ -42,7 +49,7 @@
       }
     }
 
-    button{
+    button {
       margin-top: 10px;
       padding: 0.6rem;
     }
