@@ -22,26 +22,45 @@ function Footer() {
             <i className="bi bi-twitter"></i>
             <i className="bi bi-instagram"></i>
           </div>
-          <p className="p-text">Lorem ipsum dolor sit amet</p>
+          <p className="p-text">Copyright iron@athelete made by Keanu Barnard</p>
         </div>
-        <div className="col">
-          <NavLink to="/menuItem/menuitemlist">Products </NavLink>
-          <NavLink to="/order/myorders">Orders </NavLink>
-          <NavLink to="/order/allOrders">All Orders </NavLink>
+        <div className="col" style={{ gap: "5px" }}>
+          <h1>Quick Links</h1>
+          <NavLink className={"footer__navlink"} to="/">
+            Home
+          </NavLink>
+          <NavLink className={"footer__navlink"} to="/store">
+            Shop
+          </NavLink>
+     
+          <NavLink className={"footer__navlink"} to="/contact">
+            Contact
+          </NavLink>
         </div>
-        <div className="col">
-          <NavLink to="/">Home </NavLink>
-          <NavLink to="/store">Shop </NavLink>
-          <NavLink to="/shoppingCart">Cart </NavLink>
-          <NavLink to="/contact">Contact </NavLink>
+      
+        <div className="col" style={{ gap: "5px" }}>
+          <h1>Orders</h1>
+          <NavLink className={"footer__navlink"} to="/menuItem/menuitemlist">
+            Products
+          </NavLink>
+          <NavLink className={"footer__navlink"} to="/order/myorders">
+            Orders
+          </NavLink>
+          <NavLink className={"footer__navlink"} to="/order/allOrders">
+            All Orders
+          </NavLink>
         </div>
+
         <div className="col">
           <h1>Get our newsletter</h1>
+          <p className="p-text" style={{marginTop:"5px"}}>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis accusamus temporibus et odio harum dolorem velit, quam fugit consectetur itaque natus? Architecto aperiam nemo libe
+          </p>
           <div className="row join__banner-input-container">
             <input placeholder="Enter your email" type="text" />
             <button className="btn">Join Now</button>
           </div>
-          <p className="p-text">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+          <p style={{color:"var(--grey-400)"}} className="p-text">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
         </div>
       </footer>
     </div>

@@ -27,27 +27,7 @@
         color: var(--grey-400);
         margin-bottom: 1rem;
       }
-      .join__banner-input-container {
-        width: 100%;
-        background-color: var(--grey-200);
-        padding: 0.2rem;
-
-        .btn {
-          background-color: var(--black-color);
-          color: white;
-          padding: 0.8rem 2.5rem;
-          font-size: 1rem;
-          width: 100%;
-          max-width: 200px;
-        }
-
-        input {
-          padding: 0rem 1rem;
-          width: 100%;
-          border: none;
-          font-size: 1.2rem;
-        }
-      }
+    
     }
 
     @media screen and (max-width: 900px) {
@@ -68,16 +48,12 @@
         p {
           text-align: center;
         }
-        p{
+        p {
           font-size: 1.2rem;
         }
 
         .join__banner-input-container {
-          .btn {
-            max-width: 100px;
-            font-size: 1rem;
-            padding: 0.6rem;
-          }
+         
         }
       }
 
