@@ -3,7 +3,7 @@ import "./JoinBanner.scss";
 import { images } from "../../../Assets/Images";
 export default function JoinBanner() {
   return (
-    <div style={{marginBottom:"600px"}} className="join__bannner-container app__flex">
+    <div style={{marginBottom:"50px"}} className="join__bannner-container app__flex">
       <div className="row app__container-width  join__banner-content">
         <img src={images.gym_girl} alt="" />
         <div className="col">

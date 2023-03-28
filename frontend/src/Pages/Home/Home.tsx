@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
-import { ItemSlider, ProductCard, JoinBanner } from "../../Components/Layout";
+import { ItemSlider, ProductCard, JoinBanner, TypesGrid } from "../../Components/Layout";
 import { images } from "../../Assets/Images";
 import "./Home.scss";
 import { useNavigate } from "react-router-dom";
@@ -125,6 +125,7 @@ function Home() {
         </div>
       </div>
       <JoinBanner/>
+      <TypesGrid/>
     </>
   );
 }

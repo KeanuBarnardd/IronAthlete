@@ -9,6 +9,8 @@ import MenuItemCard from "./MenuItem/MenuItemCard";
 import Suggestions from "../Suggestions/Suggestions";
 import ProductCard from "./ProductCard/ProductCard";
 import JoinBanner from "./JoinBanner/JoinBanner";
+import TypesGrid from "./TypesGrid/TypesGrid";
+
 export {
   Footer,
   AuthFormContainer,
@@ -20,5 +22,6 @@ export {
   MenuItemCard,
   Suggestions,
   ProductCard,
-  JoinBanner
+  JoinBanner,
+  TypesGrid,
 };
