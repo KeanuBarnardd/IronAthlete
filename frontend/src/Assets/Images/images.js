@@ -17,6 +17,7 @@ import types_2 from "./General/types_2.jpg";
 import types_3 from "./General/types_3.jpg";
 import types_4 from "./General/types_4.jpg";
 import types_5 from "./General/types_5.jpg";
+import types_6 from "./General/types_6.jpg";
 
 export default {
   ironAtheleteLogo,
@@ -37,4 +38,5 @@ export default {
   types_3,
   types_4,
   types_5,
+  types_6,
 };

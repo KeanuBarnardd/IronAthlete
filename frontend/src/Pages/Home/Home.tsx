@@ -113,19 +113,22 @@ function Home() {
       {/* --------------Home Items Grid -------------- */}
       <div className="app__flex" style={{ marginTop: "40px", marginBottom: "100px" }}>
         <div className="app__container-width">
-          <h1 style={{ width: "100%", textAlign: "center", marginBottom:"30px" }} className="head-text">
+          <h1
+            style={{ width: "100%", textAlign: "center", marginBottom: "30px" }}
+            className="head-text"
+          >
             Best Sellers
           </h1>
           <div className="home__items-grid">
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
-            <ProductCard/>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
           </div>
         </div>
       </div>
-      <JoinBanner/>
-      <TypesGrid/>
+      <JoinBanner />
+      <TypesGrid />
     </>
   );
 }
