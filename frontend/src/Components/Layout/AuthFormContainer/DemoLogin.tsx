@@ -39,7 +39,7 @@ export default function DemoLogin() {
   };
 
   return (
-    <button className="btn btn-outline" onClick={handleSubmit}>
+    <button className="btn btn__outline-dark" onClick={handleSubmit}>
       Demo Login
     </button>
   );

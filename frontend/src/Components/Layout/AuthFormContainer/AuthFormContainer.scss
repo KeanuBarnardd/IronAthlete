@@ -3,7 +3,7 @@ $navbar-padding-top: 64px; // Account for navbar position
 
 .auth__background-container {
   background-color: var(--grey-100);
-  padding-top: $navbar-padding-top;
+
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,20 +24,11 @@ $navbar-padding-top: 64px; // Account for navbar position
       justify-content: center;
       width: 50%;
       padding: 7rem;
-
-      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
-      border-top-left-radius: var(--border-radius-1);
-      border-bottom-left-radius: var(--border-radius-1);
+      background-size: cover;
 
       .form__header-content {
         padding: 3rem;
-        border-radius: 2px;
-
-        background-color: rgba(255, 255, 255, 0.267);
-        box-shadow: 20px 30px rgba(104, 104, 104, 0.171);
-
+        border: 3px solid white;
         h1 {
           font-size: 3.5rem;
           font-weight: bold;
@@ -46,8 +37,13 @@ $navbar-padding-top: 64px; // Account for navbar position
 
           color: white;
           span {
-            color: var(--grey-600);
+            color: var(--accent-color);
           }
+        }
+        p {
+          font-size: 1.2rem;
+          margin-top: 10px;
+          font-weight: bold;
         }
       }
     }
@@ -60,10 +56,7 @@ $navbar-padding-top: 64px; // Account for navbar position
     height: 100%;
     width: 50%;
     padding: 1rem;
-
     background-color: white;
-    border-top-right-radius: var(--border-radius-1);
-    border-bottom-right-radius: var(--border-radius-1);
 
     // General Styling of forms inside this component
     .form__content {
@@ -72,6 +65,7 @@ $navbar-padding-top: 64px; // Account for navbar position
       form {
         button {
           width: 100%;
+          padding: 0.7rem;
         }
 
         .error__container {
@@ -98,37 +92,33 @@ $navbar-padding-top: 64px; // Account for navbar position
           input {
             width: 100%;
             padding: 0.4rem;
-            border: 1.5px solid var(--grey-100);
-            border-radius: var(--border-radius-1);
+            border: none;
+            border-bottom: 1.5px solid var(--grey-200);
+            background-color: var(--grey-000);
 
             &:focus {
               outline: none !important;
-              border-color: #23a6d5;
+              border-color: var(--accent-color);
             }
           }
 
           select {
             width: 100%;
             padding: 0.5rem;
-            border: 1.5px solid var(--grey-100);
-            border-radius: var(--border-radius-1);
-            background-color: white;
-            color: var(--grey-600);
+            border: none;
+            border-bottom: 1.5px solid var(--grey-200);
+            background-color: var(--grey-000);
           }
         }
       }
-    }
-  }
-}
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+      .row {
+        .btn {
+          width: 100%;
+          max-width: 100%;
+          padding: 0.7rem;
+        }
+      }
+    }
   }
 }

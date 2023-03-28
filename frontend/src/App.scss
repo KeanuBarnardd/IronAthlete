@@ -156,6 +156,15 @@
   }
 }
 
+.btn__dark {
+  border: 1px solid var(--dark-grey-color);
+  background-color: var(--dark-grey-color);
+  color: var(--grey-100);
+  &:hover{
+    background-color: var(--black-color);
+  }
+}
+
 .join__banner-input-container {
   width: 100%;
   background-color: var(--grey-200);
@@ -183,3 +192,20 @@
     font-size: 1.2rem;
   }
 }
+
+.or__container {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  margin: 15px 0px;
+  gap: 10px;
+  hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid var(--grey-600);
+    margin-top: 10px;
+  }
+}
+
+

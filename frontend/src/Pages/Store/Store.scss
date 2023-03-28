@@ -6,7 +6,7 @@
   background-size: cover;
   margin-bottom: 2rem;
 
-  .shop__banner-content{
+  .shop__banner-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,13 +21,12 @@
     .join__banner-input-container {
       flex-direction: row-reverse;
       max-width: 500px;
-  
+
       .btn {
         padding: 0.5rem 1rem;
         max-width: 120px;
       }
     }
-    
   }
 }
 
@@ -66,4 +65,14 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2.5rem;
   border-radius: var(--border-radius-1);
+
+  .btn {
+    background-color: var(--dark-grey-color);
+    border-color: var(--dark-grey-color);
+    color: var(--grey-100);
+    transition: var(--timer-short) all ease-in-out;
+    &:hover{
+      background-color: var(--black-color);
+    }
+  }
 }

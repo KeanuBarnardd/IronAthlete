@@ -56,7 +56,7 @@ export default function ProductCard(props: menuItemModel) {
           <p className="product__price">${props.price.toFixed(2)}</p>
         </div>
 
-        <p className="p-text">{props.description}</p>
+        <p className="p-text d">{props.description}</p>
         <button onClick={() => handleAddToCart(props.id)} className="btn btn__accent">
           Add to cart
         </button>

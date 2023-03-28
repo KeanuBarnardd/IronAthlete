@@ -45,7 +45,7 @@ function Register() {
     <AuthFormContainer
       title={
         <h1>
-          <span>Register</span> with us today and taste the difference
+          <span>Register</span> with us today and feel the difference for <span>yourself</span>
         </h1>
       }
       subtitle={"Discover the delicious, wholesome flavors of healthy eating. "}
@@ -105,7 +105,7 @@ function Register() {
               </select>
             </div>
 
-            <button type="submit" className="btn btn-rainbow" disabled={loading}>
+            <button type="submit" className="btn btn__accent" disabled={loading}>
               Register
             </button>
             <div className="or__container">
@@ -119,7 +119,7 @@ function Register() {
               onClick={() => {
                 navigate("/login");
               }}
-              className="btn btn-outline"
+              className="btn btn__outline-dark"
             >
               Login
             </button>
