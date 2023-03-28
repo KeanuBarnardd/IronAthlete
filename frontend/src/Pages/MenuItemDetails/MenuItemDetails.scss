@@ -1,8 +1,9 @@
-.menu__details-container {
-  border-top: 1px solid var(--grey-100);
+.menu__details-container-parent {
+  //border-top: 1px solid var(--grey-100);
   margin-top: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
+
   .image__container {
     width: 100%;
     max-width: 500px;
@@ -10,87 +11,141 @@
     .main__img {
       background-color: var(--grey-100);
       padding: 1rem 3rem;
-      border-radius: var(--border-radius-1);
       margin-bottom: 10px;
     }
 
     h2 {
       color: var(--grey-600);
-      margin-bottom: 10px;
     }
   }
+  .menu__details-container {
+    gap: 40px;
+    .menu__details-content {
+      width: 100%;
+      max-width: 500px;
 
-  .menu__details-content {
-    width: 100%;
-    max-width: 500px !important;
-
-    h1 {
-      font-size: 2.7rem;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid var(--grey-100);
-    }
-    .price {
-      border-radius: var(--border-radius-1);
-      color: var(--grey-600);
-    }
-
-    .specials__tag {
-      background-color: var(--grey-200);
-      color: var(--grey-500);
-      padding: 0.2rem 1rem;
-      
-    }
-
-    .btn__container{
-      .btn{
-        width: 100%;
-        max-width: 170px;
-        padding: 0.7rem;
+      h1 {
+        font-size: 2.7rem;
       }
-    }
-
-    .add__remove-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-size: 1.2rem;
-      button {
-        background-color: var(--grey-000);
+      hr {
         border: none;
-        padding: 0rem 1rem;
-        font-size: 2rem;
-
-        color: var(--grey-600);
-        cursor: pointer;
-        max-width: 300px;
+        border-top: 1px solid var(--grey-100);
       }
-    }
+      .price {
+        border-radius: var(--border-radius-1);
+        color: var(--grey-600);
+      }
 
-    .delivery__details-container {
-      margin-top: 2rem;
-      border: 1px solid var(--grey-100);
-     
-      .row {
-        padding: 1rem;
-        align-items: center;
-        gap: 20px;
-        i {
-          font-size: 2rem;
-          color: var(--grey-500);
+      .specials__tag {
+        background-color: var(--grey-200);
+        color: var(--grey-500);
+        padding: 0.2rem 1rem;
+      }
+
+      .btn__container {
+        .btn {
+          width: 100%;
+          max-width: 170px;
+          padding: 0.7rem;
         }
-        .col {
-          h2 {
+      }
+
+      .row {
+        margin-top: 10px;
+        h1 {
+          margin-right: 10px;
+        }
+        .add__remove-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          font-size: 1.2rem;
+
+          button {
+            background-color: var(--grey-000);
+            border: none;
+            padding: 0rem 1rem;
+            font-size: 2rem;
+
             color: var(--grey-600);
-            font-size: 1.4rem;
+            cursor: pointer;
+            max-width: 300px;
           }
         }
       }
-      .col-two {
-        border-top: 1px solid var(--grey-100);
+
+      .delivery__details-container {
+        margin-top: 2rem;
+        border: 1px solid var(--grey-100);
+
+        .row {
+          padding: 0.7rem 1rem;
+          align-items: center;
+          gap: 20px;
+          i {
+            font-size: 2rem;
+            color: var(--grey-500);
+          }
+          .col {
+            h2 {
+              color: var(--grey-600);
+              font-size: 1.4rem;
+            }
+          }
+        }
+        .col-two {
+          border-top: 1px solid var(--grey-100);
+        }
       }
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    .image__container {
+      max-width: 300px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .menu__details-container {
+      flex-direction: column-reverse;
+      gap: 20px;
+      .image__container {
+        max-width: 100%;
+      }
+
+      .menu__details-content {
+        .btn__container {
+          .btn {
+            max-width: 100%;
+          }
+        }
+
+        .delivery__details-container {
+
+          .row{
+            padding: 0.5rem 1rem;
+          }
+          .col {
+            i {
+              font-size: 1rem;
+            }
+            h2 {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .btn__container {
+      flex-direction: column;
     }
   }
 }

@@ -52,16 +52,16 @@ function MenuItemDetails() {
   return (
     <div className="app__flex">
       {!isLoading ? (
-        <div className="app__container-width menu__details-container">
-          <div className="row" style={{ gap: "50px" }}>
+        <div className="app__container-width menu__details-container-parent">
+          <div className="row menu__details-container" >
             <div className="col row image__container">
               <img className="main__img" src={data.result.image} alt="" />
             </div>
 
-            <div className="col menu__details-content " style={{ maxWidth: "700px" }}>
+            <div className="col menu__details-content ">
               <h1 className="head-text">{data.result.name}</h1>
               <p className="p-text">{data.result?.description}</p>
-              <div className="row" style={{ marginBottom: "10px", marginTop: "10px", gap: "10px" }}>
+              <div className="row" style={{ marginBottom: "20px", marginTop: "10px", gap: "10px" }}>
                 <p className="specials__tag">
                   <span>{data.result.category}</span>
                 </p>
@@ -72,15 +72,7 @@ function MenuItemDetails() {
                 )}
               </div>
               <hr />
-              <div
-                className="row"
-                style={{
-                  alignItems: "center",
-                  marginBottom: "20px",
-                  marginTop: "20px",
-                  gap: "20px",
-                }}
-              >
+              <div className="row">
                 <h1 className="price">${data.result?.price.toFixed(2)}</h1>
                 <div className="add__remove-btn">
                   <button
