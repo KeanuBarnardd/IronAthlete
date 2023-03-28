@@ -45,7 +45,8 @@ export default function ProductCard(props: menuItemModel) {
         style={{ backgroundImage: `url(${props.image})` }}
       >
         <p>
-          <span>{props.specialTag}</span>
+          {props.specialTag !== null && props.specialTag !== "" ? <span>{props.specialTag}</span> : <></>}
+         
         </p>
       </div>
       <div className="product__card-content">

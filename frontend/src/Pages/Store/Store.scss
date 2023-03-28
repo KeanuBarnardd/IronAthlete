@@ -1,65 +1,61 @@
 .shop__banner-container {
   position: relative;
-  padding: 3rem;
-  background-color: var(--accent-color-orange);
-  border-radius: var(--border-radius-1);
+  padding: 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 2rem;
 
-  h1 {
-    font-size: 4rem;
-    max-width: 800px;
-    color: var(--grey-700);
-    line-height: 80px;
-    margin-bottom: 20px;
-    text-transform: capitalize;
-  }
+  .shop__banner-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-  img {
-    position: absolute;
-    bottom: 0;
-    right: 150px;
-    width: 400px;
+    h1 {
+      text-align: center;
+      font-size: 6rem;
+      color: var(--grey-000);
+    }
+
+    .join__banner-input-container {
+      flex-direction: row-reverse;
+      max-width: 500px;
+  
+      .btn {
+        padding: 0.5rem 1rem;
+        max-width: 120px;
+      }
+    }
+    
   }
 }
 
 .search__container {
-  margin-top: 30px;
   width: 100%;
   justify-content: space-between;
-  input {
-    width: 100%;
-    max-width: 500px;
-    font-size: 0.9rem;
-    padding: 0.2rem 1rem;
-    border: 1px solid var(--grey-200);
-    border-radius: var(--border-radius-1);
-    color: var(--grey-700);
-    &:focus{
-      outline: none;
-      border: 1px solid var(--accent-color-green-dark);
-    }
-  }
 
   .filter__container {
     button {
-      min-width: 80px;
+      padding: 0.4rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--grey-300);
       cursor: pointer;
-      border: 1px solid var(--grey-200);
-      border-radius: var(--border-radius-1);
-      color: var(--grey-400);
       transition: all ease-in-out var(--timer-short);
+      background-color: transparent;
     }
 
     button.active {
-      background-color: var(--accent-color-orange);
-      color: var(--grey-700);
-      border-color: var(--accent-color-orange-dark);
+      background-color: var(--grey-600);
+      border-color: var(--grey-600);
+      color: var(--grey-000);
     }
   }
   select {
-    padding: 0.1rem 1rem;
-    cursor: pointer;
-    border: 1px solid var(--grey-200);
-    border-radius: var(--border-radius-1);
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid var(--grey-300);
     color: var(--grey-600);
   }
 }
@@ -69,7 +65,5 @@
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin-top: 2.5rem;
-  background-color: var(--grey-000);
-  padding: 2rem;
   border-radius: var(--border-radius-1);
 }
