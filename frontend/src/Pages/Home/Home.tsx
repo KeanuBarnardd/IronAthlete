@@ -25,13 +25,6 @@ function Home() {
   return (
     <>
       <Header />;
-      <button
-        onClick={() => {
-          console.log(data.result.filter((item: menuItemModel) => item.category));
-        }}
-      >
-        CLICK ME
-      </button>
       <div className="home__content">
         <div className="app__flex" style={{ marginTop: "30px", marginBottom: "50px" }}>
           <div className="app__container-width">

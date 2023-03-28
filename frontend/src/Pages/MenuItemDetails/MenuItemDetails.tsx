@@ -56,10 +56,6 @@ function MenuItemDetails() {
           <div className="row" style={{ gap: "50px" }}>
             <div className="col row image__container">
               <img className="main__img" src={data.result.image} alt="" />
-              <div className="col">
-                <h2>You may also like</h2>
-                <Suggestions removeItem={data.result.id} />
-              </div>
             </div>
 
             <div className="col menu__details-content " style={{ maxWidth: "700px" }}>
@@ -107,32 +103,34 @@ function MenuItemDetails() {
                 </div>
               </div>
 
-              <div className="row">
-                <button className="btn btn-grey" onClick={() => handleAddToCart(data.result?.id)}>
+              <div className="row btn__container">
+                <button
+                  className="btn btn__accent"
+                  onClick={() => handleAddToCart(data.result?.id)}
+                >
                   Buy Now
                 </button>
-                <button className="btn btn-outline" onClick={() => navigate(-1)}>
+                <button className="btn btn__outline-dark" onClick={() => navigate(-1)}>
                   Return
                 </button>
               </div>
-              <div className="col delivery__details-container" >
+              <div className="col delivery__details-container">
                 <div className="row">
-                <i className="bi bi-truck"></i>
+                  <i className="bi bi-truck"></i>
                   <div className="col">
                     <h2>Free delivery</h2>
                     <p className="p-text">Enter your postal code for Delivery Availability</p>
                   </div>
                 </div>
-                <div className="row col-two" style={{alignItems:"center", gap:"10px"}}>
+                <div className="row col-two" style={{ alignItems: "center", gap: "10px" }}>
+                  <i className="bi bi-coin"></i>
                   <div className="col ">
                     <h2>Unsatisfied with food? </h2>
                     <p className="p-text">We offer a 30 day back gurantee</p>
                   </div>
                 </div>
               </div>
-              <div className="terms__container">
-                
-              </div>
+              <div className="terms__container"></div>
             </div>
           </div>
         </div>
