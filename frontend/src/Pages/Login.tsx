@@ -91,7 +91,7 @@ function Login() {
                 <p className="error__text">{error}</p>
               </div>
             )}
-            <button type="submit" className="btn btn-rainbow">
+            <button type="submit" className="btn btn__dark">
               Login
             </button>
             <div className="or__container">
@@ -102,7 +102,7 @@ function Login() {
           </form>
           <div className="row">
             <button
-              className="btn btn-outline"
+              className="btn btn__outline-dark"
               onClick={() => {
                 navigate("/register");
               }}

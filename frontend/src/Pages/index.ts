@@ -15,7 +15,7 @@ import AllOrders from "./Order/AllOrders";
 import MenuItemList from "./MenuItem/MenuItemList";
 import MenuItemUpsert from "./MenuItem/MenuItemUpsert";
 import Store from "./Store/Store";
-
+import Contact from "./Contact/Contact";
 export {
   MenuItemUpsert,
   MenuItemList,
@@ -33,5 +33,6 @@ export {
   AuthenticationTest,
   AuthenticationTestAdmin,
   AccessDenied,
-  Store
+  Store,
+  Contact,
 };

@@ -1,5 +1,4 @@
 // Variables
-$navbar-padding-top: 64px; // Account for navbar position
 
 .auth__background-container {
   background-color: var(--grey-100);
@@ -39,6 +38,7 @@ $navbar-padding-top: 64px; // Account for navbar position
 
       @media screen and (max-width: 715px) {
         width: 100%;
+        
       }
       .form__header-content {
         padding: 3rem;
