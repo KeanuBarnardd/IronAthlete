@@ -105,7 +105,7 @@ function Register() {
               </select>
             </div>
 
-            <button type="submit" className="btn btn__accent" disabled={loading}>
+            <button type="submit" className="btn btn__dark" disabled={loading}>
               Register
             </button>
             <div className="or__container">

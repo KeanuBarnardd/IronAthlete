@@ -200,10 +200,14 @@
   justify-content: center;
   margin: 15px 0px;
   gap: 10px;
+  p{
+    color: var(--grey-400);
+  }
+
   hr {
     width: 100%;
     border: none;
-    border-top: 1px solid var(--grey-600);
+    border-top: 1px solid var(--grey-200);
     margin-top: 10px;
   }
 }

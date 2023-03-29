@@ -17,6 +17,14 @@ $navbar-padding-top: 64px; // Account for navbar position
     height: 85%;
 
     border-radius: var(--border-radius-1);
+
+    @media screen and (max-width: 715px) {
+      flex-direction: column-reverse;
+      height: 100%;
+      margin: 0;
+      width: 100%;
+    }
+
     .form__header-container {
       display: flex;
       flex-direction: column;
@@ -25,7 +33,13 @@ $navbar-padding-top: 64px; // Account for navbar position
       width: 50%;
       padding: 7rem;
       background-size: cover;
+      @media screen and (max-width: 900px) {
+        padding: 2rem;
+      }
 
+      @media screen and (max-width: 715px) {
+        width: 100%;
+      }
       .form__header-content {
         padding: 3rem;
         border: 3px solid white;
@@ -45,6 +59,15 @@ $navbar-padding-top: 64px; // Account for navbar position
           margin-top: 10px;
           font-weight: bold;
         }
+
+        @media screen and (max-width: 900px) {
+          padding: 2rem;
+          h1 {
+            font-size: 2rem;
+            line-height: 40px;
+            text-align: center;
+          }
+        }
       }
     }
   }
@@ -57,6 +80,10 @@ $navbar-padding-top: 64px; // Account for navbar position
     width: 50%;
     padding: 1rem;
     background-color: white;
+
+    @media screen and (max-width: 715px) {
+      width: 100%;
+    }
 
     // General Styling of forms inside this component
     .form__content {
@@ -94,7 +121,7 @@ $navbar-padding-top: 64px; // Account for navbar position
             padding: 0.4rem;
             border: none;
             border-bottom: 1.5px solid var(--grey-200);
-            background-color: var(--grey-000);
+            font-size: 1re;
 
             &:focus {
               outline: none !important;
@@ -106,8 +133,10 @@ $navbar-padding-top: 64px; // Account for navbar position
             width: 100%;
             padding: 0.5rem;
             border: none;
+            font-size: 1rem;
+            color: var(--grey-400);
             border-bottom: 1.5px solid var(--grey-200);
-            background-color: var(--grey-000);
+            background-color: transparent;
           }
         }
       }
