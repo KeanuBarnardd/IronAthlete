@@ -87,7 +87,7 @@ function Navbar() {
             <NavLink className="nav-link" to="/store">
               Shop
             </NavLink>
-            <NavLink className="nav-link" to="/store">
+            <NavLink className="nav-link" to="/contact">
               Contact
             </NavLink>
             {userData.role == SD_Roles.ADMIN ? (

@@ -38,7 +38,6 @@
 
       @media screen and (max-width: 715px) {
         width: 100%;
-        
       }
       .form__header-content {
         padding: 3rem;
@@ -106,39 +105,6 @@
           border: 1px solid var(--error-color-dark);
         }
 
-        .input__container {
-          width: 100%;
-          margin-bottom: 1.4rem;
-
-          p {
-            font-size: 0.9rem;
-
-            color: var(--grey-400);
-          }
-
-          input {
-            width: 100%;
-            padding: 0.4rem;
-            border: none;
-            border-bottom: 1.5px solid var(--grey-200);
-            font-size: 1re;
-
-            &:focus {
-              outline: none !important;
-              border-color: var(--accent-color);
-            }
-          }
-
-          select {
-            width: 100%;
-            padding: 0.5rem;
-            border: none;
-            font-size: 1rem;
-            color: var(--grey-400);
-            border-bottom: 1.5px solid var(--grey-200);
-            background-color: transparent;
-          }
-        }
       }
 
       .row {

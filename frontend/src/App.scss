@@ -160,7 +160,7 @@
   border: 1px solid var(--dark-grey-color);
   background-color: var(--dark-grey-color);
   color: var(--grey-100);
-  &:hover{
+  &:hover {
     background-color: var(--black-color);
   }
 }
@@ -200,7 +200,7 @@
   justify-content: center;
   margin: 15px 0px;
   gap: 10px;
-  p{
+  p {
     color: var(--grey-400);
   }
 
@@ -212,4 +212,37 @@
   }
 }
 
+.input__container {
+  width: 100%;
+  margin-bottom: 1.4rem;
 
+  p {
+    font-size: 0.9rem;
+
+    color: var(--grey-400);
+  }
+
+  input,textarea {
+    width: 100%;
+    padding: 0.4rem;
+    border: none;
+    border-bottom: 1.5px solid var(--grey-200);
+    font-size: 1rem;
+    resize: none;
+
+    &:focus {
+      outline: none !important;
+      border-color: var(--accent-color);
+    }
+  }
+
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    font-size: 1rem;
+    color: var(--grey-400);
+    border-bottom: 1.5px solid var(--grey-200);
+    background-color: transparent;
+  }
+}

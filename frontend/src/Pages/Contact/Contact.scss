@@ -1,0 +1,32 @@
+.contact__details {
+  gap: 20px;
+
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: var(--grey-700);
+  }
+
+  .col {
+    h2 {
+      color: var(--grey-700);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+form {
+  width: 100%;
+
+  .btn {
+    max-width: 200px;
+    padding: 1rem;
+  }
+}
