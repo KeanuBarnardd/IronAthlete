@@ -7,39 +7,39 @@ export default function Contact() {
   return (
     <div className="app__flex">
       <div className="app__container app__container-width">
-        <div className="row" style={{ width: "100%" }}>
+        <div className="row contact__container" style={{ width: "100%" }}>
           <div className="col contact__details" style={{ width: "100%" }}>
-            <h1>Contact Us</h1>
+            <div className="col" style={{ gap: "10px" }}>
+              <h1>Contact Us</h1>
+              <p className="p-text" style={{ maxWidth: "500px" }}>
+                Thank you for your interest in our gym ecommerce store! If you have any questions or
+                concerns about our products, shipping, or anything else, please don't hesitate to
+                get in touch with us. You can reach us through the contact form below, or email us
+                at iroanAthelete@info.com.au. Thank you for your support!
+              </p>
+              <div className="row">
+                <i className="bi bi-facebook"></i>
+                <i className="bi bi-twitter"></i>
+                <i className="bi bi-instagram"></i>
+                <i className="bi bi-youtube"></i>
+              </div>
+            </div>
 
             <div className="col">
-              <h2>Hoppers Crossing </h2>
+              <h2>Sydney </h2>
               <ul>
-                <li className="p-text">0419 886 743</li>
+                <li className="p-text">+61 2 8765 4321</li>
                 <li className="p-text">ironAthelete@info.com.au</li>
-                <li className="p-text bold">123 Cranwell St Braybrook, 3019, Melbourne</li>
+                <li className="p-text bold"> 456 George Street, Sydney NSW 2000</li>
               </ul>
             </div>
             <div className="col">
-              <h2>Melbourne CBD </h2>
+              <h2>Melbourne </h2>
               <ul>
-                <li className="p-text">0419 886 743</li>
+                <li className="p-text"> +61 3 9876 5432</li>
                 <li className="p-text">ironAthelete@info.com.au</li>
-                <li className="p-text bold">123 Cranwell St Braybrook, 3019, Melbourne</li>
+                <li className="p-text bold">123 Smith Street, Richmond VIC 3121</li>
               </ul>
-            </div>
-            <div className="col">
-              <h2>Hoppers Crossing </h2>
-              <ul>
-                <li className="p-text">0419 886 743</li>
-                <li className="p-text">ironAthelete@info.com.au</li>
-                <li className="p-text bold">123 Cranwell St Braybrook, 3019, Melbourne</li>
-              </ul>
-            </div>
-            <div className="row">
-              <i className="bi bi-facebook"></i>
-              <i className="bi bi-twitter"></i>
-              <i className="bi bi-instagram"></i>
-              <i className="bi bi-instagram"></i>
             </div>
           </div>
           <form action="">
