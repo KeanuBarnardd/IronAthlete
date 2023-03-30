@@ -129,9 +129,9 @@ function MenuItemUpsert() {
 
   return (
     <div className="app__flex">
-      <div style={{ width: "100%" }} className="row app__container-width app__container">
+      <div  className=" app__container-width app__container" >
         {loading && <MainLoader />}
-        <div style={{ width: "100%" }} className="col">
+        <div  className="col form__parent">
           <form method="post" encType="multipart/form-data" onSubmit={handleSubmit}>
             <div className="row">
               <img src={imageToDisplay} alt="" />
