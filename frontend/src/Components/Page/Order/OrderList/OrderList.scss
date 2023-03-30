@@ -1,0 +1,26 @@
+.order__list-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.order__item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.order__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: white;
+  align-items: center;
+  box-shadow: var(--box-shadow-6);
+  border-radius: 5px;
+  .btn{
+    padding: 0.3rem;
+  }
+}

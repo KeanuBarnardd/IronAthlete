@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { withAdminAuth, withAuth } from "../../HOC";
+import { withAdminAuth, withAuth } from "../../../HOC";
 import { useSelector } from "react-redux";
-import { RootState } from "../../Storage/Redux/store";
-import { useGetAllOrdersQuery } from "../../Apis/orderApi";
-import OrderList from "../../Components/Page/Order/OrderList";
-import { MainLoader } from "../../Components/Page/Common";
-import { inputHelper } from "../../Helper";
-import { SD_Status } from "../../Utility/SD";
-import { orderHeaderModel } from "../../Interfaces";
+import { RootState } from "../../../Storage/Redux/store";
+import { useGetAllOrdersQuery } from "../../../Apis/orderApi";
+import OrderList from "../../../Components/Page/Order/OrderList/OrderList";
+import { MainLoader } from "../../../Components/Page/Common";
+import { inputHelper } from "../../../Helper";
+import { SD_Status } from "../../../Utility/SD";
+import "./AllOrders.scss";
+
 const filterOptions = [
   "All",
   SD_Status.CONFIRMED,
@@ -82,40 +83,34 @@ function AllOrders() {
   };
 
   return (
-    <>
+    <div className="app__flex" style={{ backgroundColor: "var(--grey-000)", paddingBottom:"5rem" }}>
       {isLoading && <MainLoader />}
       {!isLoading && (
-        <>
-          <div className="d-flex align-items-center justify-content-between mx-5 mt-5" style={{paddingTop:"5rem"}}>
-            <h1 className="text-success">Orders List</h1>
+        <div className="app__container-width app__container col">
+          <div className="col all-orders__top">
+            <h1>Orders List</h1>
+            <hr />
+            <div className="row" style={{ justifyContent: "space-between" }}>
+              <div className="row">
+                <input
+                  type="text"
+                  placeholder="Search Name, Email or Phone"
+                  name="searchString"
+                  onChange={handleChange}
+                />
+                <select onChange={handleChange} name="status">
+                  {filterOptions.map((item, index) => (
+                    <option key={index} value={item === "All" ? "" : item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+                <button className="btn btn__dark" onClick={handleFilters}>
+                  Filter
+                </button>
+              </div>
 
-            <div className="d-flex" style={{ width: "40%" }}>
-              <input
-                type="text"
-                className="form-control mx-2"
-                placeholder="Search Name, Email or Phone"
-                name="searchString"
-                onChange={handleChange}
-              />
-              <select className="form-select w-50 mx-2" onChange={handleChange} name="status">
-                {filterOptions.map((item, index) => (
-                  <option key={index} value={item === "All" ? "" : item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
-              <button className="btn btn-outline-success" onClick={handleFilters}>
-                Filter
-              </button>
-            </div>
-          </div>
-          <div className="mx-5"></div>
-          <OrderList isLoading={isLoading} orderData={orderData} />
-          <div className="d-flex mx-5 justify-content-end align-items-center">
-            <div>Rows per page: </div>
-            <div>
               <select
-                className="form-select mx-2"
                 onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                   handlePageOptionChange("change", Number(e.target.value));
                   setCurrentPageSize(Number(e.target.value));
@@ -123,31 +118,36 @@ function AllOrders() {
                 style={{ width: "80px" }}
                 value={currentPageSize}
               >
-                <option>5</option>
-                <option>10</option>
-                <option>15</option>
-                <option>20</option>
+                <option>5 Rows</option>
+                <option>10 Rows </option>
+                <option>15 Rows</option>
+                <option>20 Rows</option>
               </select>
             </div>
-            <div className="mx-2">{getPageDetails()}</div>
+          </div>
+
+          <OrderList isLoading={isLoading} orderData={orderData} />
+
+          <div style={{marginTop:"10px"}}>
+            <div>{getPageDetails()}</div>
             <button
               onClick={() => handlePageOptionChange("prev")}
               disabled={pageOptions.pageNumber === 1}
-              className="btn btn-outline-primary px-3 mx-2"
+            
             >
               <i className="bi bi-chevron-left"></i>
             </button>
             <button
               onClick={() => handlePageOptionChange("next")}
               disabled={pageOptions.pageNumber * pageOptions.pageSize >= totalRecords}
-              className="btn btn-outline-primary px-3 mx-2"
+              
             >
               <i className="bi bi-chevron-right"></i>
             </button>
           </div>
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 }
 
