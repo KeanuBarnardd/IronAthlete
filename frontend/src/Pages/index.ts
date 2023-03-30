@@ -9,7 +9,7 @@ import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
 import AccessDenied from "./AccessDenied";
 import Payment from "./Payment";
 import OrderConfirmed from "./Order/OrderConfirmed";
-import MyOrders from "./Order/MyOrders";
+import MyOrders from "./Order/MyOrders/MyOrders";
 import OrderDetails from "./Order/OrderDetails";
 import AllOrders from "./Order/AllOrders/AllOrders";
 import MenuItemList from "./MenuItem/MenuItemList/MenuItemList";
