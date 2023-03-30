@@ -34,15 +34,17 @@ function MenuItemList() {
             <div className="col product__list-parent">
               <div className="col">
                 <h1>Products</h1>
-                <hr style={{marginBottom:"10px"}} />
-                <div className="row">
+                <hr style={{ marginBottom: "10px" }} />
+                <div className="row product__info">
                   <button
                     className="btn btn__accent"
                     onClick={() => navigate("/menuitem/menuitemupsert")}
                   >
                     Add New Product
                   </button>
-                  <p className="p-text">Edit the main menu - can add, edit and remove products from the home page.</p>
+                  <p className="p-text">
+                    Edit the main menu - can add, edit and remove products from the home page.
+                  </p>
                 </div>
               </div>
               <div></div>

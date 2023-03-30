@@ -13,7 +13,7 @@ import MyOrders from "./Order/MyOrders";
 import OrderDetails from "./Order/OrderDetails";
 import AllOrders from "./Order/AllOrders";
 import MenuItemList from "./MenuItem/MenuItemList/MenuItemList";
-import MenuItemUpsert from "./MenuItem/MenuItemUpsert";
+import MenuItemUpsert from "./MenuItem/MenuItemUpsert/MenuItemUpsert";
 import Store from "./Store/Store";
 import Contact from "./Contact/Contact";
 export {
