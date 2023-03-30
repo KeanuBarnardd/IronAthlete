@@ -1,0 +1,42 @@
+.cart__item-parent {
+  box-shadow: var(--box-shadow-6);
+  padding: 0.5rem 1rem;
+  width: 100%;
+  gap: 20px;
+
+  img {
+    background-color: var(--grey-000);
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .col {
+    h1 {
+      font-size: 1.5rem;
+      color: var(--grey-700);
+    }
+
+    h4 {
+      color: var(--grey-700);
+      font-size: 1.1rem;
+    }
+
+    i{
+      color: var(--black-color);
+      font-size: 1.2rem;
+
+    }
+
+    .btn {
+      max-width: 150px;
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 10px;
+    }
+
+    span {
+      cursor: pointer;
+    }
+  }
+}
