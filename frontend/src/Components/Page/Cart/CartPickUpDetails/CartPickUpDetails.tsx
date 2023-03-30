@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useInitiatePaymentMutation } from "../../../Apis/paymentApi";
-import { inputHelper } from "../../../Helper";
-import { apiResponse, cartItemModel } from "../../../Interfaces";
-import { RootState } from "../../../Storage/Redux/store";
-import { MiniLoader } from "../Common";
+import { useInitiatePaymentMutation } from "../../../../Apis/paymentApi";
+import { inputHelper } from "../../../../Helper";
+import { apiResponse, cartItemModel } from "../../../../Interfaces";
+import { RootState } from "../../../../Storage/Redux/store";
+import { MiniLoader } from "../../Common";
 import { useNavigate } from "react-router";
+
+import "./CartPickUpDetails.scss";
 
 export default function CartPickUpDetails() {
   const [loading, setLoading] = useState(false);
@@ -54,14 +56,12 @@ export default function CartPickUpDetails() {
   };
 
   return (
-    <div className="border pb-5 pt-3">
-      <h1 style={{ fontWeight: "300" }} className="text-center text-success">
-        Pickup Details
-      </h1>
-      <hr />
-      <form onSubmit={handleSubmit} className="col-10 mx-auto">
-        <div className="form-group mt-3">
-          Pickup Name
+    <div className="pickup-cart-details__container">
+      <h1 style={{ marginBottom: "10px" }}>Pickup Details</h1>
+      <hr style={{ marginBottom: "10px" }} />
+      <form onSubmit={handleSubmit}>
+        <div className="input__container">
+          <p className="p-text">Pick up name</p>
           <input
             type="text"
             value={userInput.name}
@@ -72,8 +72,8 @@ export default function CartPickUpDetails() {
             required
           />
         </div>
-        <div className="form-group mt-3">
-          Pickup Email
+        <div className="input__container">
+          <p className="p-text">Pickup Email</p>
           <input
             type="email"
             value={userInput.email}
@@ -85,30 +85,35 @@ export default function CartPickUpDetails() {
           />
         </div>
 
-        <div className="form-group mt-3">
-          Pickup Phone Number
+        <div className="input__container">
+          <p className="p-text">Phone number</p>
           <input
             type="number"
             value={userInput.phoneNumber}
             className="form-control"
-            placeholder="phone number..."
             name="phoneNumber"
             onChange={handleUserInput}
             required
           />
         </div>
-        <div className="form-group mt-3">
-          <div className="card p-3" style={{ background: "ghostwhite" }}>
-            <h5>Grand Total : ${grandTotal.toFixed(2)}</h5>
-            <h5>No of items : {totalItems}</h5>
+        <div className="col total__container">
+          <h2>Total</h2>
+          <hr />
+          <div className="row" style={{ justifyContent: "space-between", width: "100%" }}>
+            <p className="p-text">No of Item</p>
+            <p className="total__text">{totalItems}</p>
+          </div>
+          <div className="row" style={{ justifyContent: "space-between", width: "100%" }}>
+            <p className="p-text">Grand Total</p>
+            <p className="total__text">${grandTotal.toFixed(2)}</p>
           </div>
         </div>
         <button
           type="submit"
-          className="btn btn-lg btn-success form-control mt-3"
+          className="btn btn__accent"
           disabled={loading || shoppingCartFromStore.length == 0}
         >
-          {loading ? <MiniLoader /> : "Looks Good? Place Order!"}
+          {loading ? <MiniLoader /> : "Place order"}
         </button>
       </form>
     </div>

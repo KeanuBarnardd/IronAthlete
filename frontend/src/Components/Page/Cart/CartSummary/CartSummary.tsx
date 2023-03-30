@@ -46,7 +46,7 @@ function CartSummary() {
   };
 
   return (
-    <div className="col">
+    <div className="col summary__container">
       <h1 style={{ marginBottom: "10px" }}>Cart Summary</h1>
       <hr style={{ marginBottom: "15px" }} />
       <div className="col" style={{ gap: "15px", width: "100%" }}>

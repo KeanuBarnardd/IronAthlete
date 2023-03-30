@@ -7,7 +7,7 @@ function ShoppingCart() {
   return (
     <div className="app__flex">
       <hr />
-      <div className="app__container-width app__container" style={{ gap: "30px" }}>
+      <div className="app__container-width app__container shopping__cart-container" style={{ gap: "30px" }}>
         <CartSummary />
 
         <CartPickUpDetails />
