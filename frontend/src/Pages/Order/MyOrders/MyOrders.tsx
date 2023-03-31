@@ -14,9 +14,9 @@ function MyOrders() {
     <>
       {isLoading && <MainLoader />}
       {!isLoading && (
-        <div className="app__flex" style={{ paddingBottom: "16rem" }}>
+        <div className="app__flex" style={{ paddingBottom: "16rem", backgroundColor:"var(--grey-000)" }}>
           <div className="app__container-width app__container col">
-            <h1 className="text-success">My Orders</h1>
+            <h1 className="text-success" style={{marginBottom:"10px"}}>My Orders</h1>
             <hr />
 
             {data?.apiResponse.result.length > 0 && (

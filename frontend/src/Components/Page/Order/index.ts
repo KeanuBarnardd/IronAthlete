@@ -1,2 +1,2 @@
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "../OrderSummary/OrderSummary";
 export { OrderSummary };

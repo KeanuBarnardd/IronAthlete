@@ -10,7 +10,7 @@ import AccessDenied from "./AccessDenied";
 import Payment from "./Payment";
 import OrderConfirmed from "./Order/OrderConfirmed";
 import MyOrders from "./Order/MyOrders/MyOrders";
-import OrderDetails from "./Order/OrderDetails";
+import OrderDetails from "./Order/OrderDetails/OrderDetails";
 import AllOrders from "./Order/AllOrders/AllOrders";
 import MenuItemList from "./MenuItem/MenuItemList/MenuItemList";
 import MenuItemUpsert from "./MenuItem/MenuItemUpsert/MenuItemUpsert";

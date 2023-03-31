@@ -1,0 +1,37 @@
+.order__summary-parent {
+  width: 100%;
+  max-width: 400px;
+
+  .status__tag {
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .order__summary-content {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  h1,h2{
+    color: var(--grey-700);
+  }
+  h2{
+    margin-top: 15px;
+  }
+
+  h4{
+    color: var(--grey-600);
+  }
+
+  .row{
+    margin-top: 10px;
+    justify-content: flex-end;
+    .btn{
+      padding: 0.7rem;
+    }
+  }
+}

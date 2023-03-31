@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGetOrderDetailsQuery } from "../../Apis/orderApi";
-import { OrderSummary } from "../../Components/Page/Order";
+import { useGetOrderDetailsQuery } from "../../../Apis/orderApi";
+import { OrderSummary } from "../../../Components/Page/Order";
 
 function OrderDetails() {
   const { id } = useParams();
@@ -23,13 +23,12 @@ function OrderDetails() {
   }
 
   return (
-    <div
-      className="container my-5 mx-auto p-5 w-100"
-      style={{ maxWidth: "750px", paddingTop:"5rem" }}
-    >
-      {!isLoading && orderDetails && userInput && (
-        <OrderSummary data={orderDetails} userInput={userInput} />
-      )}
+    <div className="app__flex" style={{backgroundColor:"var(--grey-000)"}}>
+      <div className="app__container app__container-width">
+        {!isLoading && orderDetails && userInput && (
+          <OrderSummary data={orderDetails} userInput={userInput} />
+        )}
+      </div>
     </div>
   );
 }
