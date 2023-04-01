@@ -10,7 +10,7 @@ function Payment() {
     state: { apiResult, userInput },
   } = useLocation();
   const stripePromise = loadStripe(
-    "pk_test_51MG6xmDU3OjDrP4GJV8avgtFNNGxikOffHWtYgncDFkahat38KLX3foPPgFbk0JHNG2FmYhIpSNl2lqbnR3uEfRM00Bv0LptTW"
+    "pk_test_51MbwiwGg3VC7gPnxcbXkjmadqwDdUbeFNbBPKVuhVfv1k4Aq3dL4Nsk3FmWPcRitguVrG5WPUwZINFrMPSrvk08O00flFKZ7K7"
   );
   const options = {
     // passing the client secret obtained from the server
@@ -18,16 +18,14 @@ function Payment() {
   };
   return (
     <Elements stripe={stripePromise} options={options}>
-      <div className="container m-5 p-5" style={{ paddingTop: "5rem" }}>
-        <div className="row">
+      <div className="app__flex" style={{ width: "100%" }}>
+        <div className="app__container-width app__container row" style={{ gap: "40px" }}>
           <div className="col-md-7">
             <OrderSummary data={apiResult} userInput={userInput} />
           </div>
-          <div className="col-md-4 offset-md-1">
-            <h3 className="text-success">Payment</h3>
-            <div className="mt-5">
-              <PaymentForm data={apiResult} userInput={userInput} />
-            </div>
+          <div className="col">
+            <h3>Payment</h3>
+            <PaymentForm data={apiResult} userInput={userInput} />
           </div>
         </div>
       </div>

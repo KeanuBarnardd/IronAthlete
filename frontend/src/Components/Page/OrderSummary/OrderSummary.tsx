@@ -53,9 +53,13 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
           <div className="order__summary-top">
             <h1 style={{ marginBottom: "5px" }}>Order Summary</h1>
             <hr style={{ marginBottom: "10px" }} />
-            <span className="status__tag" style={{ backgroundColor: "var(--grey-300)" }}>
-              {data.status}
-            </span>
+            {!data.status ? (
+              <></>
+            ) : (
+              <span className="status__tag" style={{ backgroundColor: "var(--grey-300)" }}>
+                {data.status}
+              </span>
+            )}
           </div>
           <div className="order__summary-content">
             <p className="p-text">Name : {userInput.name}</p>
@@ -69,11 +73,11 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
                     <div key={index}>
                       <div>
                         <p>{cartItem.menuItem?.name}</p>
-                        <p>
+                        <p style={{ marginBottom: "5px" }}>
                           ${cartItem.menuItem?.price} x {cartItem.quantity} =
+                          <span>${(cartItem.menuItem?.price ?? 0) * (cartItem.quantity ?? 0)}</span>
                         </p>
                       </div>
-                      <p>${(cartItem.menuItem?.price ?? 0) * (cartItem.quantity ?? 0)}</p>
                     </div>
                   );
                 })}
@@ -85,7 +89,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
               </div>
             </div>
           </div>
-          <div >
+          <div>
             {userData.role == SD_Roles.ADMIN && (
               <div className="row">
                 {data.status! !== SD_Status.CANCELLED && data.status! !== SD_Status.COMPLETED && (
@@ -93,9 +97,13 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
                     Cancel
                   </button>
                 )}
-                <button className={`btn btn__accent`} onClick={handleNextStatus}>
-                  {nextStatus.value}
-                </button>
+                {!nextStatus.value ? (
+                  <></>
+                ) : (
+                  <button className={`btn btn__accent`} onClick={handleNextStatus}>
+                    {nextStatus.value}
+                  </button>
+                )}
               </div>
             )}
           </div>

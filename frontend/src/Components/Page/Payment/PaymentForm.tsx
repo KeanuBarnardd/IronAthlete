@@ -68,7 +68,9 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
       });
 
       if (response) {
+     
         if (response.data?.result.status === SD_Status.CONFIRMED) {
+          console.log(response.data.result.orderHeaderId)
           navigate(
             `/order/orderConfirmed/${response.data.result.orderHeaderId}`
           );
@@ -84,7 +86,7 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
       <PaymentElement />
       <button
         disabled={!stripe || isProcessing}
-        className="btn btn-success mt-5 w-100"
+        className="btn btn__accent"
       >
         <span id="button-text">
           {isProcessing ? "Processing ... " : "Submit Order"}
