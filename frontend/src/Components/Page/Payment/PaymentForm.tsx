@@ -1,8 +1,4 @@
-import {
-  useStripe,
-  useElements,
-  PaymentElement,
-} from "@stripe/react-stripe-js";
+import { useStripe, useElements, PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useCreateOrderMutation } from "../../../Apis/orderApi";
 import { toastNotify } from "../../../Helper";
@@ -62,18 +58,13 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
         stripePaymentIntentID: data.stripePaymentIntentId,
         applicationUserId: data.userId,
         status:
-          result.paymentIntent.status === "succeeded"
-            ? SD_Status.CONFIRMED
-            : SD_Status.PENDING,
+          result.paymentIntent.status === "succeeded" ? SD_Status.CONFIRMED : SD_Status.PENDING,
       });
 
       if (response) {
-     
         if (response.data?.result.status === SD_Status.CONFIRMED) {
-          console.log(response.data.result.orderHeaderId)
-          navigate(
-            `/order/orderConfirmed/${response.data.result.orderHeaderId}`
-          );
+          console.log(response.data.result.orderHeaderId);
+          navigate(`/order/orderConfirmed/${response.data.result.orderHeaderId}`);
         } else {
           navigate("/failed");
         }
@@ -84,14 +75,16 @@ const PaymentForm = ({ data, userInput }: orderSummaryProps) => {
   return (
     <form onSubmit={handleSubmit}>
       <PaymentElement />
+      <div className="row" style={{justifyContent:"flex-end"}}>
       <button
+        style={{ padding: "0.5rem 1rem", marginTop: "20px" }}
         disabled={!stripe || isProcessing}
         className="btn btn__accent"
       >
-        <span id="button-text">
-          {isProcessing ? "Processing ... " : "Submit Order"}
-        </span>
+        <span id="button-text">{isProcessing ? "Processing ... " : "Submit Order"}</span>
       </button>
+      </div>
+      
     </form>
   );
 };

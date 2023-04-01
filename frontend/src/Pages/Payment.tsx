@@ -18,13 +18,13 @@ function Payment() {
   };
   return (
     <Elements stripe={stripePromise} options={options}>
-      <div className="app__flex" style={{ width: "100%" }}>
-        <div className="app__container-width app__container row" style={{ gap: "40px" }}>
-          <div className="col-md-7">
-            <OrderSummary data={apiResult} userInput={userInput} />
-          </div>
+      <div className="app__flex">
+        <div className="app__container-width app__container app__flex row" style={{ gap: "40px",alignItems:"flex-start" }}>
+          <OrderSummary data={apiResult} userInput={userInput} />
+
           <div className="col">
-            <h3>Payment</h3>
+            <h1 style={{ marginBottom: "5px", color: "var(--grey-700)" }}>Payment</h1>
+            <hr style={{ marginBottom: "10px" }} />
             <PaymentForm data={apiResult} userInput={userInput} />
           </div>
         </div>

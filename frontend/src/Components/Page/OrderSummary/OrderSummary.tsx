@@ -73,7 +73,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
                     <div key={index}>
                       <div>
                         <p>{cartItem.menuItem?.name}</p>
-                        <p style={{ marginBottom: "5px" }}>
+                        <p style={{ marginBottom: "5px", display:"flex", justifyContent:"space-between" }}>
                           ${cartItem.menuItem?.price} x {cartItem.quantity} =
                           <span>${(cartItem.menuItem?.price ?? 0) * (cartItem.quantity ?? 0)}</span>
                         </p>
@@ -93,7 +93,7 @@ function OrderSummary({ data, userInput }: orderSummaryProps) {
             {userData.role == SD_Roles.ADMIN && (
               <div className="row">
                 {data.status! !== SD_Status.CANCELLED && data.status! !== SD_Status.COMPLETED && (
-                  <button className="btn btn__dark" onClick={handleCancel}>
+                  <button className="btn btn__dark" style={{padding:"0.6rem 2rem", marginTop:"10px"}} onClick={handleCancel}>
                     Cancel
                   </button>
                 )}
