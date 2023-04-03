@@ -1,6 +1,6 @@
 .app__container {
   padding: 14rem 0rem;
-  i {
+  .confirmed_logo {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,7 +20,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    i{
+    .confirmed_logo{
       width: min-content;
     }
   }

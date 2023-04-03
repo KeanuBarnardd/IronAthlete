@@ -7,7 +7,7 @@ function OrderConfirmed() {
   return (
     <div className="app__flex">
       <div className="app__container-width  app__container " style={{ gap: "20px ", justifyContent:"center"}}>
-        <i className="bi bi-check2-circle "></i>
+        <i className="bi bi-check2-circle confirmed_logo "></i>
         <div className="">
           <h1 style={{color:"var(--grey-600)"}}>Order has been Confirmed!</h1>
           <hr />
