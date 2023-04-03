@@ -8,7 +8,7 @@ import AuthenticationTest from "./AuthenticationTest";
 import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
 import AccessDenied from "./AccessDenied";
 import Payment from "./Payment";
-import OrderConfirmed from "./Order/OrderConfirmed";
+import OrderConfirmed from "./Order/OrderConfirmed/OrderConfirmed";
 import MyOrders from "./Order/MyOrders/MyOrders";
 import OrderDetails from "./Order/OrderDetails/OrderDetails";
 import AllOrders from "./Order/AllOrders/AllOrders";

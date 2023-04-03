@@ -1,0 +1,27 @@
+.app__container {
+  padding: 14rem 0rem;
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black-color);
+    font-size: 4rem;
+    padding: 1rem 1rem;
+    border-radius: 100%;
+    color: var(--accent-color);
+  }
+
+  h2 {
+    color: var(--grey-500);
+  }
+
+  @media screen and (max-width: 500px) {
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    i{
+      width: min-content;
+    }
+  }
+}
