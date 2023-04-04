@@ -6,7 +6,7 @@ import Register from "./Register";
 import Login from "./Login";
 
 import AccessDenied from "./AccessDenied";
-import Payment from "./Payment";
+import Payment from "./Payment/Payment";
 import OrderConfirmed from "./Order/OrderConfirmed/OrderConfirmed";
 import MyOrders from "./Order/MyOrders/MyOrders";
 import OrderDetails from "./Order/OrderDetails/OrderDetails";

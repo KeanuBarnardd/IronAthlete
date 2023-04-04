@@ -38,52 +38,69 @@ export default function MobileNav(props: Props) {
         </NavLink>
         {props.userData.role == SD_Roles.ADMIN ? (
           <>
-           <button
-            style={{ display: "flex", gap: "15px" }}
-            onClick={() => {
-              toggleOrders ? setToggleOrders(false) : setToggleOrders(true);
-            }}
-            className="mobile__nav-link"
-          >
-            Orders <i className="bi bi-chevron-compact-down"></i>
-          </button>
-          <div className={`dropdown__container ${toggleOrders && props.toggleNav ? "active" : ""}`}>
-          <li
-            className="mobile__nav-link"
-            onClick={() => {
-              navigate("menuItem/menuitemlist");
-              props.setToggleNav(false);
-            }}
-          >
-            Products
-          </li>
-          <li
-            className="mobile__nav-link"
-            onClick={() => {
-              navigate("order/myorders");
-              props.setToggleNav(false);
-            }}
-          >
-            My Orders
-          </li>
-          <li
-            className="mobile__nav-link"
-            onClick={() => {
-              navigate("order/allOrders");
-              props.setToggleNav(false);
-            }}
-          >
-            All Orders
-          </li>
-        </div>
+            <button
+              style={{ display: "flex", gap: "15px" }}
+              onClick={() => {
+                toggleOrders ? setToggleOrders(false) : setToggleOrders(true);
+              }}
+              className="mobile__nav-link"
+            >
+              Orders <i className="bi bi-chevron-compact-down"></i>
+            </button>
+            <div
+              className={`dropdown__container ${toggleOrders && props.toggleNav ? "active" : ""}`}
+            >
+              <li
+                className="mobile__nav-link"
+                onClick={() => {
+                  navigate("menuItem/menuitemlist");
+                  props.setToggleNav(false);
+                }}
+              >
+                Products
+              </li>
+              <li
+                className="mobile__nav-link"
+                onClick={() => {
+                  navigate("order/myorders");
+                  props.setToggleNav(false);
+                }}
+              >
+                My Orders
+              </li>
+              <li
+                className="mobile__nav-link"
+                onClick={() => {
+                  navigate("order/allOrders");
+                  props.setToggleNav(false);
+                }}
+              >
+                All Orders
+              </li>
+            </div>
           </>
-         
         ) : (
-          <NavLink to="/login" className="mobile__nav-link">
-            Orders
-          </NavLink>
+          <>
+            {props.userData.role == SD_Roles.CUTOMER ? (
+              <NavLink
+                onClick={() => props.setToggleNav(false)}
+                to="/order/myOrders"
+                className="mobile__nav-link"
+              >
+                Orders
+              </NavLink>
+            ) : (
+              <NavLink
+                onClick={() => props.setToggleNav(false)}
+                to="/login"
+                className="mobile__nav-link"
+              >
+                Orders
+              </NavLink>
+            )}
+          </>
         )}
-       
+
         <NavLink onClick={() => props.setToggleNav(false)} className="mobile__nav-link" to="/store">
           Contact
         </NavLink>

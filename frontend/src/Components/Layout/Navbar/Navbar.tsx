@@ -89,7 +89,7 @@ function Navbar() {
             </NavLink>
             <NavLink className="nav-link" to="/contact">
               Contact
-            </NavLink>
+          </NavLink>
 
             {userData.role == SD_Roles.ADMIN ? (
               <button

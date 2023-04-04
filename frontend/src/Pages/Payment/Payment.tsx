@@ -2,8 +2,8 @@ import React from "react";
 import { useLocation } from "react-router";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import { PaymentForm } from "../Components/Page/Payment";
-import { OrderSummary } from "../Components/Page/Order";
+import { PaymentForm } from "../../Components/Page/Payment";
+import { OrderSummary } from "../../Components/Page/Order";
 
 function Payment() {
   const {
@@ -19,7 +19,10 @@ function Payment() {
   return (
     <Elements stripe={stripePromise} options={options}>
       <div className="app__flex">
-        <div className="app__container-width app__container app__flex row" style={{ gap: "40px",alignItems:"flex-start" }}>
+        <div
+          className="app__container-width app__container app__flex row"
+          style={{ gap: "40px", alignItems: "flex-start" }}
+        >
           <OrderSummary data={apiResult} userInput={userInput} />
 
           <div className="col">
@@ -29,6 +32,7 @@ function Payment() {
           </div>
         </div>
       </div>
+      .
     </Elements>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useGetOrderDetailsQuery } from "../../../Apis/orderApi";
 import { OrderSummary } from "../../../Components/Page/Order";
-
+import "./OrderDetails.scss";
 function OrderDetails() {
   const { id } = useParams();
   const { data, isLoading } = useGetOrderDetailsQuery(id);
@@ -23,8 +23,8 @@ function OrderDetails() {
   }
 
   return (
-    <div className="app__flex" style={{backgroundColor:"var(--grey-000)"}}>
-      <div className="app__container app__container-width">
+    <div className="app__flex" style={{ backgroundColor: "var(--grey-000)" }}>
+      <div className="app__container app__container-width order__details__pad">
         {!isLoading && orderDetails && userInput && (
           <OrderSummary data={orderDetails} userInput={userInput} />
         )}

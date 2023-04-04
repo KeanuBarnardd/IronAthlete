@@ -37,6 +37,12 @@ function App() {
     skip: skip,
   });
 
+
+  // Note in case someone checks the console and wonders why there are so many CORS errors. 
+  console.log(
+    "Ignore the below errors, Currently working on fixing them right now, Project still works as intended just taking some time to fix them. Thanks :) \n\n\n\n\n\n\n\n\n\n"
+  );
+
   useEffect(() => {
     const localToken = localStorage.getItem("token");
     if (localToken) {
