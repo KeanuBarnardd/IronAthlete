@@ -49,7 +49,7 @@ function Login() {
     <AuthFormContainer
       title={
         <h1>
-          The best food is right here <span>log in </span>and begin shopping
+          Let's get to work, Iron Athlete! <span>Login</span>  now to start <span>your</span>  fitness journey.
         </h1>
       }
       subtitle={"Don't wait to get healthy eat with the best food people now. "}

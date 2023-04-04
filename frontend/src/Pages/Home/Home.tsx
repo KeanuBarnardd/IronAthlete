@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../../Components/Page/Common";
+import { Header, MainLoader } from "../../Components/Page/Common";
 import { MenuItemList } from "../../Components/Page/Home";
 import { useGetMenuItemsQuery } from "../../Apis/menuItemApi";
 import menuItemModel from "./../../Interfaces/menuItemModel";
@@ -132,7 +132,11 @@ function Home() {
           >
             Best Sellers
           </h1>
+          {isLoading && <div className="app__flex" style={{marginTop:"20px"}}>
+          <MainLoader/>
+          </div>} 
           <div className="home__items-grid">
+      
             {!isLoading && (
               <>
                 {data.result.filter(getBestSellers).map((item: menuItemModel, index: number) => (

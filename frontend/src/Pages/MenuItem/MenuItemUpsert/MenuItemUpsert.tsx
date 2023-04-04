@@ -6,16 +6,15 @@ import {
 } from "../../../Apis/menuItemApi";
 import { inputHelper, toastNotify } from "../../../Helper";
 import { useNavigate, useParams } from "react-router-dom";
-import { MainLoader } from "../../../Components/Page/Common";
 import { SD_Categories } from "../../../Utility/SD";
+import { MainLoader } from "../../../Components/Page/Common";
 import "./MenuItemUpsert.scss";
-
 const Categories = [
   SD_Categories.GYM,
   SD_Categories.SPORTS,
   SD_Categories.FOOTWEAR,
   SD_Categories.CLOTHING,
-  SD_Categories.ACCESORIES
+  SD_Categories.ACCESORIES,
 ];
 
 const menuItemData = {
@@ -130,94 +129,97 @@ function MenuItemUpsert() {
 
   return (
     <div className="app__flex">
-      <div  className=" app__container-width app__container" >
-        {loading && <MainLoader />}
-        <div  className="col form__parent">
-          <form method="post" encType="multipart/form-data" onSubmit={handleSubmit}>
-            <div className="row">
-              <img src={imageToDisplay} alt="" />
-              <div className="col form__input-side">
-                <h1>{id ? "Edit Menu Item" : "Add Menu Item"}</h1>
-                <hr style={{ marginBottom: "10px" }} />
-                <p className="p-text"></p>
-                <div className="input__container">
-                  <p className="p-text">Product Name</p>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Enter Name"
-                    required
-                    name="name"
-                    value={menuItemInputs.name}
-                    onChange={handleMenuItemInput}
-                  />
-                </div>
-                <div className="input__container">
-                  <p className="p-text">Product Description</p>
-                  <textarea
-                    placeholder="Enter Description"
-                    name="description"
-                    rows={5}
-                    value={menuItemInputs.description}
-                    onChange={handleMenuItemInput}
-                  ></textarea>
-                </div>
+      <div className=" app__container-width app__container">
+        {loading ? (
+          <MainLoader />
+        ) : (
+          <div className="col form__parent">
+            <form method="post" encType="multipart/form-data" onSubmit={handleSubmit}>
+              <div className="row">
+                <img src={imageToDisplay} alt="" />
+                <div className="col form__input-side">
+                  <h1>{id ? "Edit Menu Item" : "Add Menu Item"}</h1>
+                  <hr style={{ marginBottom: "10px" }} />
+                  <p className="p-text"></p>
+                  <div className="input__container">
+                    <p className="p-text">Product Name</p>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Enter Name"
+                      required
+                      name="name"
+                      value={menuItemInputs.name}
+                      onChange={handleMenuItemInput}
+                    />
+                  </div>
+                  <div className="input__container">
+                    <p className="p-text">Product Description</p>
+                    <textarea
+                      placeholder="Enter Description"
+                      name="description"
+                      rows={5}
+                      value={menuItemInputs.description}
+                      onChange={handleMenuItemInput}
+                    ></textarea>
+                  </div>
 
-                <div className="input__container">
-                  <p className="p-text">Product Special Tag</p>
-                  <input
-                    type="text"
-                    className="form-control mt-3"
-                    placeholder="Enter Special Tag"
-                    name="specialTag"
-                    value={menuItemInputs.specialTag}
-                    onChange={handleMenuItemInput}
-                  />
-                </div>
+                  <div className="input__container">
+                    <p className="p-text">Product Special Tag</p>
+                    <input
+                      type="text"
+                      className="form-control mt-3"
+                      placeholder="Enter Special Tag"
+                      name="specialTag"
+                      value={menuItemInputs.specialTag}
+                      onChange={handleMenuItemInput}
+                    />
+                  </div>
 
-                <div className="input__container">
-                  <p className="p-text">Product Category</p>
-                  <select
-                    placeholder="Enter Category"
-                    name="category"
-                    value={menuItemInputs.category}
-                    onChange={handleMenuItemInput}
-                  >
-                    {Categories.map((category) => (
-                      <option value={category}>{category}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="input__container">
-                  <p className="p-text">Product Price</p>
-                  <input
-                    type="number"
-                    className="form-control mt-3"
-                    required
-                    placeholder="Enter Price"
-                    name="price"
-                    value={menuItemInputs.price}
-                    onChange={handleMenuItemInput}
-                  />
-                </div>
+                  <div className="input__container">
+                    <p className="p-text">Product Category</p>
+                    <select
+                      placeholder="Enter Category"
+                      name="category"
+                      value={menuItemInputs.category}
+                      onChange={handleMenuItemInput}
+                    >
+                      {Categories.map((category) => (
+                        <option value={category}>{category}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="input__container">
+                    <p className="p-text">Product Price</p>
+                    <input
+                      type="number"
+                      className="form-control mt-3"
+                      required
+                      placeholder="Enter Price"
+                      name="price"
+                      value={menuItemInputs.price}
+                      onChange={handleMenuItemInput}
+                    />
+                  </div>
 
-                <input type="file" onChange={handleFileChange} className="form-control mt-3" />
-                <div className="row">
-                  <button type="submit" className="btn btn__accent">
-                    {id ? "Update" : "Create"}
-                  </button>
+                  <input type="file" onChange={handleFileChange} className="form-control mt-3" />
+                  <div className="row">
+                    <button type="submit" className="btn btn__accent">
+                      {id ? "Update" : "Create"}
+                    </button>
 
-                  <button
-                    onClick={() => navigate("/menuItem/menuitemlist")}
-                    className="btn btn__outline-dark"
-                  >
-                    Back to Menu Items
-                  </button>
+                    <button
+                      onClick={() => navigate("/menuItem/menuitemlist")}
+                      className="btn btn__outline-dark"
+                    >
+                      Back to Menu Items
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          </form>
-        </div>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );

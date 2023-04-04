@@ -27,8 +27,7 @@ function MenuItemList() {
 
   return (
     <>
-      {isLoading && <MainLoader />}
-      {!isLoading && (
+      {!isLoading ? (
         <div className="app__flex" style={{ backgroundColor: "var(--grey-000)" }}>
           <div className="app__container-width app__container">
             <div className="col product__list-parent">
@@ -77,11 +76,11 @@ function MenuItemList() {
                       <p>${menuItem.price}</p>
                       <p> {menuItem.specialTag}</p>
                       <div className="row ">
-                        <button className="btn btn__outline-dark">
-                          <i
-                            className="bi bi-pencil-fill"
-                            onClick={() => navigate("/menuitem/menuitemupsert/" + menuItem.id)}
-                          ></i>
+                        <button
+                          className="btn btn__outline-dark"
+                          onClick={() => navigate("/menuitem/menuitemupsert/" + menuItem.id)}
+                        >
+                          <i className="bi bi-pencil-fill"></i>
                         </button>
                         <button
                           className="btn btn__outline-dark"
@@ -96,6 +95,10 @@ function MenuItemList() {
               </div>
             </div>
           </div>
+        </div>
+      ) : (
+        <div className="app__flex app__container" style={{height:"60vh"}}>
+          <MainLoader/>
         </div>
       )}
     </>

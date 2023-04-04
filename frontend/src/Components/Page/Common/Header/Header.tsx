@@ -72,7 +72,12 @@ export default function Header() {
                     {slideImage.btn1?.btnText} <i className={slideImage.btn1?.btnIcon}></i>
                   </button>
                   {typeof slideImage.btn2 != "undefined" ? (
-                    <button className="btn btn__outline-white"> {slideImage.btn2.btnText} </button>
+                    <button
+                      className="btn btn__outline-white"
+                      onClick={() => navigate("/login")}
+                    >
+                      {slideImage.btn2.btnText}
+                    </button>
                   ) : null}
                 </div>
               </div>

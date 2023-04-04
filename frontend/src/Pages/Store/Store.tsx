@@ -6,7 +6,7 @@ import { useGetMenuItemsQuery } from "../../Apis/menuItemApi";
 import menuItemModel from "./../../Interfaces/menuItemModel";
 import { setMenuItem, setSearchItem } from "../../Storage/Redux/menuItemSlice";
 import { MainLoader } from "../../Components/Page/Common";
-import { BeatLoader } from "react-spinners";
+
 // Filter/Category/Search specific
 import { useDispatch, useSelector } from "react-redux";
 import { SD_SortTypes } from "../../Utility/SD";
@@ -157,8 +157,8 @@ export default function Shop() {
       </div>
 
       {isLoading ? (
-        <div className="app__flex app__container">
-          <BeatLoader color="#1c1c1d" size={16} />
+        <div className="app__flex app__container" style={{padding:"14rem 0rem"}}>
+          <MainLoader />
         </div>
       ) : (
         <div className="app__flex " style={{ marginBottom: "70px" }}>

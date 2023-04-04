@@ -5,18 +5,27 @@ import { RootState } from "../../../Storage/Redux/store";
 import { useGetAllOrdersQuery } from "../../../Apis/orderApi";
 import OrderList from "../../../Components/Page/Order/OrderList/OrderList";
 import { MainLoader } from "../../../Components/Page/Common";
-import { SD_Status } from "../../../Utility/SD";
+
 
 function MyOrders() {
   const userId = useSelector((state: RootState) => state.userAuthStore.id);
   const { data, isLoading } = useGetAllOrdersQuery({ userId });
   return (
     <>
-      {isLoading && <MainLoader />}
+      {isLoading && (
+        <div className="app__container app__flex" style={{height:"60vh"}}>
+          <MainLoader />
+        </div>
+      )}
       {!isLoading && (
-        <div className="app__flex" style={{ paddingBottom: "16rem", backgroundColor:"var(--grey-000)" }}>
+        <div
+          className="app__flex"
+          style={{ paddingBottom: "16rem", backgroundColor: "var(--grey-000)" }}
+        >
           <div className="app__container-width app__container col">
-            <h1 className="text-success" style={{marginBottom:"10px"}}>My Orders</h1>
+            <h1 className="text-success" style={{ marginBottom: "10px" }}>
+              My Orders
+            </h1>
             <hr />
 
             {data?.apiResponse.result.length > 0 && (

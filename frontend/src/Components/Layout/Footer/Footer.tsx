@@ -13,9 +13,7 @@ function Footer() {
             <h1>IronAthelete</h1>
           </div>
           <p className="p-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque at eveniet aperiam ad
-            minima laboriosam adipisci, esse velit ipsam iusto aspernatur neque sapiente iste atque
-            voluptatibus possimus odit totam praesentium.
+          Iron Athlete, your one-stop destination for all fitness enthusiasts. From apparel to supplements, we have it all. We pride ourselves on selling you high quality amazing products with top tier service. 
           </p>
           <div className="row">
             <i className="bi bi-facebook"></i>
@@ -54,13 +52,13 @@ function Footer() {
         <div className="col">
           <h1>Get our newsletter</h1>
           <p className="p-text" style={{marginTop:"5px"}}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis accusamus temporibus et odio harum dolorem velit, quam fugit consectetur itaque natus? Architecto aperiam nemo libe
+          Don't miss out on the latest product launches and special deals - sign up for our newsletter today!
           </p>
           <div className="row join__banner-input-container">
             <input placeholder="Enter your email" type="text" />
             <button className="btn">Join Now</button>
           </div>
-          <p style={{color:"var(--grey-400)"}} className="p-text">Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
+          <p style={{color:"var(--grey-400)"}} className="p-text">Stronger Every Day.</p>
         </div>
       </footer>
     </div>

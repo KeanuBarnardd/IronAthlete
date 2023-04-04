@@ -1,28 +1,7 @@
 import React from "react";
-
+import { BeatLoader } from "react-spinners";
 function MainLoader() {
-  return (
-    <div
-      style={{
-        position: "fixed",
-        top: "0",
-        left: "0",
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
-      <div
-        className="spinner-border text-warning"
-        style={{
-          width: "4rem",
-          height: "4rem",
-        }}
-      ></div>
-    </div>
-  );
+  return <BeatLoader color="#1c1c1d" size={16} />;
 }
 
 export default MainLoader;
