@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import React from "react";
 import "./OrderConfirmed.scss";
 
@@ -12,7 +12,8 @@ function OrderConfirmed() {
           <h1 style={{color:"var(--grey-600)"}}>Order has been Confirmed!</h1>
           <hr />
           <h2>Your order ID: {id}</h2>
-          <p className="p-text">We will soon start to cook the delicous food you ordered. </p>
+          <p className="p-text">We will begin packaging your order shortly </p>
+          <NavLink style={{marginTop:"10px"}} to={"/"}>Return Home</NavLink>
         </div>
       </div>
     </div>

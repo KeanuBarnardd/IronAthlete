@@ -1,0 +1,22 @@
+.payment__info-container {
+  padding: 0.3rem;
+  background-color: var(--grey-100);
+  margin-top: 10px;
+  border: 1px solid var(--accent-color);
+  h3 {
+    color: var(--grey-400);
+  }
+
+  .details__container {
+    p{
+      margin-top: 5px;
+      font-weight: bold;
+      color: var(--grey-600);
+      span{
+        background-color: white;
+        padding: 0rem 0.2rem;
+
+      }
+    }
+  }
+}

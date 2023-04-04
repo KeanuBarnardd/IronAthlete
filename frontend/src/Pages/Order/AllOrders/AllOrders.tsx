@@ -117,7 +117,7 @@ function AllOrders() {
                   </button>
                 </div>
 
-                <select
+                {/* <select
                   onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
                     handlePageOptionChange("change", Number(e.target.value));
                     setCurrentPageSize(Number(e.target.value));
@@ -129,7 +129,7 @@ function AllOrders() {
                   <option>10 Rows </option>
                   <option>15 Rows</option>
                   <option>20 Rows</option>
-                </select>
+                </select> */}
               </div>
             </div>
 

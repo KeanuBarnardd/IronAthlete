@@ -1,5 +1,11 @@
 .order__confirmed-container {
   padding: 14rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  text-align: center;
   .confirmed_logo {
     display: flex;
     align-items: center;
@@ -11,6 +17,10 @@
     color: var(--accent-color);
   }
 
+  i {
+    width: 100px;
+  }
+
   h2 {
     color: var(--grey-500);
   }
@@ -20,7 +30,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    .confirmed_logo{
+    .confirmed_logo {
       width: min-content;
     }
   }

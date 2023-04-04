@@ -24,6 +24,14 @@ function OrderList({ isLoading, orderData }: OrderListProps) {
             <p className="p-text"></p>
           </div>
           <div className="order__item-grid">
+            {orderData.length === 0 && (
+              <div className="app__flex">
+                <div className="app__container col">
+                  <h1>Can't find orders you are looking for</h1>
+                  <p className="p-text">There may be no products ordered or you have to adjust your search.  </p>
+                </div>
+              </div>
+            )}
             {orderData.map((orderItem: orderHeaderModel) => {
               const badgeColor = getStatusColor(orderItem.status!);
               return (

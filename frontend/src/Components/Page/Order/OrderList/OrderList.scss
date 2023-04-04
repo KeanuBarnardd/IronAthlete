@@ -2,6 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   text-align: center;
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .order__item {
@@ -20,7 +24,21 @@
   align-items: center;
   box-shadow: var(--box-shadow-6);
   border-radius: 5px;
-  .btn{
+
+  .order__item-val {
+    display: none;
+  }
+  .btn {
     padding: 0.3rem;
+  }
+  @media screen and (max-width: 600px) {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    .order__item-val {
+      span {
+        display: flex;
+      }
+    }
   }
 }

@@ -4,6 +4,7 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { PaymentForm } from "../../Components/Page/Payment";
 import { OrderSummary } from "../../Components/Page/Order";
+import "./Payment.scss";
 
 function Payment() {
   const {
@@ -29,10 +30,24 @@ function Payment() {
             <h1 style={{ marginBottom: "5px", color: "var(--grey-700)" }}>Payment</h1>
             <hr style={{ marginBottom: "10px" }} />
             <PaymentForm data={apiResult} userInput={userInput} />
+            <div className="payment__info-container">
+              <h3>Note for testing: </h3>
+              <p className="p-text">Use these card details to test.</p>
+              <div className="details__container">
+                <p>
+                  Card No: <span>4242 4242 4242 4242</span>{" "}
+                </p>
+                <p>
+                  Expiration: <span>33/33</span>{" "}
+                </p>
+                <p>
+                  CVC: <span>333</span>{" "}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      .
     </Elements>
   );
 }

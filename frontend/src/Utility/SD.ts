@@ -6,7 +6,7 @@ export enum SD_Roles {
 export enum SD_Status {
   PENDING = "Pending",
   CONFIRMED = "Confirmed",
-  BEING_COOKED = "Being Cooked",
+  BEING_COOKED = "Being Packaged",
   READY_FOR_PICKUP = "Ready for Pickup",
   COMPLETED = "Completed",
   CANCELLED = "Cancelled",
