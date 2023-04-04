@@ -11,10 +11,11 @@ import { SD_Categories } from "../../../Utility/SD";
 import "./MenuItemUpsert.scss";
 
 const Categories = [
-  SD_Categories.APPETIZER,
-  SD_Categories.BEVERAGES,
-  SD_Categories.DESSERT,
-  SD_Categories.ENTREE,
+  SD_Categories.GYM,
+  SD_Categories.SPORTS,
+  SD_Categories.FOOTWEAR,
+  SD_Categories.CLOTHING,
+  SD_Categories.ACCESORIES
 ];
 
 const menuItemData = {

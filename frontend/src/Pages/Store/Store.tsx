@@ -6,7 +6,7 @@ import { useGetMenuItemsQuery } from "../../Apis/menuItemApi";
 import menuItemModel from "./../../Interfaces/menuItemModel";
 import { setMenuItem, setSearchItem } from "../../Storage/Redux/menuItemSlice";
 import { MainLoader } from "../../Components/Page/Common";
-
+import { BeatLoader } from "react-spinners";
 // Filter/Category/Search specific
 import { useDispatch, useSelector } from "react-redux";
 import { SD_SortTypes } from "../../Utility/SD";
@@ -142,64 +142,74 @@ export default function Shop() {
         }}
       >
         <div className="shop__banner-content app__container-width">
-        
           <div className="row join__banner-input-container">
-              <input
-                value={value}
-                onChange={handleChange}
-                placeholder="Search product name here..."
-                type="text"
-                name=""
-                id=""
-              ></input>
-              <button className="btn">Search</button>
-            </div>
-        </div>
-      </div>
-      <div className="app__flex " style={{ marginBottom: "70px" }}>
-        <div className="app__container-width ">
-          <div className="search__container row">
-            
-
-            <div className="filter__container row">
-              {categoryList.map((categoryName, index) => (
-                <button
-                  className={`category__buttons ${index === 0 && "active"}`}
-                  onClick={() => handleCategoryClick(index)}
-                  key={index}
-                >
-                  {categoryName}
-                </button>
-              ))}
-            </div>
-            <select name="" id="">
-              {sortOptions.map((sortType, index) => (
-                <option key={index} onClick={() => handleSortClick(index)}>
-                  {sortType}
-                </option>
-              ))}
-            </select>
+            <input
+              value={value}
+              onChange={handleChange}
+              placeholder="Search product name here..."
+              type="text"
+              name=""
+              id=""
+            ></input>
+            <button className="btn">Search</button>
           </div>
-          {isLoading && <p>Loading Content</p>}
-          {!isLoading && (
-            <div className="store__grid">
-              {menuItems.length > 0 &&
-                menuItems.map((menuItem: menuItemModel, index: number) => (
-                  <ProductCard
-                    id={menuItem.id}
-                    description={menuItem.description}
-                    image={menuItem.image}
-                    name={menuItem.name}
-                    category={menuItem.category}
-                    price={menuItem.price}
-                    specialTag={menuItem.specialTag}
-                    key={index}
-                  />
-                ))}
-            </div>
-          )}
         </div>
       </div>
+
+      {isLoading ? (
+        <div className="app__flex app__container">
+          <BeatLoader color="#1c1c1d" size={16} />
+        </div>
+      ) : (
+        <div className="app__flex " style={{ marginBottom: "70px" }}>
+          <div className="app__container-width ">
+            <div className="search__container row">
+              <div className="filter__container row">
+                {categoryList.map((categoryName, index) => (
+                  <button
+                    className={`category__buttons ${index === 0 && "active"}`}
+                    onClick={() => handleCategoryClick(index)}
+                    key={index}
+                  >
+                    {categoryName}
+                  </button>
+                ))}
+              </div>
+              <select name="" id="">
+                {sortOptions.map((sortType, index) => (
+                  <option key={index} onClick={() => handleSortClick(index)}>
+                    {sortType}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {!isLoading && (
+              <div className={`store__grid ${menuItems.length <= 2 ? "one__item" : ""}`}>
+                {menuItems.length > 0 ? (
+                  menuItems.map((menuItem: menuItemModel, index: number) => (
+                    <ProductCard
+                      id={menuItem.id}
+                      description={menuItem.description}
+                      image={menuItem.image}
+                      name={menuItem.name}
+                      category={menuItem.category}
+                      price={menuItem.price}
+                      specialTag={menuItem.specialTag}
+                      key={index}
+                    />
+                  ))
+                ) : (
+                  <div className="app__container app__container-width not__found col">
+                    <h1 className="">No Products found matching search</h1>
+                    <h2 className="">Try another search and you might find something you love. </h2>
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 }

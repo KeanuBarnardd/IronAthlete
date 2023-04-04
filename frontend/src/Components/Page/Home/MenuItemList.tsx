@@ -116,8 +116,8 @@ function MenuItemList() {
 
   return (
     <div className="container row">
-      <div className="my-3">
-        <ul className="nav w-100 d-flex justify-content-center">
+      <div>
+        <ul>
           {categoryList.map((categoryName, index) => (
             <li
               className="nav-item"
