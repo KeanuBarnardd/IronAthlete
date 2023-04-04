@@ -1,11 +1,10 @@
 import Home from "./Home/Home";
-import NotFound from "./NotFound";
+import NotFound from "./NotFound/NotFound";
 import MenuItemDetails from "./MenuItemDetails/MenuItemDetails";
 import ShoppingCart from "./ShoppingCart/ShoppingCart";
 import Register from "./Register";
 import Login from "./Login";
-import AuthenticationTest from "./AuthenticationTest";
-import AuthenticationTestAdmin from "./AuthenticationTestAdmin";
+
 import AccessDenied from "./AccessDenied";
 import Payment from "./Payment";
 import OrderConfirmed from "./Order/OrderConfirmed/OrderConfirmed";
@@ -30,8 +29,6 @@ export {
   ShoppingCart,
   Login,
   Register,
-  AuthenticationTest,
-  AuthenticationTestAdmin,
   AccessDenied,
   Store,
   Contact,

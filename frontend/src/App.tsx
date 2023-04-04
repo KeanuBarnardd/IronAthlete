@@ -3,8 +3,6 @@ import { Footer, Navbar } from "./Components/Layout";
 import {
   AccessDenied,
   AllOrders,
-  AuthenticationTest,
-  AuthenticationTestAdmin,
   Home,
   Login,
   MenuItemDetails,
@@ -68,9 +66,6 @@ function App() {
           <Route path="/shoppingCart" element={<ShoppingCart />}></Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
-          <Route path="/authentication" element={<AuthenticationTest />}></Route>
-          <Route path="/authorization" element={<AuthenticationTestAdmin />}></Route>
           <Route path="/accessDenied" element={<AccessDenied />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="order/orderconfirmed/:id" element={<OrderConfirmed />}></Route>

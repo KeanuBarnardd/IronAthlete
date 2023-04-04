@@ -90,6 +90,7 @@ function Navbar() {
             <NavLink className="nav-link" to="/contact">
               Contact
             </NavLink>
+
             {userData.role == SD_Roles.ADMIN ? (
               <button
                 style={{ display: "flex", gap: "15px" }}
@@ -106,9 +107,17 @@ function Navbar() {
                 </div>
               </button>
             ) : (
-              <NavLink to="/login" className="nav-link">
-                Orders
-              </NavLink>
+              <>
+                {userData.role == SD_Roles.CUTOMER ? (
+                  <NavLink to="/order/myOrders" className="nav-link">
+                    Orders
+                  </NavLink>
+                ) : (
+                  <NavLink to="/login" className="nav-link">
+                    Orders
+                  </NavLink>
+                )}
+              </>
             )}
           </div>
           <NavLink className={"cart__btn"} aria-current="page" to="/shoppingCart">

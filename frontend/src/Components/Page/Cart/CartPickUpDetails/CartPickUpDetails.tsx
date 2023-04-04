@@ -4,7 +4,7 @@ import { useInitiatePaymentMutation } from "../../../../Apis/paymentApi";
 import { inputHelper } from "../../../../Helper";
 import { apiResponse, cartItemModel } from "../../../../Interfaces";
 import { RootState } from "../../../../Storage/Redux/store";
-import { MiniLoader } from "../../Common";
+import { MainLoader, MiniLoader } from "../../Common";
 import { useNavigate } from "react-router";
 
 import "./CartPickUpDetails.scss";

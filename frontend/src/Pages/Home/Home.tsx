@@ -66,7 +66,7 @@ function Home() {
           <div className="app__container-width catalogue__parent-container">
             <div className="row catalogue__container">
               <div className="catalogue__container-tall">
-                <span className="sales__tag">SALE 15% OFF</span>
+                <span className="sales__tag">SALE 20% OFF</span>
                 <div
                   className="catalogue__container-img"
                   style={{ backgroundImage: `url(${images.cat_img_4})` }}
@@ -76,17 +76,17 @@ function Home() {
                   <h1>Heavy dumbell set weights light cruiser brand</h1>
 
                   <div className="row__price">
-                    <h2>$149.99</h2>
-                    <h3>$189.99</h3>
+                    <h2>$150.00</h2>
+                    <h3>$180.00</h3>
                   </div>
                   <p className="p-text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat magni quibusdam
-                    non ab doloribus atque eius a molestias eos perferendis aperiam esse dolorem,
-                    fugit rem, neque vero deleniti deserunt porro.
+                    Heavy Heavy Dumbbell Set - the perfect addition to your home gym for those who
+                    are serious about their strength training. With a weight range of 5 to 50
+                    pounds, this set of dumbbells is versatile and can be used for a variety of
+                    exercises, from bicep curls to shoulder presses to lunges.
                   </p>
                   <div className="row">
-                    <button className="btn btn__accent">Add to cart</button>
-                    <button className="btn btn__outline-dark">View Product</button>
+                    <button className="btn btn__outline-dark" onClick={()=>{navigate("/menuItemDetails/35")}}>View Product</button>
                   </div>
                   <p className="terms">Offer ends 20/06/2023. All terms & conditions apply</p>
                 </div>
@@ -132,11 +132,12 @@ function Home() {
           >
             Best Sellers
           </h1>
-          {isLoading && <div className="app__flex" style={{marginTop:"20px"}}>
-          <MainLoader/>
-          </div>} 
+          {isLoading && (
+            <div className="app__flex" style={{ marginTop: "20px" }}>
+              <MainLoader />
+            </div>
+          )}
           <div className="home__items-grid">
-      
             {!isLoading && (
               <>
                 {data.result.filter(getBestSellers).map((item: menuItemModel, index: number) => (

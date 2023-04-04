@@ -1,14 +1,7 @@
 import React from "react";
-
-function MiniLoader({ type = "warning", size = 100 }) {
-  return (
-    <div
-      className={`spinner-border text-${type}`}
-      style={{ scale: `${size}%` }}
-    >
-      {" "}
-    </div>
-  );
+import { BeatLoader } from "react-spinners";
+function MiniLoader() {
+  return <BeatLoader color="#1c1c1d" size={5} />;
 }
 
 export default MiniLoader;

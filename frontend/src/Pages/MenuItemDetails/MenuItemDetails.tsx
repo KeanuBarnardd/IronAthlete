@@ -53,7 +53,7 @@ function MenuItemDetails() {
     <div className="app__flex">
       {!isLoading ? (
         <div className="app__container-width menu__details-container-parent">
-          <div className="row menu__details-container" >
+          <div className="row menu__details-container">
             <div className="col row image__container">
               <img className="main__img" src={data.result.image} alt="" />
             </div>
@@ -127,7 +127,11 @@ function MenuItemDetails() {
           </div>
         </div>
       ) : (
-        <div>Fetching Data...</div>
+        <div className="app__flex">
+          <div className="app__container" style={{ padding: "16rem 0rem" }}>
+            <MainLoader />
+          </div>
+        </div>
       )}
     </div>
   );
