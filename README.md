@@ -4,6 +4,7 @@ https://ironathletestore.com ( Live Application  )
 
 https://fdirectapi.azurewebsites.net/index.html ( Live API ) 
 
+![Home Page Image](/frontend/Github_Images/home.PNG)
 
 ## Overview
 Iron Athlete is an ecommerce store that allows customers to purchase a variety of items related to fitness and athleticism. The website is built using a variety of technologies, including TypeScript, React, JavaScript, Redux, CSS/SCSS, C#, .NET, SQL, and Azure. The website is fully functional, with an API that was built in .NET and is called fdirectAPI. Customers and admin users can log in and register for accounts, and the website is fully responsive.
@@ -21,6 +22,8 @@ Iron Athlete is an ecommerce store that allows customers to purchase a variety o
 
   -View purchase history: customers can view all of their previous purchases.
 
+![Home Page Image](/frontend/Github_Images/shop.PNG)
+
 ## Admin Features
 Admin can do everything that a user can do plus: 
 
@@ -30,6 +33,7 @@ Admin can do everything that a user can do plus:
 
 -Admin can confirm, cancel and proccess all orders made within the site. 
 
+![Home Page Image](/frontend/Github_Images/allProducts.PNG)
 
 ## Conclusion
 Iron Athlete is a fully functional ecommerce store that was built using a variety of technologies, including TypeScript, React, JavaScript, Redux, CSS/SCSS, C#, .NET, SQL, and Azure. It has a variety of features for both customers and admin users, including login/register, product browsing and filtering, purchasing products, viewing purchase history, creating new products, processing orders, and viewing user products. The website is also fully responsive, ensuring that it is usable on a variety of devices.
