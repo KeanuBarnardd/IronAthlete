@@ -89,7 +89,7 @@ function Navbar() {
             </NavLink>
             <NavLink className="nav-link" to="/contact">
               Contact
-          </NavLink>
+            </NavLink>
 
             {userData.role == SD_Roles.ADMIN ? (
               <button
@@ -120,10 +120,18 @@ function Navbar() {
               </>
             )}
           </div>
-          <NavLink className={"cart__btn"} aria-current="page" to="/shoppingCart">
-            <i className="bi bi-cart cart"></i>{" "}
-            {userData.id && <span>{shoppingCartFromStore.length}</span>}
-          </NavLink>
+
+          {userData.role == SD_Roles.CUTOMER || userData.role == SD_Roles.ADMIN ? (
+            <NavLink className={"cart__btn"} aria-current="page" to="/shoppingCart">
+              <i className="bi bi-cart cart"></i>{" "}
+              {userData.id && <span>{shoppingCartFromStore.length}</span>}
+            </NavLink>
+          ) : (
+            <NavLink className={"cart__btn"} aria-current="page" to="/login">
+              <i className="bi bi-cart cart"></i>{" "}
+              {userData.id && <span>{shoppingCartFromStore.length}</span>}
+            </NavLink>
+          )}
         </div>
       </nav>
 
