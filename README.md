@@ -1,8 +1,8 @@
 # IRONATHLETE
 
-https://ironathletestore.com ( Live Application  )
+https://ironathletestore.com ( OFFLINE  )
 
-https://fdirectapi.azurewebsites.net/index.html ( Live API ) 
+https://fdirectapi.azurewebsites.net/index.html ( OFFLINE ) 
 
 ![Home Page Image](/frontend/Github_Images/home.PNG)
 
