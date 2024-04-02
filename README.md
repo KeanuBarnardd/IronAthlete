@@ -9,7 +9,7 @@ https://fdirectapi.azurewebsites.net/index.html ( OFFLINE )
 ## Overview
 Iron Athlete is an ecommerce store that allows customers to purchase a variety of items related to fitness and athleticism. The website is built using a variety of technologies, including TypeScript, React, JavaScript, Redux, CSS/SCSS, C#, .NET, SQL, and Azure. The website is fully functional, with an API that was built in .NET and is called fdirectAPI. Customers and admin users can log in and register for accounts, and the website is fully responsive.
 
-## Technologies used: 
+## Technologies used
 
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,azure,cs,mysql,react,ts)](https://skillicons.dev)
 
